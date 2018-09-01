@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,算法,Swift,Objective-C,项目管理" />
+  <meta name="keywords" content="排序,Swift," />
 
 
 
@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="iOS\算法\项目管理">
-<meta name="keywords" content="iOS,算法,Swift,Objective-C,项目管理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="成长路上">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="介绍将两个有序数列合并成一个有序数列 根据实现方式分为“从上往下”和“从下往上”两种方式 分析图使用的graphviz 从下往上（非递归实现）分析将待排序的数列分成若干个长度为1的子数列，然后将这些数列两两合并；得到若干个长度为2的有序数列，再将这些数列两两合并；得到若干个长度为4的有序数列，再将它们两两合并；直接合并成一个数列为止  c实现1234567891011121314151617181">
+<meta name="keywords" content="排序,Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法之归并排序">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/排序算法之归并排序/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="iOS\算法\项目管理">
+<meta property="og:description" content="介绍将两个有序数列合并成一个有序数列 根据实现方式分为“从上往下”和“从下往上”两种方式 分析图使用的graphviz 从下往上（非递归实现）分析将待排序的数列分成若干个长度为1的子数列，然后将这些数列两两合并；得到若干个长度为2的有序数列，再将这些数列两两合并；得到若干个长度为4的有序数列，再将它们两两合并；直接合并成一个数列为止  c实现1234567891011121314151617181">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Users/liyoucheng/Desktop/digraph/归并排序从下到上.png">
+<meta property="og:image" content="http://yoursite.com/Users/liyoucheng/Desktop/digraph/归并排序从上到下.png">
+<meta property="og:updated_time" content="2018-09-01T04:45:41.966Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="成长路上">
-<meta name="twitter:description" content="iOS\算法\项目管理">
+<meta name="twitter:title" content="排序算法之归并排序">
+<meta name="twitter:description" content="介绍将两个有序数列合并成一个有序数列 根据实现方式分为“从上往下”和“从下往上”两种方式 分析图使用的graphviz 从下往上（非递归实现）分析将待排序的数列分成若干个长度为1的子数列，然后将这些数列两两合并；得到若干个长度为2的有序数列，再将这些数列两两合并；得到若干个长度为4的有序数列，再将它们两两合并；直接合并成一个数列为止  c实现1234567891011121314151617181">
+<meta name="twitter:image" content="http://yoursite.com/Users/liyoucheng/Desktop/digraph/归并排序从下到上.png">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/排序算法之归并排序/"/>
 
 
 
 
 
-  <title>成长路上</title>
+  <title>排序算法之归并排序 | 成长路上</title>
   
 
 
@@ -144,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,9 +285,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -314,9 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/01/排序算法之归并排序/" itemprop="url">排序算法之归并排序</a></h1>
+          <h1 class="post-title" itemprop="name headline">排序算法之归并排序</h1>
         
 
         <div class="post-meta">
@@ -399,9 +400,7 @@
       
 
       
-        
-          
-            <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>将两个有序数列合并成一个有序数列</p>
+        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>将两个有序数列合并成一个有序数列</p>
 <p>根据实现方式分为“从上往下”和“从下往上”两种方式</p>
 <p>分析图使用的<a href="http://www.graphviz.org/" target="_blank" rel="noopener">graphviz</a></p>
 <h4 id="从下往上（非递归实现）"><a href="#从下往上（非递归实现）" class="headerlink" title="从下往上（非递归实现）"></a>从下往上（非递归实现）</h4><h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>将待排序的数列分成若干个长度为1的子数列，然后将这些数列两两合并；得到若干个长度为2的有序数列，再将这些数列两两合并；得到若干个长度为4的有序数列，再将它们两两合并；直接合并成一个数列为止</p>
@@ -417,8 +416,6 @@
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.graphviz.org/" target="_blank" rel="noopener">graphviz程序员画图</a></p>
 <p><a href="https://max.book118.com/html/2017/0513/106648582.shtm" target="_blank" rel="noopener">graphviz使用说明</a></p>
 
-          
-        
       
     </div>
     
@@ -433,182 +430,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/Hexo搭建个人博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LiYouCheng2014">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="成长路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/30/Hexo搭建个人博客/" itemprop="url">Hexo搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-30T11:51:50+08:00">
-                2018-08-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/排序/" rel="tag"># 排序</a>
           
-
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/30/Hexo搭建个人博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/30/Hexo搭建个人博客/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><h5 id="需要先安装Node-js和Git"><a href="#需要先安装Node-js和Git" class="headerlink" title="需要先安装Node.js和Git"></a>需要先安装Node.js和Git</h5><h5 id="通过nvm安装Node-js"><a href="#通过nvm安装Node-js" class="headerlink" title="通过nvm安装Node.js"></a>通过nvm安装Node.js</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
-<h5 id="通过brew安装Git"><a href="#通过brew安装Git" class="headerlink" title="通过brew安装Git"></a>通过brew安装Git</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install git</span><br></pre></td></tr></table></figure>
-<h4 id="通过npm安装hexo"><a href="#通过npm安装hexo" class="headerlink" title="通过npm安装hexo"></a>通过npm安装hexo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="建站Hexo"><a href="#建站Hexo" class="headerlink" title="建站Hexo"></a>建站Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;文件名&gt;</span><br><span class="line">$ cd &lt;文件名&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">_config.yml 配置信息</span><br><span class="line">package.json</span><br><span class="line">scaffolds  模板</span><br><span class="line">source 资源文件</span><br><span class="line">	_draft 草稿</span><br><span class="line">	_posts 发布</span><br><span class="line">themes 主题</span><br></pre></td></tr></table></figure>
-<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<h4 id="创建文章方式"><a href="#创建文章方式" class="headerlink" title="创建文章方式"></a>创建文章方式</h4><h4 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;文章名&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new draft &quot;文章名&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="发布草稿"><a href="#发布草稿" class="headerlink" title="发布草稿"></a>发布草稿</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish &quot;文章名&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h4><h5 id="清除缓存和静态页面"><a href="#清除缓存和静态页面" class="headerlink" title="清除缓存和静态页面"></a>清除缓存和静态页面</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-<h5 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate 简写:hexo g</span><br></pre></td></tr></table></figure>
-<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy 简写:hexo d</span><br></pre></td></tr></table></figure>
-<p><a href="http://gonghonglou.com/2016/02/03/firstblog/" target="_blank" rel="noopener">部署</a></p>
-<p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo官方文档</a></p>
-<p><a href="https://www.jianshu.com/p/e17711e44e00" target="_blank" rel="noopener">创建标签和分类</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/30/Hexo搭建个人博客/" rel="next" title="Hexo搭建个人博客">
+                <i class="fa fa-chevron-left"></i> Hexo搭建个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -618,10 +471,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -629,6 +483,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -651,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -732,6 +609,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从下往上（非递归实现）"><span class="nav-number">1.1.</span> <span class="nav-text">从下往上（非递归实现）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#分析"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#c实现"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">c实现</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Swift实现"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">Swift实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从上往下（递归实现）"><span class="nav-number">1.2.</span> <span class="nav-text">从上往下（递归实现）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#分析-1"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#C实现"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">C实现</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Swift实现-1"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">Swift实现</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -872,6 +765,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -889,6 +786,18 @@
       <script id="dsq-count-scr" src="https://LiYouCheng2014.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/09/01/排序算法之归并排序/';
+          this.page.identifier = '2018/09/01/排序算法之归并排序/';
+          this.page.title = '排序算法之归并排序';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LiYouCheng2014.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
