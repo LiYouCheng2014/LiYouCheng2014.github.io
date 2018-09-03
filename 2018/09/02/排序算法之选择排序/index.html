@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="排序,Swift,选择排序," />
+  <meta name="keywords" content="排序,Swift,C,选择排序," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="介绍分析基本思想: ​    对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
-<meta name="keywords" content="排序,Swift,选择排序">
+<meta name="description" content="介绍分析基本思想: 对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
+<meta name="keywords" content="排序,Swift,C,选择排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序算法之选择排序">
 <meta property="og:url" content="http://yoursite.com/2018/09/02/排序算法之选择排序/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="介绍分析基本思想: ​    对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
+<meta property="og:description" content="介绍分析基本思想: 对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-02T10:14:00.505Z">
+<meta property="og:updated_time" content="2018-09-03T13:06:43.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法之选择排序">
-<meta name="twitter:description" content="介绍分析基本思想: ​    对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
+<meta name="twitter:description" content="介绍分析基本思想: 对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
 
 
 
@@ -398,8 +398,8 @@
 
       
         <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>基本思想:</p>
-<p>​    对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程</p>
-<p>算法描述:</p>
+<pre><code>对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程
+</code></pre><p>算法描述:</p>
 <ol>
 <li>从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换</li>
 <li>从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换</li>
@@ -442,6 +442,8 @@
             <a href="/tags/排序/" rel="tag"># 排序</a>
           
             <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+            <a href="/tags/C/" rel="tag"># C</a>
           
             <a href="/tags/选择排序/" rel="tag"># 选择排序</a>
           
@@ -561,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -583,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
