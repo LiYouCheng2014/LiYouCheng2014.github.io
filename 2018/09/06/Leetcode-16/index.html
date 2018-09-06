@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最接近的三数之和给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。 123例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2). 这道题让我们返回这个最接">
+<meta name="description" content="最接近的三数之和给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。 123例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-15">
+<meta property="og:title" content="Leetcode-16">
 <meta property="og:url" content="http://yoursite.com/2018/09/06/Leetcode-16/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="最接近的三数之和给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。 123例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2). 这道题让我们返回这个最接">
+<meta property="og:description" content="最接近的三数之和给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。 123例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-06T14:11:09.270Z">
+<meta property="og:updated_time" content="2018-09-06T14:13:50.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode-15">
-<meta name="twitter:description" content="最接近的三数之和给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。 123例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2). 这道题让我们返回这个最接">
+<meta name="twitter:title" content="Leetcode-16">
+<meta name="twitter:description" content="最接近的三数之和给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。 123例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Leetcode-15 | 成长路上</title>
+  <title>Leetcode-16 | 成长路上</title>
   
 
 
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode-15</h1>
+          <h1 class="post-title" itemprop="name headline">Leetcode-16</h1>
         
 
         <div class="post-meta">
@@ -326,7 +326,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-06T20:26:33+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-06T22:20:33+08:00">
                 2018-09-06
               </time>
             
@@ -400,6 +400,7 @@
         <hr>
 <h4 id="最接近的三数之和"><a href="#最接近的三数之和" class="headerlink" title="最接近的三数之和"></a>最接近的三数之和</h4><p>给定一个包括 <em>n</em> 个整数的数组 <code>nums</code> 和 一个目标值 <code>target</code>。找出 <code>nums</code> 中的三个整数，使得它们的和与 <code>target</code> 最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.</span><br><span class="line"></span><br><span class="line">与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>这道题让我们返回这个最接近于给定值的值，即我们要保证当前三数和跟给定值之间的差的绝对值最小，所以我们需要定义一个变量diff用来记录差的绝对值，然后我们还是要先将数组排个序，然后开始遍历数组，思路跟那道三数之和很相似，都是先确定一个数，然后用两个指针left和right来滑动寻找另外两个数，每确定两个数，我们求出此三数之和，然后算和给定值的差的绝对值存在newDiff中，然后和diff比较并更新diff和结果closest即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">//比较</span><br><span class="line">int compare(const void *a, const void *b)</span><br><span class="line">&#123;</span><br><span class="line">    return *(int *)a - *(int *)b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//最接近的三数之和</span><br><span class="line">int threeSumClosest(int* nums, int numsSize, int target) &#123;</span><br><span class="line">	int min_diff = INT_MAX;</span><br><span class="line">    if (numsSize &lt; 3) &#123;</span><br><span class="line">        return min_diff;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    qsort(nums, numsSize, sizeof(*nums), compare);</span><br><span class="line"></span><br><span class="line">    for (int k = 0; k &lt; numsSize - 2; ++k) &#123;</span><br><span class="line">    	int i = k + 1;</span><br><span class="line">    	int j = numsSize - 1;</span><br><span class="line">    	while (i &lt; j) &#123;</span><br><span class="line">			int diff = nums[k] + nums[i] + nums[j] - target;</span><br><span class="line">			if (abs(diff) &lt; abs(min_diff)) &#123;</span><br><span class="line">				min_diff = diff;</span><br><span class="line">			&#125; </span><br><span class="line"></span><br><span class="line">			if (diff &gt; 0) &#123;</span><br><span class="line">				j--;</span><br><span class="line">			&#125;</span><br><span class="line">			else if (diff &lt; 0) &#123;</span><br><span class="line">				i++;</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;</span><br><span class="line">				return target;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return min_diff + target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://leetcode-cn.com/problems" target="_blank" rel="noopener">参考题目</a></p>
@@ -434,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/06/Leetcode-1/" rel="next" title="Leetcode-1">
-                <i class="fa fa-chevron-left"></i> Leetcode-1
+              <a href="/2018/09/06/Leetcode-15/" rel="next" title="Leetcode-15">
+                <i class="fa fa-chevron-left"></i> Leetcode-15
               </a>
             
           </div>
@@ -778,7 +779,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2018/09/06/Leetcode-16/';
           this.page.identifier = '2018/09/06/Leetcode-16/';
-          this.page.title = 'Leetcode-15';
+          this.page.title = 'Leetcode-16';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://LiYouCheng2014.disqus.com/embed.js';
