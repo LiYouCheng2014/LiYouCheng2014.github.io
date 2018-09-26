@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,算法,Swift,Objective-C,项目管理" />
+  <meta name="keywords" content="C,栈," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="iOS\算法\项目管理">
-<meta name="keywords" content="iOS,算法,Swift,Objective-C,项目管理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="成长路上">
-<meta property="og:url" content="http://yoursite.com/tags/排序/index.html">
+<meta name="description" content="链栈源代码，不带头结点">
+<meta name="keywords" content="C,栈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构之栈">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/数据结构之栈/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="iOS\算法\项目管理">
+<meta property="og:description" content="链栈源代码，不带头结点">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-26T23:52:34.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="成长路上">
-<meta name="twitter:description" content="iOS\算法\项目管理">
+<meta name="twitter:title" content="数据结构之栈">
+<meta name="twitter:description" content="链栈源代码，不带头结点">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/27/数据结构之栈/"/>
 
 
 
 
 
-  <title>Tag: 排序 | 成长路上</title>
+  <title>数据结构之栈 | 成长路上</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,222 +283,185 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>排序<small>Tag</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/数据结构之栈/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYouCheng2014">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长路上">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/03/排序算法之希尔排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之希尔排序</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">数据结构之栈</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-03T21:29:45+08:00"
-              content="2018-09-03" >
-          09-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-27T07:40:49+08:00">
+                2018-09-27
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/27/数据结构之栈/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/27/数据结构之栈/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/03/排序算法之插入排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之插入排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-03T21:05:49+08:00"
-              content="2018-09-03" >
-          09-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序算法之堆排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之堆排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T21:45:22+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序算法之选择排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之选择排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T18:03:37+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序算法之快速排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之快速排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T14:07:43+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序算法之冒泡排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之冒泡排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T13:27:43+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/01/排序算法之归并排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之归并排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T10:43:30+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>链栈源代码，不带头结点</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">typedef int ElementType;</span><br><span class="line"></span><br><span class="line">//结点</span><br><span class="line">struct Node&#123;</span><br><span class="line">    ElementType data;</span><br><span class="line">    struct Node *next;</span><br><span class="line">&#125;;</span><br><span class="line">typedef struct Node *Ptr;</span><br><span class="line"></span><br><span class="line">//栈结构</span><br><span class="line">struct LinkStack &#123;</span><br><span class="line">    Ptr top;//栈顶</span><br><span class="line">    int count;</span><br><span class="line">&#125;;</span><br><span class="line">typedef struct LinkStack *Stack;</span><br><span class="line"></span><br><span class="line">//创建栈</span><br><span class="line">Stack InitStack(void);</span><br><span class="line">//栈是否空</span><br><span class="line">bool IsEmptyStack(Stack stack);</span><br><span class="line">//入栈</span><br><span class="line">void PushStack(Stack stack, ElementType val);</span><br><span class="line">//出栈</span><br><span class="line">void PopStack(Stack stack, ElementType *val);</span><br><span class="line">//销毁栈</span><br><span class="line">void DestroyStack(Stack stack);</span><br><span class="line">//遍历栈</span><br><span class="line">void TraverseStack(Stack stack);</span><br><span class="line">//清空栈</span><br><span class="line">void ClearStack(Stack stack);</span><br><span class="line">//栈长度</span><br><span class="line">int LengthStack(Stack stack);</span><br><span class="line">//获取栈顶元素</span><br><span class="line">void GetTop(Stack stack, ElementType *val);</span><br><span class="line">//栈测试</span><br><span class="line">void test(void);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建栈</span></span><br><span class="line"><span class="function">Stack <span class="title">InitStack</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//可能分配失败 内存不足</span></span><br><span class="line">    Stack <span class="built_in">stack</span> = (Stack)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkStack));</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">stack</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"分配内存失败\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;top = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">stack</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//栈是否空</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsEmptyStack</span><span class="params">(Stack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">stack</span>-&gt;top ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//入栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PushStack</span><span class="params">(Stack <span class="built_in">stack</span>, ElementType val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Ptr p = (Ptr)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node));</span><br><span class="line">    <span class="keyword">if</span> (!p) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"分配内存失败\n"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;data = val;</span><br><span class="line">    p-&gt;next = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;top = p;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;count++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//出栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PopStack</span><span class="params">(Stack <span class="built_in">stack</span>, ElementType *val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!IsEmptyStack(<span class="built_in">stack</span>)) &#123;</span><br><span class="line">        Ptr p = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">        *val = p-&gt;data;</span><br><span class="line">        <span class="built_in">stack</span>-&gt;top = p-&gt;next;</span><br><span class="line">        <span class="built_in">stack</span>-&gt;count--;</span><br><span class="line">        <span class="built_in">free</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyStack</span><span class="params">(Stack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ClearStack(<span class="built_in">stack</span>);</span><br><span class="line">    <span class="built_in">free</span>(<span class="built_in">stack</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TraverseStack</span><span class="params">(Stack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Ptr p = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,p-&gt;data);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearStack</span><span class="params">(Stack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Ptr p;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">stack</span>-&gt;top) &#123;</span><br><span class="line">        p = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">        <span class="built_in">stack</span>-&gt;top = p-&gt;next;</span><br><span class="line">        <span class="built_in">stack</span>-&gt;count--;</span><br><span class="line">        <span class="built_in">free</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//栈长度</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LengthStack</span><span class="params">(Stack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">stack</span>-&gt;count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取栈顶元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetTop</span><span class="params">(Stack <span class="built_in">stack</span>, ElementType *val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!IsEmptyStack(<span class="built_in">stack</span>)) &#123;</span><br><span class="line">        *val = <span class="built_in">stack</span>-&gt;top-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//栈测试</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"初始化栈并将1-10入栈\n"</span>);</span><br><span class="line">    Stack s = InitStack();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">11</span>; i++) &#123;</span><br><span class="line">        PushStack(s, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"栈中元素从栈顶依次为:\n"</span>);</span><br><span class="line">    TraverseStack(s);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"栈长度:%d\n"</span>,LengthStack(s));</span><br><span class="line"></span><br><span class="line">    ElementType e;</span><br><span class="line">    PopStack(s, &amp;e);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第一次弹出的元素为:%d\n"</span>,e);</span><br><span class="line"></span><br><span class="line">    PopStack(s, &amp;e);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第二次弹出的元素为:%d\n"</span>,e);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"栈是否空:%d(1:是，0:不是)\n"</span>,IsEmptyStack(s));</span><br><span class="line"></span><br><span class="line">    GetTop(s, &amp;e);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"当前栈顶的元素为:%d\n"</span>,e);</span><br><span class="line"></span><br><span class="line">    ClearStack(s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"栈清空后，是否空:%d(1:是，0:不是)\n"</span>,IsEmptyStack(s));</span><br><span class="line"></span><br><span class="line">    DestroyStack(s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"栈销毁\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+            <a href="/tags/栈/" rel="tag"># 栈</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/27/数据结构之队/" rel="next" title="数据结构之队">
+                <i class="fa fa-chevron-left"></i> 数据结构之队
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -505,6 +469,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -748,6 +726,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -765,6 +747,18 @@
       <script id="dsq-count-scr" src="https://LiYouCheng2014.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/09/27/数据结构之栈/';
+          this.page.identifier = '2018/09/27/数据结构之栈/';
+          this.page.title = '数据结构之栈';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LiYouCheng2014.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
