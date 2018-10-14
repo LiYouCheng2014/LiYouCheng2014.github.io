@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="leetCode," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="用法发出请求123import AlamofireAlamofire.request(&amp;quot;https://httpbin.org/get&amp;quot;) 响应处理处理Alamofire中Response的一个Request制作涉及将响应处理程序链接到Request。 12345678910111213Alamofire.request(&amp;quot;https://httpbin.org/ge">
+<meta name="keywords" content="leetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Alamofire-用法">
+<meta property="og:url" content="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-用法/index.html">
+<meta property="og:site_name" content="成长路上">
+<meta property="og:description" content="用法发出请求123import AlamofireAlamofire.request(&amp;quot;https://httpbin.org/get&amp;quot;) 响应处理处理Alamofire中Response的一个Request制作涉及将响应处理程序链接到Request。 12345678910111213Alamofire.request(&amp;quot;https://httpbin.org/ge">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-14T07:47:31.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Alamofire-用法">
+<meta name="twitter:description" content="用法发出请求123import AlamofireAlamofire.request(&amp;quot;https://httpbin.org/get&amp;quot;) 响应处理处理Alamofire中Response的一个Request制作涉及将响应处理程序链接到Request。 12345678910111213Alamofire.request(&amp;quot;https://httpbin.org/ge">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-用法/"/>
+
+
+
+
+
+  <title>Alamofire-用法 | 成长路上</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">成长路上</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不断放弃舒适区</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYouCheng2014">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Alamofire-用法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T15:00:33+08:00">
+                2018-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/swift源码学习/" itemprop="url" rel="index">
+                    <span itemprop="name">swift源码学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/14/Swift源码分析/Alamofire-用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/14/Swift源码分析/Alamofire-用法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="发出请求"><a href="#发出请求" class="headerlink" title="发出请求"></a>发出请求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Alamofire</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="响应处理"><a href="#响应处理" class="headerlink" title="响应处理"></a>响应处理</h3><p>处理Alamofire中<code>Response</code>的一个<code>Request</code>制作涉及将响应处理程序链接到<code>Request</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    print(&quot;Request: \(String(describing: response.request))&quot;)   // original url request</span><br><span class="line">    print(&quot;Response: \(String(describing: response.response))&quot;) // http url response</span><br><span class="line">    print(&quot;Result: \(response.result)&quot;)                         // response serialization result</span><br><span class="line"></span><br><span class="line">    if let json = response.result.value &#123;</span><br><span class="line">        print(&quot;JSON: \(json)&quot;) // serialized json response</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) &#123;</span><br><span class="line">        print(&quot;Data: \(utf8Text)&quot;) // original server data as UTF8 string</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的示例中，<code>responseJSON</code>处理程序附加到完成<code>Request</code>后要执行的处理程序<code>Request</code>。不是阻止执行以等待来自服务器的响应，而是指定闭包形式的<a href="https://en.wikipedia.org/wiki/Callback_%28computer_programming%29" target="_blank" rel="noopener">回调</a>以在收到响应后处理响应。请求的结果仅在响应闭包的范围内可用。根据响应或从服务器接收的数据执行的任何执行都必须在响应闭包内完成。</p>
+<blockquote>
+<p>Alamofire中的网络是<em>异步</em>完成的。对于不熟悉这个概念的程序员来说，异步编程可能会让人感到沮丧，但这样做有<a href="https://developer.apple.com/library/ios/qa/qa1693/_index.html" target="_blank" rel="noopener">很好的理由</a>。</p>
+</blockquote>
+<p>Alamofire默认包含五种不同的响应处理程序，包括：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//响应处理程序 - 反序列化响应</span><br><span class="line">func response(</span><br><span class="line">    queue: DispatchQueue?,</span><br><span class="line">    completionHandler: @escaping (DefaultDataResponse) -&gt; Void)</span><br><span class="line">    -&gt; Self</span><br><span class="line"></span><br><span class="line">//响应数据处理程序 - 序列化为数据</span><br><span class="line">func  responseData（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt;Data&gt;）- &gt;  Void）</span><br><span class="line">     - &gt;  Self</span><br><span class="line"></span><br><span class="line">//响应字符串处理程序 - 序列化为字符串</span><br><span class="line">func  responseString（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     encoding：String .Encoding ？，</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt; String &gt;）- &gt;  Void）</span><br><span class="line">     - &gt;  Self</span><br><span class="line"></span><br><span class="line">//响应JSON处理程序 - 序列化为任意</span><br><span class="line">func  responseJSON（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt; Any &gt;）- &gt;  Void）</span><br><span class="line">     - &gt;  Self</span><br><span class="line"></span><br><span class="line">//响应PropertyList（plist）处理程序 - 序列化为Any</span><br><span class="line">func  responsePropertyList（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt; Any &gt;）- &gt;  Void））</span><br><span class="line">     - &gt;  Self</span><br></pre></td></tr></table></figure>
+<p>没有任何响应处理程序执行<code>HTTPURLResponse</code>从服务器返回的任何验证。</p>
+<blockquote>
+<p>例如，<code>400..&lt;500</code>和<code>500..&lt;600</code>范围中的响应状态代码不会自动触发<code>Error</code>。Alamofire使用<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-validation" target="_blank" rel="noopener">响应验证</a>方法链接来实现此目的。</p>
+</blockquote>
+<h4 id="响应处理程序"><a href="#响应处理程序" class="headerlink" title="响应处理程序"></a>响应处理程序</h4><p>该<code>response</code>处理程序不评价任何响应数据的。它只是直接从URL会话委托转发所有信息。这是Alamofire相当于<code>cURL</code>用来执行一个<code>Request</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).response &#123; response in</span><br><span class="line">    print(&quot;Request: \(response.request)&quot;)</span><br><span class="line">    print(&quot;Response: \(response.response)&quot;)</span><br><span class="line">    print(&quot;Error: \(response.error)&quot;)</span><br><span class="line"></span><br><span class="line">    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) &#123;</span><br><span class="line">    	print(&quot;Data: \(utf8Text)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我们强烈建议您利用其他响应序列化程序来利用<code>Response</code>和<code>Result</code>类型。</p>
+</blockquote>
+<h4 id="响应数据处理程序"><a href="#响应数据处理程序" class="headerlink" title="响应数据处理程序"></a>响应数据处理程序</h4><p>该<code>responseData</code>处理程序使用<code>responseDataSerializer</code>（服务器数据序列化到一些其它类型的对象），以提取<code>Data</code>由服务器返回。如果没有错误发生并<code>Data</code>返回，则响应<code>Result</code>将是a <code>.success</code>，并且<code>value</code>将是类型<code>Data</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseData &#123; response in</span><br><span class="line">    debugPrint(&quot;All Response Info: \(response)&quot;)</span><br><span class="line"></span><br><span class="line">    if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) &#123;</span><br><span class="line">    	print(&quot;Data: \(utf8Text)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="响应字符串处理程序"><a href="#响应字符串处理程序" class="headerlink" title="响应字符串处理程序"></a>响应字符串处理程序</h4><p>该<code>responseString</code>处理器采用了<code>responseStringSerializer</code>转换的<code>Data</code>服务器返回到<code>String</code>与指定的编码。如果没有发生错误并且服务器数据成功序列化为a <code>String</code>，则响应<code>Result</code>将为a <code>.success</code>且<code>value</code>类型为<code>String</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseString &#123; response in</span><br><span class="line">    print(&quot;Success: \(response.result.isSuccess)&quot;)</span><br><span class="line">    print(&quot;Response String: \(response.result.value)&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果未指定编码，Alamofire将使用<code>HTTPURLResponse</code>服务器中指定的文本编码。如果服务器响应无法确定文本编码，则默认为<code>.isoLatin1</code>。</p>
+</blockquote>
+<h4 id="响应JSON处理程序"><a href="#响应JSON处理程序" class="headerlink" title="响应JSON处理程序"></a>响应JSON处理程序</h4><p>该<code>responseJSON</code>处理器采用了<code>responseJSONSerializer</code>转换的<code>Data</code>服务器返回到<code>Any</code>使用指定的类型<code>JSONSerialization.ReadingOptions</code>。如果没有发生错误并且服务器数据成功序列化为JSON对象，则响应<code>Result</code>将为a <code>.success</code>且<code>value</code>类型为<code>Any</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line"></span><br><span class="line">    if let json = response.result.value &#123;</span><br><span class="line">        print(&quot;JSON: \(json)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>所有JSON序列化都由框架中的<code>JSONSerialization</code>API 处理<code>Foundation</code>。</p>
+</blockquote>
+<h4 id="链式响应处理程序"><a href="#链式响应处理程序" class="headerlink" title="链式响应处理程序"></a>链式响应处理程序</h4><p>响应处理程序甚至可以链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;)</span><br><span class="line">    .responseString &#123; response in</span><br><span class="line">        print(&quot;Response String: \(response.result.value)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        print(&quot;Response JSON: \(response.result.value)&quot;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重要的是要注意，在同一个上使用多个响应处理程序<code>Request</code>需要多次序列化服务器数据。每个响应处理程序一次。</p>
+</blockquote>
+<h4 id="响应处理程序队列"><a href="#响应处理程序队列" class="headerlink" title="响应处理程序队列"></a>响应处理程序队列</h4><p>默认情况下，响应处理程序在主调度队列上执行。但是，可以提供自定义调度队列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let utilityQueue = DispatchQueue.global(qos: .utility)</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON(queue: utilityQueue) &#123; response in</span><br><span class="line">    print(&quot;Executing response handler on utility queue&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="响应验证"><a href="#响应验证" class="headerlink" title="响应验证"></a>响应验证</h3><p>默认情况下，无论响应的内容如何，Alamofire都会将任何已完成的请求视为成功。<code>validate</code>如果响应具有不可接受的状态代码或MIME类型，则在响应处理程序之前调用会导致生成错误。</p>
+<h4 id="手动验证"><a href="#手动验证" class="headerlink" title="手动验证"></a>手动验证</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;)</span><br><span class="line">    .validate(statusCode: 200..&lt;300)</span><br><span class="line">    .validate(contentType: [&quot;application/json&quot;])</span><br><span class="line">    .responseData &#123; response in</span><br><span class="line">        switch response.result &#123;</span><br><span class="line">        case .success:</span><br><span class="line">            print(&quot;Validation Successful&quot;)</span><br><span class="line">        case .failure(let error):</span><br><span class="line">            print(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自动验证"><a href="#自动验证" class="headerlink" title="自动验证"></a>自动验证</h4><p>自动验证<code>200..&lt;300</code>范围内的状态代码，并且<code>Content-Type</code>响应的<code>Accept</code>标头与请求的标头匹配（如果提供了标头）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).validate().responseJSON &#123; response in</span><br><span class="line">    switch response.result &#123;</span><br><span class="line">    case .success:</span><br><span class="line">        print(&quot;Validation Successful&quot;)</span><br><span class="line">    case .failure(let error):</span><br><span class="line">        print(error)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="响应缓存"><a href="#响应缓存" class="headerlink" title="响应缓存"></a>响应缓存</h3><p>响应缓存在系统框架级别上处理<a href="https://developer.apple.com/reference/foundation/urlcache" target="_blank" rel="noopener"><code>URLCache</code></a>。它提供了复合内存和磁盘缓存，并允许您操作内存和磁盘部分的大小。</p>
+<blockquote>
+<p>默认情况下，Alamofire利用共享<code>URLCache</code>。要自定义它，请参阅“ <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置”</a>部分。</p>
+</blockquote>
+<h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><p>该<code>HTTPMethod</code>枚举列出定义的HTTP方法<a href="https://tools.ietf.org/html/rfc7231#section-4.3" target="_blank" rel="noopener">RFC 7231第4.3节</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public enum HTTPMethod: String &#123;</span><br><span class="line">    case options = &quot;OPTIONS&quot;</span><br><span class="line">    case get     = &quot;GET&quot;</span><br><span class="line">    case head    = &quot;HEAD&quot;</span><br><span class="line">    case post    = &quot;POST&quot;</span><br><span class="line">    case put     = &quot;PUT&quot;</span><br><span class="line">    case patch   = &quot;PATCH&quot;</span><br><span class="line">    case delete  = &quot;DELETE&quot;</span><br><span class="line">    case trace   = &quot;TRACE&quot;</span><br><span class="line">    case connect = &quot;CONNECT&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这些值可以作为<code>method</code>参数传递给<code>Alamofire.request</code>API：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;) // method defaults to `.get`</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/put&quot;, method: .put)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/delete&quot;, method: .delete)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>所述<code>Alamofire.request</code>方法参数的缺省值为<code>.get</code>。</p>
+</blockquote>
+<h3 id="参数编码"><a href="#参数编码" class="headerlink" title="参数编码"></a>参数编码</h3><p>Alamofire支持三种类型的参数编码，包括：<code>URL</code>，<code>JSON</code>和<code>PropertyList</code>。它还可以支持任何符合<code>ParameterEncoding</code>协议的自定义编码。</p>
+<h4 id="网址编码"><a href="#网址编码" class="headerlink" title="网址编码"></a>网址编码</h4><p>该<code>URLEncoding</code>类型创建一个URL编码的查询字符串，该字符串将被设置为或附加到任何现有的URL查询字符串，或者设置为URL请求的HTTP正文。查询字符串是设置还是附加到任何现有URL查询字符串或设置为HTTP正文取决于<code>Destination</code>编码。该<code>Destination</code>枚举有三种情况：</p>
+<ul>
+<li><code>.methodDependent</code>- 将编码的查询字符串结果应用于现有查询字符串<code>GET</code>，<code>HEAD</code>并将<code>DELETE</code>请求和集合应用为使用任何其他HTTP方法的请求的HTTP正文。</li>
+<li><code>.queryString</code> - 将编码查询字符串结果设置或附加到现有查询字符串。</li>
+<li><code>.httpBody</code> - 将编码的查询字符串结果设置为URL请求的HTTP正文。</li>
+</ul>
+<p><code>Content-Type</code>HTTP主体的编码请求的HTTP头字段设置为<code>application/x-www-form-urlencoded; charset=utf-8</code>。由于没有关于如何编码集合类型的已发布规范，因此附加<code>[]</code>了数组值（<code>foo[]=1&amp;foo[]=2</code>）的键，以及为嵌套字典值（<code>foo[bar]=baz</code>）附加方括号括起来的键的约定。</p>
+<h5 id="使用URL编码参数获取请求"><a href="#使用URL编码参数获取请求" class="headerlink" title="使用URL编码参数获取请求"></a>使用URL编码参数获取请求</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let parameters: Parameters = [&quot;foo&quot;: &quot;bar&quot;]</span><br><span class="line"></span><br><span class="line">// All three of these calls are equivalent</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: parameters) // encoding defaults to `URLEncoding.default`</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: parameters, encoding: URLEncoding.default)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: parameters, encoding: URLEncoding(destination: .methodDependent))</span><br><span class="line"></span><br><span class="line">// https://httpbin.org/get?foo=bar</span><br></pre></td></tr></table></figure>
+<h5 id="使用URL编码参数的POST请求"><a href="#使用URL编码参数的POST请求" class="headerlink" title="使用URL编码参数的POST请求"></a>使用URL编码参数的POST请求</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let parameters: Parameters = [</span><br><span class="line">    &quot;foo&quot;: &quot;bar&quot;,</span><br><span class="line">    &quot;baz&quot;: [&quot;a&quot;, 1],</span><br><span class="line">    &quot;qux&quot;: [</span><br><span class="line">        &quot;x&quot;: 1,</span><br><span class="line">        &quot;y&quot;: 2,</span><br><span class="line">        &quot;z&quot;: 3</span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">// All three of these calls are equivalent</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: URLEncoding.default)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: URLEncoding.httpBody)</span><br><span class="line"></span><br><span class="line">// HTTP body: foo=bar&amp;baz[]=a&amp;baz[]=1&amp;qux[x]=1&amp;qux[y]=2&amp;qux[z]=3</span><br></pre></td></tr></table></figure>
+<h5 id="配置Bool参数编码"><a href="#配置Bool参数编码" class="headerlink" title="配置Bool参数编码"></a>配置<code>Bool</code>参数编码</h5><p>该<code>URLEncoding.BoolEncoding</code>枚举提供了编码以下方法<code>Bool</code>参数：</p>
+<ul>
+<li><code>.numeric</code>-编码<code>true</code>作为<code>1</code>和<code>false</code>作为<code>0</code>。</li>
+<li><code>.literal</code>- 编码<code>true</code>和<code>false</code>字符串文字。</li>
+</ul>
+<p>默认情况下，Alamofire使用<code>.numeric</code>编码。</p>
+<p>您可以创建自己的<code>URLEncoding</code>并<code>Bool</code>在初始化程序中指定所需的编码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let encoding = URLEncoding(boolEncoding: .literal)</span><br></pre></td></tr></table></figure>
+<h5 id="配置Array参数编码"><a href="#配置Array参数编码" class="headerlink" title="配置Array参数编码"></a>配置<code>Array</code>参数编码</h5><p>该<code>URLEncoding.ArrayEncoding</code>枚举提供了编码以下方法<code>Array</code>参数：</p>
+<ul>
+<li><code>.brackets</code> - 每个值的键都附加一组空方括号。</li>
+<li><code>.noBrackets</code> - 不附加括号。密钥按原样编码。</li>
+</ul>
+<p>默认情况下，Alamofire使用<code>.brackets</code>编码，<code>foo=[1,2]</code>编码为<code>foo[]=1&amp;foo[]=2</code>。</p>
+<p>使用<code>.noBrackets</code>编码将编码<code>foo=[1,2]</code>为<code>foo=1&amp;foo=2</code>。</p>
+<p>您可以创建自己的<code>URLEncoding</code>并<code>Array</code>在初始化程序中指定所需的编码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let encoding = URLEncoding(arrayEncoding: .noBrackets)</span><br></pre></td></tr></table></figure>
+<h4 id="JSON编码"><a href="#JSON编码" class="headerlink" title="JSON编码"></a>JSON编码</h4><p>该<code>JSONEncoding</code>类型创建参数对象的JSON表示，该表示被设置为请求的HTTP主体。<code>Content-Type</code>编码请求的HTTP头字段设置为<code>application/json</code>。</p>
+<h5 id="使用JSON编码参数的POST请求"><a href="#使用JSON编码参数的POST请求" class="headerlink" title="使用JSON编码参数的POST请求"></a>使用JSON编码参数的POST请求</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let parameters: Parameters = [</span><br><span class="line">    &quot;foo&quot;: [1,2,3],</span><br><span class="line">    &quot;bar&quot;: [</span><br><span class="line">        &quot;baz&quot;: &quot;qux&quot;</span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">// Both calls are equivalent</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: JSONEncoding.default)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: JSONEncoding(options: []))</span><br><span class="line"></span><br><span class="line">// HTTP body: &#123;&quot;foo&quot;: [1, 2, 3], &quot;bar&quot;: &#123;&quot;baz&quot;: &quot;qux&quot;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Plist编码"><a href="#Plist编码" class="headerlink" title="Plist编码"></a>Plist编码</h4><p>的<code>PropertyListEncoding</code>用途<code>PropertyListSerialization</code>来创建参数对象的plist表示时，根据相关联的格式，并写入选项的值，其被设置为请求的主体。<code>Content-Type</code>编码请求的HTTP头字段设置为<code>application/x-plist</code>。</p>
+<h4 id="自定义编码"><a href="#自定义编码" class="headerlink" title="自定义编码"></a>自定义编码</h4><p>如果提供的<code>ParameterEncoding</code>类型不符合您的需求，您可以创建自己的自定义编码。这是一个快速示例，说明如何构建自定义<code>JSONStringArrayEncoding</code>类型以将JSON字符串数组编码到<code>Request</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">struct JSONStringArrayEncoding: ParameterEncoding &#123;</span><br><span class="line">    private let array: [String]</span><br><span class="line"></span><br><span class="line">    init(array: [String]) &#123;</span><br><span class="line">        self.array = array</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -&gt; URLRequest &#123;</span><br><span class="line">        var urlRequest = try urlRequest.asURLRequest()</span><br><span class="line"></span><br><span class="line">        let data = try JSONSerialization.data(withJSONObject: array, options: [])</span><br><span class="line"></span><br><span class="line">        if urlRequest.value(forHTTPHeaderField: &quot;Content-Type&quot;) == nil &#123;</span><br><span class="line">            urlRequest.setValue(&quot;application/json&quot;, forHTTPHeaderField: &quot;Content-Type&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        urlRequest.httpBody = data</span><br><span class="line"></span><br><span class="line">        return urlRequest</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="URLRequest的手动参数编码"><a href="#URLRequest的手动参数编码" class="headerlink" title="URLRequest的手动参数编码"></a>URLRequest的手动参数编码</h4><p>该<code>ParameterEncoding</code>API可让网络请求之外使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let url = URL(string: &quot;https://httpbin.org/get&quot;)!</span><br><span class="line">var urlRequest = URLRequest(url: url)</span><br><span class="line"></span><br><span class="line">let parameters: Parameters = [&quot;foo&quot;: &quot;bar&quot;]</span><br><span class="line">let encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: parameters)</span><br></pre></td></tr></table></figure>
+<h3 id="HTTP头部"><a href="#HTTP头部" class="headerlink" title="HTTP头部"></a>HTTP头部</h3><p><code>Request</code>在global <code>request</code>方法中直接支持向a添加自定义HTTP标头。这样可以轻松地将HTTP标头附加到<code>Request</code>可以不断更改的标头上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let headers: HTTPHeaders = [</span><br><span class="line">    &quot;Authorization&quot;: &quot;Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==&quot;,</span><br><span class="line">    &quot;Accept&quot;: &quot;application/json&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/headers&quot;, headers: headers).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于不更改的HTTP标头，建议将它们设置为，<code>URLSessionConfiguration</code>以便它们自动应用于<code>URLSessionTask</code>底层创建的任何标头<code>URLSession</code>。有关更多信息，请参阅<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置</a>部分。</p>
+</blockquote>
+<p>默认的Alamofire <code>SessionManager</code>为每个提供默认的标头集<code>Request</code>。这些包括：</p>
+<ul>
+<li><code>Accept-Encoding</code>，默认为<code>gzip;q=1.0, compress;q=0.5</code>，每<a href="https://tools.ietf.org/html/rfc7230#section-4.2.3" target="_blank" rel="noopener">RFC 7230§4.2.3</a>。</li>
+<li><code>Accept-Language</code>，缺省到顶部6偏好的语言在系统上，格式化等<code>en;q=1.0</code>，每<a href="https://tools.ietf.org/html/rfc7231#section-5.3.5" target="_blank" rel="noopener">RFC 7231§5.3.5</a>。</li>
+<li><code>User-Agent</code>，其中包含有关当前应用程序的版本信息。例如：<code>iOS Example/1.0 (com.alamofire.iOS-Example; build:1; iOS 10.0.0) Alamofire/4.0.0</code>，根据<a href="https://tools.ietf.org/html/rfc7231#section-5.5.3" target="_blank" rel="noopener">RFC7231§5.5.3</a>。</li>
+</ul>
+<p>如果需要自定义这些标头，<code>URLSessionConfiguration</code>则应创建自定义，<code>defaultHTTPHeaders</code>更新属性并将配置应用于新<code>SessionManager</code>实例。</p>
+<h3 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h3><p>身份验证在系统框架级别由<a href="https://developer.apple.com/reference/foundation/nsurlcredential" target="_blank" rel="noopener"><code>URLCredential</code></a>和处理<a href="https://developer.apple.com/reference/foundation/urlauthenticationchallenge" target="_blank" rel="noopener"><code>URLAuthenticationChallenge</code></a>。</p>
+<p><strong>支持的身份验证方案</strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank" rel="noopener">HTTP基础</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Digest_access_authentication" target="_blank" rel="noopener">HTTP摘要</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Kerberos_%28protocol%29" target="_blank" rel="noopener">Kerberos的</a></li>
+<li><a href="https://en.wikipedia.org/wiki/NT_LAN_Manager" target="_blank" rel="noopener">NTLM</a></li>
+</ul>
+<h4 id="HTTP基本身份验证"><a href="#HTTP基本身份验证" class="headerlink" title="HTTP基本身份验证"></a>HTTP基本身份验证</h4><p>在<code>authenticate</code>上一个方法<code>Request</code>自动将提供<code>URLCredential</code>给一个<code>URLAuthenticationChallenge</code>适当的时候：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let user = &quot;user&quot;</span><br><span class="line">let password = &quot;password&quot;</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/basic-auth/\(user)/\(password)&quot;)</span><br><span class="line">    .authenticate(user: user, password: password)</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>根据您的服务器实现，<code>Authorization</code>标头也可能是合适的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let user = &quot;user&quot;</span><br><span class="line">let password = &quot;password&quot;</span><br><span class="line"></span><br><span class="line">var headers: HTTPHeaders = [:]</span><br><span class="line"></span><br><span class="line">if let authorizationHeader = Request.authorizationHeader(user: user, password: password) &#123;</span><br><span class="line">    headers[authorizationHeader.key] = authorizationHeader.value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/basic-auth/user/password&quot;, headers: headers)</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用URLCredential进行身份验证"><a href="#使用URLCredential进行身份验证" class="headerlink" title="使用URLCredential进行身份验证"></a>使用URLCredential进行身份验证</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let user = &quot;user&quot;</span><br><span class="line">let password = &quot;password&quot;</span><br><span class="line"></span><br><span class="line">let credential = URLCredential(user: user, password: password, persistence: .forSession)</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/basic-auth/\(user)/\(password)&quot;)</span><br><span class="line">    .authenticate(usingCredential: credential)</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>值得注意的是，当使用<code>URLCredential</code>for进行身份验证时，<code>URLSession</code>如果服务器发出质询，则底层实际上最终会发出两个请求。第一个请求将不包括“可能”从服务器触发质询的凭证。然后，Alamofire接收挑战，附加凭证并由底层重试请求<code>URLSession</code>。</p>
+</blockquote>
+<h3 id="将数据下载到文件"><a href="#将数据下载到文件" class="headerlink" title="将数据下载到文件"></a>将数据下载到文件</h3><p>在Alamofire中从服务器获取数据的请求可以下载内存中或磁盘上的数据。<code>Alamofire.request</code>到目前为止，所有示例中使用的API始终在内存中下载服务器数据。这对于较小的有效负载来说非常有用，因为它更有效，但对于较大的有效负载却非常糟糕，因为下载可以使整个应用程序运行在内存之外。因此，您还可以使用<code>Alamofire.download</code>API将服务器数据下载到磁盘上的临时文件。</p>
+<blockquote>
+<p>这只能按现状运行<code>macOS</code>。其他平台不允许访问应用程序沙箱之外的文件系统。要在其他平台上下载文件，请参阅“ <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#download-file-destination" target="_blank" rel="noopener">下载文件目标”</a>部分。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;).responseData &#123; response in</span><br><span class="line">    if let data = response.result.value &#123;</span><br><span class="line">        let image = UIImage(data: data)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>该<code>Alamofire.download</code>API还应该如果你需要下载数据，同时您的应用程序在后台使用。有关更多信息，请参阅<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置</a>部分。</p>
+</blockquote>
+<h4 id="下载文件目的地"><a href="#下载文件目的地" class="headerlink" title="下载文件目的地"></a>下载文件目的地</h4><p>您还可以提供<code>DownloadFileDestination</code>闭包以将文件从临时目录移动到最终目标。在临时文件实际移动到之前<code>destinationURL</code>，<code>DownloadOptions</code>将执行闭包中指定的内容。目前支持的两个<code>DownloadOptions</code>是：</p>
+<ul>
+<li><code>.createIntermediateDirectories</code> - 如果指定，则为目标URL创建中间目录。</li>
+<li><code>.removePreviousFile</code> - 如果指定，则从目标URL中删除以前的文件。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let destination: DownloadRequest.DownloadFileDestination = &#123; _, _ in</span><br><span class="line">    let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]</span><br><span class="line">    let fileURL = documentsURL.appendingPathComponent(&quot;pig.png&quot;)</span><br><span class="line"></span><br><span class="line">    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.download(urlString, to: destination).response &#123; response in</span><br><span class="line">    print(response)</span><br><span class="line"></span><br><span class="line">    if response.error == nil, let imagePath = response.destinationURL?.path &#123;</span><br><span class="line">        let image = UIImage(contentsOfFile: imagePath)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>您还可以使用建议的下载目标API。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)</span><br><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;, to: destination)</span><br></pre></td></tr></table></figure>
+<h4 id="下载进度"><a href="#下载进度" class="headerlink" title="下载进度"></a>下载进度</h4><p>很多时候向用户报告下载进度会很有帮助。任何人<code>DownloadRequest</code>都可以使用<code>downloadProgress</code>API 报告下载进度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;)</span><br><span class="line">    .downloadProgress &#123; progress in</span><br><span class="line">        print(&quot;Download Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseData &#123; response in</span><br><span class="line">        if let data = response.result.value &#123;</span><br><span class="line">            let image = UIImage(data: data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>该<code>downloadProgress</code>API也需要<code>queue</code>定义哪个参数<code>DispatchQueue</code>的下载进度闭合应该叫上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let utilityQueue = DispatchQueue.global(qos: .utility)</span><br><span class="line"></span><br><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;)</span><br><span class="line">    .downloadProgress(queue: utilityQueue) &#123; progress in</span><br><span class="line">        print(&quot;Download Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseData &#123; response in</span><br><span class="line">        if let data = response.result.value &#123;</span><br><span class="line">            let image = UIImage(data: data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="恢复下载"><a href="#恢复下载" class="headerlink" title="恢复下载"></a>恢复下载</h4><p>如果a <code>DownloadRequest</code>被取消或中断，则基础URL会话可以生成活动的恢复数据<code>DownloadRequest</code>。如果发生这种情况，可以重新使用恢复数据重新启动<code>DownloadRequest</code>它停止的位置。可以通过下载响应访问恢复数据，然后在尝试重新启动请求时重用。</p>
+<blockquote>
+<p><strong>重要提示：</strong>在所有Apple平台的某些版本（iOS 10 - 10.2，macOS 10.12 - 10.12.2，tvOS 10 - 10.1，watchOS 3 - 3.1.1）<code>resumeData</code>上，后台URL会话配置中断。在<code>resumeData</code>生成逻辑中存在一个潜在的错误，其中数据写错了，并且总是无法恢复下载。有关错误和可能的解决方法的更多信息，请参阅此<a href="https://stackoverflow.com/a/39347461/1342462" target="_blank" rel="noopener">Stack Overflow帖子</a>。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class ImageRequestor &#123;</span><br><span class="line">    private var resumeData: Data?</span><br><span class="line">    private var image: UIImage?</span><br><span class="line"></span><br><span class="line">    func fetchImage(completion: (UIImage?) -&gt; Void) &#123;</span><br><span class="line">        guard image == nil else &#123; completion(image) ; return &#125;</span><br><span class="line"></span><br><span class="line">        let destination: DownloadRequest.DownloadFileDestination = &#123; _, _ in</span><br><span class="line">            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]</span><br><span class="line">            let fileURL = documentsURL.appendingPathComponent(&quot;pig.png&quot;)</span><br><span class="line"></span><br><span class="line">            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        let request: DownloadRequest</span><br><span class="line"></span><br><span class="line">        if let resumeData = resumeData &#123;</span><br><span class="line">            request = Alamofire.download(resumingWith: resumeData)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            request = Alamofire.download(&quot;https://httpbin.org/image/png&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        request.responseData &#123; response in</span><br><span class="line">            switch response.result &#123;</span><br><span class="line">            case .success(let data):</span><br><span class="line">                self.image = UIImage(data: data)</span><br><span class="line">            case .failure:</span><br><span class="line">                self.resumeData = response.resumeData</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="将数据上传到服务器"><a href="#将数据上传到服务器" class="headerlink" title="将数据上传到服务器"></a>将数据上传到服务器</h3><p>使用JSON或URL编码参数向服务器发送相对少量的数据时，<code>Alamofire.request</code>API通常就足够了。如果您需要从文件URL或文件URL发送更大量的数据<code>InputStream</code>，那么<code>Alamofire.upload</code>API就是您要使用的。</p>
+<blockquote>
+<p>该<code>Alamofire.upload</code>API还应该如果你需要上传的数据，同时您的应用程序在后台使用。有关更多信息，请参阅<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置</a>部分。</p>
+</blockquote>
+<h4 id="上传数据"><a href="#上传数据" class="headerlink" title="上传数据"></a>上传数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let imageData = UIImagePNGRepresentation(image)!</span><br><span class="line"></span><br><span class="line">Alamofire.upload(imageData, to: &quot;https://httpbin.org/post&quot;).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let fileURL = Bundle.main.url(forResource: &quot;video&quot;, withExtension: &quot;mov&quot;)</span><br><span class="line"></span><br><span class="line">Alamofire.upload(fileURL, to: &quot;https://httpbin.org/post&quot;).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="上传多部分表单数据"><a href="#上传多部分表单数据" class="headerlink" title="上传多部分表单数据"></a>上传多部分表单数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.upload(</span><br><span class="line">    multipartFormData: &#123; multipartFormData in</span><br><span class="line">        multipartFormData.append(unicornImageURL, withName: &quot;unicorn&quot;)</span><br><span class="line">        multipartFormData.append(rainbowImageURL, withName: &quot;rainbow&quot;)</span><br><span class="line">    &#125;,</span><br><span class="line">    to: &quot;https://httpbin.org/post&quot;,</span><br><span class="line">    encodingCompletion: &#123; encodingResult in</span><br><span class="line">    	switch encodingResult &#123;</span><br><span class="line">    	case .success(let upload, _, _):</span><br><span class="line">            upload.responseJSON &#123; response in</span><br><span class="line">                debugPrint(response)</span><br><span class="line">            &#125;</span><br><span class="line">    	case .failure(let encodingError):</span><br><span class="line">    	    print(encodingError)</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="上传进度"><a href="#上传进度" class="headerlink" title="上传进度"></a>上传进度</h4><p>当您的用户等待上传完成时，有时可以方便地向用户显示上传的进度。任何人<code>UploadRequest</code>都可以使用<code>uploadProgress</code>和<code>downloadProgress</code>API 报告上传进度和响应数据的下载进度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let fileURL = Bundle.main.url(forResource: &quot;video&quot;, withExtension: &quot;mov&quot;)</span><br><span class="line"></span><br><span class="line">Alamofire.upload(fileURL, to: &quot;https://httpbin.org/post&quot;)</span><br><span class="line">    .uploadProgress &#123; progress in // main queue by default</span><br><span class="line">        print(&quot;Upload Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .downloadProgress &#123; progress in // main queue by default</span><br><span class="line">        print(&quot;Download Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="统计指标"><a href="#统计指标" class="headerlink" title="统计指标"></a>统计指标</h3><h4 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h4><p>Alamofire在a的整个生命周期中收集时间，<code>Request</code>并创建<code>Timeline</code>在所有响应类型上作为属性公开的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    print(response.timeline)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上报告以下<code>Timeline</code>信息：</p>
+<ul>
+<li><code>Latency</code>：0.428秒</li>
+<li><code>Request Duration</code>：0.428秒</li>
+<li><code>Serialization Duration</code>：0.001秒</li>
+<li><code>Total Duration</code>：0.429秒</li>
+</ul>
+<h4 id="URL会话任务度量标准"><a href="#URL会话任务度量标准" class="headerlink" title="URL会话任务度量标准"></a>URL会话任务度量标准</h4><p>在iOS和tvOS 10以及macOS 10.12中，Apple引入了新的<a href="https://developer.apple.com/reference/foundation/urlsessiontaskmetrics" target="_blank" rel="noopener">URLSessionTaskMetrics</a> API。任务指标封装了一些关于请求和响应执行的精彩统计信息。API非常类似<code>Timeline</code>，但提供了Alamofire无法计算的更多统计信息。可以通过任何响应类型访问度量标准。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    print(response.metrics)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，这些API仅适用于iOS和tvOS 10以及macOS 10.12。因此，根据您的部署目标，您可能需要使用这些内部可用性检查：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    if #available(iOS 10.0, *) &#123;</span><br><span class="line">        print(response.metrics)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="cURL命令输出"><a href="#cURL命令输出" class="headerlink" title="cURL命令输出"></a>cURL命令输出</h3><p>调试平台问题可能令人沮丧。值得庆幸的是，Alamofire <code>Request</code>对象符合协议<code>CustomStringConvertible</code>和<code>CustomDebugStringConvertible</code>协议，以提供一些非常有用的调试工具。</p>
+<h4 id="CustomStringConvertible"><a href="#CustomStringConvertible" class="headerlink" title="CustomStringConvertible"></a>CustomStringConvertible</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let request = Alamofire.request(&quot;https://httpbin.org/ip&quot;)</span><br><span class="line"></span><br><span class="line">print(request)</span><br><span class="line">// GET https://httpbin.org/ip (200)</span><br></pre></td></tr></table></figure>
+<h4 id="CustomDebugStringConvertible"><a href="#CustomDebugStringConvertible" class="headerlink" title="CustomDebugStringConvertible"></a>CustomDebugStringConvertible</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let request = Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: [&quot;foo&quot;: &quot;bar&quot;])</span><br><span class="line">debugPrint(request)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ curl -i \</span><br><span class="line">    -H <span class="string">"User-Agent: Alamofire/4.0.0"</span> \</span><br><span class="line">    -H <span class="string">"Accept-Encoding: gzip;q=1.0, compress;q=0.5"</span> \</span><br><span class="line">    -H <span class="string">"Accept-Language: en;q=1.0,fr;q=0.9,de;q=0.8,zh-Hans;q=0.7,zh-Hant;q=0.6,ja;q=0.5"</span> \</span><br><span class="line">    <span class="string">"https://httpbin.org/get?foo=bar"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetCode/" rel="tag"># leetCode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/13/leetCode/leetCode-0234_回文链表/" rel="next" title="leetCode-0234_回文链表">
+                <i class="fa fa-chevron-left"></i> leetCode-0234_回文链表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/14/Swift源码分析/Alamofire-目录/" rel="prev" title="Alamofire-目录">
+                Alamofire-目录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="LiYouCheng2014" />
+            
+              <p class="site-author-name" itemprop="name">LiYouCheng2014</p>
+              <p class="site-description motion-element" itemprop="description">iOS\算法\项目管理</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LiYouCheng2014" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liyoucheng2014@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">1.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发出请求"><span class="nav-number">1.1.</span> <span class="nav-text">发出请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应处理"><span class="nav-number">1.2.</span> <span class="nav-text">响应处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#响应处理程序"><span class="nav-number">1.2.1.</span> <span class="nav-text">响应处理程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应数据处理程序"><span class="nav-number">1.2.2.</span> <span class="nav-text">响应数据处理程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应字符串处理程序"><span class="nav-number">1.2.3.</span> <span class="nav-text">响应字符串处理程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应JSON处理程序"><span class="nav-number">1.2.4.</span> <span class="nav-text">响应JSON处理程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式响应处理程序"><span class="nav-number">1.2.5.</span> <span class="nav-text">链式响应处理程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应处理程序队列"><span class="nav-number">1.2.6.</span> <span class="nav-text">响应处理程序队列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应验证"><span class="nav-number">1.3.</span> <span class="nav-text">响应验证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#手动验证"><span class="nav-number">1.3.1.</span> <span class="nav-text">手动验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动验证"><span class="nav-number">1.3.2.</span> <span class="nav-text">自动验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应缓存"><span class="nav-number">1.4.</span> <span class="nav-text">响应缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP方法"><span class="nav-number">1.5.</span> <span class="nav-text">HTTP方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数编码"><span class="nav-number">1.6.</span> <span class="nav-text">参数编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网址编码"><span class="nav-number">1.6.1.</span> <span class="nav-text">网址编码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用URL编码参数获取请求"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">使用URL编码参数获取请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用URL编码参数的POST请求"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">使用URL编码参数的POST请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Bool参数编码"><span class="nav-number">1.6.1.3.</span> <span class="nav-text">配置Bool参数编码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Array参数编码"><span class="nav-number">1.6.1.4.</span> <span class="nav-text">配置Array参数编码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON编码"><span class="nav-number">1.6.2.</span> <span class="nav-text">JSON编码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用JSON编码参数的POST请求"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">使用JSON编码参数的POST请求</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Plist编码"><span class="nav-number">1.6.3.</span> <span class="nav-text">Plist编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义编码"><span class="nav-number">1.6.4.</span> <span class="nav-text">自定义编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URLRequest的手动参数编码"><span class="nav-number">1.6.5.</span> <span class="nav-text">URLRequest的手动参数编码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP头部"><span class="nav-number">1.7.</span> <span class="nav-text">HTTP头部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#认证"><span class="nav-number">1.8.</span> <span class="nav-text">认证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP基本身份验证"><span class="nav-number">1.8.1.</span> <span class="nav-text">HTTP基本身份验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用URLCredential进行身份验证"><span class="nav-number">1.8.2.</span> <span class="nav-text">使用URLCredential进行身份验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将数据下载到文件"><span class="nav-number">1.9.</span> <span class="nav-text">将数据下载到文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载文件目的地"><span class="nav-number">1.9.1.</span> <span class="nav-text">下载文件目的地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载进度"><span class="nav-number">1.9.2.</span> <span class="nav-text">下载进度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复下载"><span class="nav-number">1.9.3.</span> <span class="nav-text">恢复下载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将数据上传到服务器"><span class="nav-number">1.10.</span> <span class="nav-text">将数据上传到服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上传数据"><span class="nav-number">1.10.1.</span> <span class="nav-text">上传数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传文件"><span class="nav-number">1.10.2.</span> <span class="nav-text">上传文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传多部分表单数据"><span class="nav-number">1.10.3.</span> <span class="nav-text">上传多部分表单数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传进度"><span class="nav-number">1.10.4.</span> <span class="nav-text">上传进度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计指标"><span class="nav-number">1.11.</span> <span class="nav-text">统计指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#时间线"><span class="nav-number">1.11.1.</span> <span class="nav-text">时间线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL会话任务度量标准"><span class="nav-number">1.11.2.</span> <span class="nav-text">URL会话任务度量标准</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cURL命令输出"><span class="nav-number">1.12.</span> <span class="nav-text">cURL命令输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CustomStringConvertible"><span class="nav-number">1.12.1.</span> <span class="nav-text">CustomStringConvertible</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CustomDebugStringConvertible"><span class="nav-number">1.12.2.</span> <span class="nav-text">CustomDebugStringConvertible</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiYouCheng2014</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://LiYouCheng2014.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-用法/';
+          this.page.identifier = '2018/10/14/Swift源码分析/Alamofire-用法/';
+          this.page.title = 'Alamofire-用法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LiYouCheng2014.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

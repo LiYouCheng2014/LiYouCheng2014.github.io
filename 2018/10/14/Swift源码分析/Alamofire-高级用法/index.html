@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="leetCode," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="高级用法Alamofire建立在URLSessionFoundation URL加载系统之上。要充分利用此框架，建议您熟悉底层网络堆栈的概念和功能。 推荐阅读  URL加载系统编程指南 URLSession类参考 URLCache类参考 URLAuthenticationChallenge类参考  会话管理器顶级便捷方法，例如Alamofire.request使用默认实例Alamofire.Ses">
+<meta name="keywords" content="leetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Alamofire-高级用法">
+<meta property="og:url" content="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-高级用法/index.html">
+<meta property="og:site_name" content="成长路上">
+<meta property="og:description" content="高级用法Alamofire建立在URLSessionFoundation URL加载系统之上。要充分利用此框架，建议您熟悉底层网络堆栈的概念和功能。 推荐阅读  URL加载系统编程指南 URLSession类参考 URLCache类参考 URLAuthenticationChallenge类参考  会话管理器顶级便捷方法，例如Alamofire.request使用默认实例Alamofire.Ses">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-14T07:47:46.033Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Alamofire-高级用法">
+<meta name="twitter:description" content="高级用法Alamofire建立在URLSessionFoundation URL加载系统之上。要充分利用此框架，建议您熟悉底层网络堆栈的概念和功能。 推荐阅读  URL加载系统编程指南 URLSession类参考 URLCache类参考 URLAuthenticationChallenge类参考  会话管理器顶级便捷方法，例如Alamofire.request使用默认实例Alamofire.Ses">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-高级用法/"/>
+
+
+
+
+
+  <title>Alamofire-高级用法 | 成长路上</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">成长路上</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不断放弃舒适区</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-高级用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYouCheng2014">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Alamofire-高级用法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T15:00:33+08:00">
+                2018-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/swift源码学习/" itemprop="url" rel="index">
+                    <span itemprop="name">swift源码学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/14/Swift源码分析/Alamofire-高级用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/14/Swift源码分析/Alamofire-高级用法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><p>Alamofire建立在<code>URLSession</code>Foundation URL加载系统之上。要充分利用此框架，建议您熟悉底层网络堆栈的概念和功能。</p>
+<p><strong>推荐阅读</strong></p>
+<ul>
+<li><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html" target="_blank" rel="noopener">URL加载系统编程指南</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/nsurlsession" target="_blank" rel="noopener">URLSession类参考</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/urlcache" target="_blank" rel="noopener">URLCache类参考</a></li>
+<li><a href="https://developer.apple.com/reference/foundation/urlauthenticationchallenge" target="_blank" rel="noopener">URLAuthenticationChallenge类参考</a></li>
+</ul>
+<h3 id="会话管理器"><a href="#会话管理器" class="headerlink" title="会话管理器"></a>会话管理器</h3><p>顶级便捷方法，例如<code>Alamofire.request</code>使用默认实例<code>Alamofire.SessionManager</code>配置的默认实例<code>URLSessionConfiguration</code>。</p>
+<p>因此，以下两个陈述是等效的：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(<span class="string">"https://httpbin.org/get"</span>)</span><br><span class="line"></span><br><span class="line">let sessionManager = Alamofire.SessionManager.<span class="keyword">default</span></span><br><span class="line">sessionManager.request(<span class="string">"https://httpbin.org/get"</span>)</span><br></pre></td></tr></table></figure>
+<p>应用程序可以为后台和短暂会话创建会话管理器，以及自定义默认会话配置的新管理器，例如默认标头（<code>httpAdditionalHeaders</code>）或超时间隔（<code>timeoutIntervalForRequest</code>）。</p>
+<h4 id="使用默认配置创建会话管理器"><a href="#使用默认配置创建会话管理器" class="headerlink" title="使用默认配置创建会话管理器"></a>使用默认配置创建会话管理器</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let configuration = URLSessionConfiguration.<span class="keyword">default</span></span><br><span class="line">let sessionManager = Alamofire.SessionManager(configuration: configuration)</span><br></pre></td></tr></table></figure>
+<h4 id="使用后台配置创建会话管理器"><a href="#使用后台配置创建会话管理器" class="headerlink" title="使用后台配置创建会话管理器"></a>使用后台配置创建会话管理器</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let configuration = URLSessionConfiguration.background(withIdentifier: <span class="string">"com.example.app.background"</span>)</span><br><span class="line">let sessionManager = Alamofire.SessionManager(configuration: configuration)</span><br></pre></td></tr></table></figure>
+<h4 id="使用临时配置创建会话管理器"><a href="#使用临时配置创建会话管理器" class="headerlink" title="使用临时配置创建会话管理器"></a>使用临时配置创建会话管理器</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let configuration = URLSessionConfiguration.ephemeral</span><br><span class="line">let sessionManager = Alamofire.SessionManager(configuration: configuration)</span><br></pre></td></tr></table></figure>
+<h4 id="修改会话配置"><a href="#修改会话配置" class="headerlink" title="修改会话配置"></a>修改会话配置</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var defaultHeaders = Alamofire.SessionManager.defaultHTTPHeaders</span><br><span class="line">defaultHeaders[<span class="string">"DNT"</span>] = <span class="string">"1 (Do Not Track Enabled)"</span></span><br><span class="line"></span><br><span class="line">let configuration = URLSessionConfiguration.<span class="keyword">default</span></span><br><span class="line">configuration.httpAdditionalHeaders = defaultHeaders</span><br><span class="line"></span><br><span class="line">let sessionManager = Alamofire.SessionManager(configuration: configuration)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是<strong>不</strong>推荐<code>Authorization</code>或<code>Content-Type</code>头。相反，使用<code>headers</code>参数在顶层<code>Alamofire.request</code>的API，<code>URLRequestConvertible</code>并<code>ParameterEncoding</code>分别。</p>
+</blockquote>
+<h3 id="会话代表"><a href="#会话代表" class="headerlink" title="会话代表"></a>会话代表</h3><p>默认情况下，Alamofire <code>SessionManager</code>实例创建一个<code>SessionDelegate</code>对象来处理由底层生成的所有各种类型的委托回调<code>URLSession</code>。每个委托方法的实现处理这些类型的调用的最常见用例，从顶层API中抽象出复杂性。但是，高级用户可能会因各种原因发现需要覆盖默认功能。</p>
+<h4 id="覆盖闭包"><a href="#覆盖闭包" class="headerlink" title="覆盖闭包"></a>覆盖闭包</h4><p>自定义<code>SessionDelegate</code>行为的第一种方法是使用覆盖闭包。每个闭包使您能够覆盖匹配<code>SessionDelegate</code>API 的实现，但仍然使用所有其他API的默认实现。这样可以轻松自定义委托功能的子集。以下是一些可用的覆盖闭包的示例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Overrides default behavior for URLSessionDelegate method `urlSession(_:didReceive:completionHandler:)`.</span></span><br><span class="line">open var sessionDidReceiveChallenge: ((URLSession, URLAuthenticationChallenge) -&gt; (URLSession.AuthChallengeDisposition, URLCredential?))?</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Overrides default behavior for URLSessionDelegate method `urlSessionDidFinishEvents(forBackgroundURLSession:)`.</span></span><br><span class="line">open var sessionDidFinishEventsForBackgroundURLSession: ((URLSession) -&gt; Void)?</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Overrides default behavior for URLSessionTaskDelegate method `urlSession(_:task:willPerformHTTPRedirection:newRequest:completionHandler:)`.</span></span><br><span class="line">open var taskWillPerformHTTPRedirection: ((URLSession, URLSessionTask, HTTPURLResponse, URLRequest) -&gt; URLRequest?)?</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Overrides default behavior for URLSessionDataDelegate method `urlSession(_:dataTask:willCacheResponse:completionHandler:)`.</span></span><br><span class="line">open var dataTaskWillCacheResponse: ((URLSession, URLSessionDataTask, CachedURLResponse) -&gt; CachedURLResponse?)?</span><br></pre></td></tr></table></figure>
+<p>以下是如何使用<code>taskWillPerformHTTPRedirection</code>以避免重定向到任何<code>apple.com</code>域的简短示例。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let sessionManager = Alamofire.SessionManager(configuration: URLSessionConfiguration.<span class="keyword">default</span>)</span><br><span class="line">let delegate: Alamofire.SessionDelegate = sessionManager.delegate</span><br><span class="line"></span><br><span class="line">delegate.taskWillPerformHTTPRedirection = &#123; session, task, response, request in</span><br><span class="line">    var finalRequest = request</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span></span><br><span class="line">        let originalRequest = task.originalRequest,</span><br><span class="line">        let urlString = originalRequest.url?.urlString,</span><br><span class="line">        urlString.contains(<span class="string">"apple.com"</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        finalRequest = originalRequest</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> finalRequest</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="子类"><a href="#子类" class="headerlink" title="子类"></a>子类</h4><p>覆盖默认实现的另一种方法<code>SessionDelegate</code>是将其子类化。子类化允许您完全自定义API的行为或为API创建代理，并仍使用默认实现。创建代理允许您记录事件，发出通知，提供前后钩实现等。这是一个<code>SessionDelegate</code>在重定向发生时子类化和记录消息的快速示例。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoggingSessionDelegate</span>:</span> SessionDelegate &#123;</span><br><span class="line">    <span class="function">override func <span class="title">urlSession</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        _ session: URLSession,</span></span></span><br><span class="line"><span class="function"><span class="params">        task: URLSessionTask,</span></span></span><br><span class="line"><span class="function"><span class="params">        willPerformHTTPRedirection response: HTTPURLResponse,</span></span></span><br><span class="line"><span class="function"><span class="params">        newRequest request: URLRequest,</span></span></span><br><span class="line">        completionHandler: @escaping (URLRequest?) -&gt; Void)</span><br><span class="line">    &#123;</span><br><span class="line">        print(<span class="string">"URLSession will perform HTTP redirection to request: \(request)"</span>)</span><br><span class="line"></span><br><span class="line">        super.urlSession(</span><br><span class="line">            session,</span><br><span class="line">            task: task,</span><br><span class="line">            willPerformHTTPRedirection: response,</span><br><span class="line">            newRequest: request,</span><br><span class="line">            completionHandler: completionHandler</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一般来说，默认实现或覆盖闭包应提供所需的必要功能。子类只应作为最后的手段使用。</p>
+<blockquote>
+<p>请记住，<code>subdelegates</code>在默认实现中初始化和销毁它是很重要的。子类化时要小心，不要引入内存泄漏。</p>
+</blockquote>
+<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><p>的结果<code>request</code>，<code>download</code>，<code>upload</code>或<code>stream</code>方法是a <code>DataRequest</code>，<code>DownloadRequest</code>，<code>UploadRequest</code>和<code>StreamRequest</code>其中所有的继承<code>Request</code>。所有<code>Request</code>实例始终由拥有的会话管理器创建，并且从不直接初始化。</p>
+<p>每个子类有专门的方法，比如<code>authenticate</code>，<code>validate</code>，<code>responseJSON</code>和<code>uploadProgress</code>每个以利于方法链接返回调用者的实例。</p>
+<p>请求可以暂停，恢复和取消：</p>
+<ul>
+<li><code>suspend()</code>：暂停基础任务和调度队列。</li>
+<li><code>resume()</code>：恢复基础任务和调度队列。如果拥有管理器未<code>startRequestsImmediately</code>设置为<code>true</code>，则请求必须调用<code>resume()</code>才能启动。</li>
+<li><code>cancel()</code>：取消基础任务，产生传递给任何已注册响应处理程序的错误。</li>
+</ul>
+<h3 id="路由请求"><a href="#路由请求" class="headerlink" title="路由请求"></a>路由请求</h3><p>随着应用程序规模的扩大，在构建网络堆栈时采用通用模式非常重要。该设计的一个重要部分是如何路由您的请求。Alamofire <code>URLConvertible</code>和<code>URLRequestConvertible</code>协议以及<code>Router</code>设计模式可以提供帮助。</p>
+<h4 id="URLConvertible"><a href="#URLConvertible" class="headerlink" title="URLConvertible"></a>URLConvertible</h4><p>采用该<code>URLConvertible</code>协议的类型可用于构造URL，然后用于在内部构造URL请求。<code>String</code>，<code>URL</code>以及<code>URLComponents</code>符合<code>URLConvertible</code>在默认情况下，允许任何人将其交给<code>url</code>参数的<code>request</code>，<code>upload</code>和<code>download</code>方法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let urlString = <span class="string">"https://httpbin.org/post"</span></span><br><span class="line">Alamofire.request(urlString, method: .post)</span><br><span class="line"></span><br><span class="line">let url = URL(<span class="built_in">string</span>: urlString)!</span><br><span class="line">Alamofire.request(url, method: .post)</span><br><span class="line"></span><br><span class="line">let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: <span class="literal">true</span>)!</span><br><span class="line">Alamofire.request(urlComponents, method: .post)</span><br></pre></td></tr></table></figure>
+<p>鼓励以显着方式与Web应用程序交互的应用程序使自定义类型符合将<code>URLConvertible</code>特定于域的模型映射到服务器资源的便捷方式。</p>
+<h5 id="类型安全路由"><a href="#类型安全路由" class="headerlink" title="类型安全路由"></a>类型安全路由</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">extension User: URLConvertible &#123;</span><br><span class="line">    <span class="keyword">static</span> let baseURLString = <span class="string">"https://example.com"</span></span><br><span class="line"></span><br><span class="line">    func asURL() throws -&gt; URL &#123;</span><br><span class="line">    	let urlString = User.baseURLString + <span class="string">"/users/\(username)/"</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">try</span> urlString.asURL()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let user = User(username: <span class="string">"mattt"</span>)</span><br><span class="line">Alamofire.request(user) <span class="comment">// https://example.com/users/mattt</span></span><br></pre></td></tr></table></figure>
+<h4 id="URLRequestConvertible"><a href="#URLRequestConvertible" class="headerlink" title="URLRequestConvertible"></a>URLRequestConvertible</h4><p>采用该<code>URLRequestConvertible</code>协议的类型可用于构造URL请求。默认情况下<code>URLRequest</code>符合<code>URLRequestConvertible</code>，允许它直接传递给<code>request</code>，<code>upload</code>和<code>download</code>方法（这是为各个请求指定自定义HTTP正文的推荐方法）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">let url = URL(<span class="built_in">string</span>: <span class="string">"https://httpbin.org/post"</span>)!</span><br><span class="line">var urlRequest = URLRequest(url: url)</span><br><span class="line">urlRequest.httpMethod = <span class="string">"POST"</span></span><br><span class="line"></span><br><span class="line">let parameters = [<span class="string">"foo"</span>: <span class="string">"bar"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    urlRequest.httpBody = <span class="keyword">try</span> JSONSerialization.data(withJSONObject: parameters, options: [])</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="comment">// No-op</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">urlRequest.setValue(<span class="string">"application/json"</span>, forHTTPHeaderField: <span class="string">"Content-Type"</span>)</span><br><span class="line"></span><br><span class="line">Alamofire.request(urlRequest)</span><br></pre></td></tr></table></figure>
+<p>鼓励以显着方式与Web应用程序交互的应用程序使自定义类型符合<code>URLRequestConvertible</code>确保所请求端点的一致性的方式。这种方法可用于抽象出服务器端的不一致性，并提供类型安全的路由，以及管理身份验证凭据和其他状态。</p>
+<h5 id="API参数抽象"><a href="#API参数抽象" class="headerlink" title="API参数抽象"></a>API参数抽象</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Router: URLRequestConvertible &#123;</span><br><span class="line">    <span class="function"><span class="keyword">case</span> <span class="title">search</span><span class="params">(query: String, page: Int)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="keyword">static</span> let baseURLString </span>= <span class="string">"https://example.com"</span></span><br><span class="line">    <span class="keyword">static</span> let perPage = <span class="number">50</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: URLRequestConvertible</span></span><br><span class="line"></span><br><span class="line">    func asURLRequest() throws -&gt; URLRequest &#123;</span><br><span class="line">        let result: (path: String, parameters: Parameters) = &#123;</span><br><span class="line">            <span class="keyword">switch</span> self &#123;</span><br><span class="line">            <span class="keyword">case</span> let .search(query, page) where page &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> (<span class="string">"/search"</span>, [<span class="string">"q"</span>: query, <span class="string">"offset"</span>: Router.perPage * page])</span><br><span class="line">            <span class="keyword">case</span> let .search(query, _):</span><br><span class="line">                <span class="keyword">return</span> (<span class="string">"/search"</span>, [<span class="string">"q"</span>: query])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;()</span><br><span class="line"></span><br><span class="line">        let url = <span class="keyword">try</span> Router.baseURLString.asURL()</span><br><span class="line">        let urlRequest = URLRequest(url: url.appendingPathComponent(result.path))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">try</span> URLEncoding.<span class="keyword">default</span>.encode(urlRequest, with: result.parameters)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.request(Router.search(query: <span class="string">"foo bar"</span>, page: <span class="number">1</span>)) <span class="comment">// https://example.com/search?q=foo%20bar&amp;offset=50</span></span><br></pre></td></tr></table></figure>
+<h5 id="CRUD和授权"><a href="#CRUD和授权" class="headerlink" title="CRUD和授权"></a>CRUD和授权</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Alamofire</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> Router: URLRequestConvertible &#123;</span><br><span class="line">    <span class="function"><span class="keyword">case</span> <span class="title">createUser</span><span class="params">(parameters: Parameters)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">case</span> <span class="title">readUser</span><span class="params">(username: String)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">case</span> <span class="title">updateUser</span><span class="params">(username: String, parameters: Parameters)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">case</span> <span class="title">destroyUser</span><span class="params">(username: String)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="keyword">static</span> let baseURLString </span>= <span class="string">"https://example.com"</span></span><br><span class="line"></span><br><span class="line">    var method: HTTPMethod &#123;</span><br><span class="line">        <span class="keyword">switch</span> self &#123;</span><br><span class="line">        <span class="keyword">case</span> .createUser:</span><br><span class="line">            <span class="keyword">return</span> .post</span><br><span class="line">        <span class="keyword">case</span> .readUser:</span><br><span class="line">            <span class="keyword">return</span> .get</span><br><span class="line">        <span class="keyword">case</span> .updateUser:</span><br><span class="line">            <span class="keyword">return</span> .put</span><br><span class="line">        <span class="keyword">case</span> .destroyUser:</span><br><span class="line">            <span class="keyword">return</span> .<span class="keyword">delete</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var path: String &#123;</span><br><span class="line">        <span class="keyword">switch</span> self &#123;</span><br><span class="line">        <span class="keyword">case</span> .createUser:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"/users"</span></span><br><span class="line">        <span class="keyword">case</span> .readUser(let username):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"/users/\(username)"</span></span><br><span class="line">        <span class="keyword">case</span> .updateUser(let username, _):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"/users/\(username)"</span></span><br><span class="line">        <span class="keyword">case</span> .destroyUser(let username):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"/users/\(username)"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: URLRequestConvertible</span></span><br><span class="line"></span><br><span class="line">    func asURLRequest() throws -&gt; URLRequest &#123;</span><br><span class="line">    	let url = <span class="keyword">try</span> Router.baseURLString.asURL()</span><br><span class="line"></span><br><span class="line">        var urlRequest = URLRequest(url: url.appendingPathComponent(path))</span><br><span class="line">        urlRequest.httpMethod = method.rawValue</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> self &#123;</span><br><span class="line">        <span class="keyword">case</span> .createUser(let parameters):</span><br><span class="line">            urlRequest = <span class="keyword">try</span> URLEncoding.<span class="keyword">default</span>.encode(urlRequest, with: parameters)</span><br><span class="line">        <span class="keyword">case</span> .updateUser(_, let parameters):</span><br><span class="line">            urlRequest = <span class="keyword">try</span> URLEncoding.<span class="keyword">default</span>.encode(urlRequest, with: parameters)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> urlRequest</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.request(Router.readUser(<span class="string">"mattt"</span>)) <span class="comment">// GET https://example.com/users/mattt</span></span><br></pre></td></tr></table></figure>
+<h3 id="适应和重试请求"><a href="#适应和重试请求" class="headerlink" title="适应和重试请求"></a>适应和重试请求</h3><p>如今，大多数Web服务都支持某种身份验证系统。今天比较常见的一个是OAuth。这通常涉及生成访问令牌，授权您的应用程序或用户调用各种支持的Web服务。虽然创建这些初始访问令牌可能很麻烦，但是当访问令牌过期并且您需要获取新令牌时，它可能会更加复杂。需要考虑许多线程安全问题。</p>
+<p>在<code>RequestAdapter</code>和<code>RequestRetrier</code>协议的建立是为了使它更容易为一组特定的Web服务创建一个线程安全的身份验证系统。</p>
+<h4 id="RequestAdapter"><a href="#RequestAdapter" class="headerlink" title="RequestAdapter"></a>RequestAdapter</h4><p>该<code>RequestAdapter</code>协议允许在创建之前<code>Request</code>对每个上面的内容<code>SessionManager</code>进行检查和调整。使用适配器的一种非常具体的方法是向<code>Authorization</code>特定类型的身份验证后面的请求附加标头。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AccessTokenAdapter</span>:</span> RequestAdapter &#123;</span><br><span class="line">    <span class="keyword">private</span> let accessToken: String</span><br><span class="line"></span><br><span class="line">    init(accessToken: String) &#123;</span><br><span class="line">        self.accessToken = accessToken</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    func adapt(_ urlRequest: URLRequest) throws -&gt; URLRequest &#123;</span><br><span class="line">        var urlRequest = urlRequest</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(<span class="string">"https://httpbin.org"</span>) &#123;</span><br><span class="line">            urlRequest.setValue(<span class="string">"Bearer "</span> + accessToken, forHTTPHeaderField: <span class="string">"Authorization"</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> urlRequest</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let sessionManager = SessionManager()</span><br><span class="line">sessionManager.adapter = AccessTokenAdapter(accessToken: <span class="string">"1234"</span>)</span><br><span class="line"></span><br><span class="line">sessionManager.request(<span class="string">"https://httpbin.org/get"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="RequestRetrier"><a href="#RequestRetrier" class="headerlink" title="RequestRetrier"></a>RequestRetrier</h4><p>该<code>RequestRetrier</code>协议允许重试执行<code>Request</code>的<code>Error</code>一段时间。同时使用<code>RequestAdapter</code>和<code>RequestRetrier</code>协议时，您可以为OAuth1，OAuth2，Basic Auth甚至指数退避重试策略创建凭据刷新系统。可能性是无止境。以下是如何为OAuth2访问令牌实现刷新流程的示例。</p>
+<blockquote>
+<p><strong>免责声明：这不是</strong>一个全球性的<code>OAuth2</code>解决方案。它只是一个示例，演示了如何<code>RequestAdapter</code>结合使用它<code>RequestRetrier</code>来创建一个线程安全的刷新系统。</p>
+</blockquote>
+<blockquote>
+<p>重申一下，<strong>请勿复制</strong>此示例代码并将其放入生产应用程序中。这只是一个例子。每个身份验证系统必须针对特定平台和身份验证类型进行定制。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OAuth2Handler</span>:</span> RequestAdapter, RequestRetrier &#123;</span><br><span class="line">    <span class="keyword">private</span> typealias RefreshCompletion = (_ succeeded: Bool, _ accessToken: String?, _ refreshToken: String?) -&gt; Void</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> let sessionManager: SessionManager = &#123;</span><br><span class="line">        let configuration = URLSessionConfiguration.<span class="keyword">default</span></span><br><span class="line">        configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> SessionManager(configuration: configuration)</span><br><span class="line">    &#125;()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> let lock = NSLock()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> var clientID: String</span><br><span class="line">    <span class="keyword">private</span> var baseURLString: String</span><br><span class="line">    <span class="keyword">private</span> var accessToken: String</span><br><span class="line">    <span class="keyword">private</span> var refreshToken: String</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> var isRefreshing = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">private</span> var requestsToRetry: [RequestRetryCompletion] = []</span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: - Initialization</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> init(clientID: String, baseURLString: String, accessToken: String, refreshToken: String) &#123;</span><br><span class="line">        self.clientID = clientID</span><br><span class="line">        self.baseURLString = baseURLString</span><br><span class="line">        self.accessToken = accessToken</span><br><span class="line">        self.refreshToken = refreshToken</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: - RequestAdapter</span></span><br><span class="line"></span><br><span class="line">    func adapt(_ urlRequest: URLRequest) throws -&gt; URLRequest &#123;</span><br><span class="line">        <span class="keyword">if</span> let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(baseURLString) &#123;</span><br><span class="line">            var urlRequest = urlRequest</span><br><span class="line">            urlRequest.setValue(<span class="string">"Bearer "</span> + accessToken, forHTTPHeaderField: <span class="string">"Authorization"</span>)</span><br><span class="line">            <span class="keyword">return</span> urlRequest</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> urlRequest</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: - RequestRetrier</span></span><br><span class="line"></span><br><span class="line">    func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) &#123;</span><br><span class="line">        lock.lock() ; defer &#123; lock.unlock() &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> let response = request.task?.response as? HTTPURLResponse, response.statusCode == <span class="number">401</span> &#123;</span><br><span class="line">            requestsToRetry.append(completion)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> !isRefreshing &#123;</span><br><span class="line">                refreshTokens &#123; [weak self] succeeded, accessToken, refreshToken in</span><br><span class="line">                    guard let strongSelf = self <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line"></span><br><span class="line">                    strongSelf.lock.lock() ; defer &#123; strongSelf.lock.unlock() &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> let accessToken = accessToken, let refreshToken = refreshToken &#123;</span><br><span class="line">                        strongSelf.accessToken = accessToken</span><br><span class="line">                        strongSelf.refreshToken = refreshToken</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    strongSelf.requestsToRetry.forEach &#123; $<span class="number">0</span>(succeeded, <span class="number">0.0</span>) &#125;</span><br><span class="line">                    strongSelf.requestsToRetry.removeAll()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            completion(<span class="literal">false</span>, <span class="number">0.0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: - Private - Refresh Tokens</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> func refreshTokens(completion: @escaping RefreshCompletion) &#123;</span><br><span class="line">        guard !isRefreshing <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line"></span><br><span class="line">        isRefreshing = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">        let urlString = <span class="string">"\(baseURLString)/oauth2/token"</span></span><br><span class="line"></span><br><span class="line">        let parameters: [String: Any] = [</span><br><span class="line">            <span class="string">"access_token"</span>: accessToken,</span><br><span class="line">            <span class="string">"refresh_token"</span>: refreshToken,</span><br><span class="line">            <span class="string">"client_id"</span>: clientID,</span><br><span class="line">            <span class="string">"grant_type"</span>: <span class="string">"refresh_token"</span></span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">        sessionManager.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.<span class="keyword">default</span>)</span><br><span class="line">            .responseJSON &#123; [weak self] response in</span><br><span class="line">                guard let strongSelf = self <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> </span><br><span class="line">                    let json = response.result.value as? [String: Any], </span><br><span class="line">                    let accessToken = json[<span class="string">"access_token"</span>] as? String, </span><br><span class="line">                    let refreshToken = json[<span class="string">"refresh_token"</span>] as? String </span><br><span class="line">                &#123;</span><br><span class="line">                    completion(<span class="literal">true</span>, accessToken, refreshToken)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    completion(<span class="literal">false</span>, nil, nil)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                strongSelf.isRefreshing = <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let baseURLString = <span class="string">"https://some.domain-behind-oauth2.com"</span></span><br><span class="line"></span><br><span class="line">let oauthHandler = OAuth2Handler(</span><br><span class="line">    clientID: <span class="string">"12345678"</span>,</span><br><span class="line">    baseURLString: baseURLString,</span><br><span class="line">    accessToken: <span class="string">"abcd1234"</span>,</span><br><span class="line">    refreshToken: <span class="string">"ef56789a"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">let sessionManager = SessionManager()</span><br><span class="line">sessionManager.adapter = oauthHandler</span><br><span class="line">sessionManager.retrier = oauthHandler</span><br><span class="line"></span><br><span class="line">let urlString = <span class="string">"\(baseURLString)/some/endpoint"</span></span><br><span class="line"></span><br><span class="line">sessionManager.request(urlString).validate().responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一旦<code>OAuth2Handler</code>被同时作为应用<code>adapter</code>和<code>retrier</code>为<code>SessionManager</code>，它会自动刷新访问令牌，并在重试失败，他们以相同的顺序所有失败的请求的处理无效访问令牌错误。</p>
+<blockquote>
+<p>如果您需要按照创建它们的顺序执行它们，则可以按任务标识符对它们进行排序。</p>
+</blockquote>
+<p>上面的示例仅检查<code>401</code>响应代码，该代码不够健壮，但确实演示了如何检查无效的访问令牌错误。在生产应用程序中，尽管取决于OAuth2实现，但仍希望检查<code>realm</code>并且最有可能是<code>www-authenticate</code>标头响应。</p>
+<p>另一个重要的注意事项是该认证系统可以在多个会话管理器之间共享。例如，您可能需要对同一组Web服务使用a <code>default</code>和<code>ephemeral</code>会话配置。上面的示例允许<code>oauthHandler</code>在多个会话管理器之间共享同一实例，以管理单个刷新流。</p>
+<h3 id="自定义响应序列化"><a href="#自定义响应序列化" class="headerlink" title="自定义响应序列化"></a>自定义响应序列化</h3><p>Alamofire为数据，字符串，JSON和属性列表提供内置的响应序列化：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(...).responseData &#123; (resp: DataResponse&lt;Data&gt;) in ... &#125;</span><br><span class="line">Alamofire.request(...).responseString &#123; (resp: DataResponse&lt;String&gt;) in ... &#125;</span><br><span class="line">Alamofire.request(...).responseJSON &#123; (resp: DataResponse&lt;Any&gt;) in ... &#125;</span><br><span class="line">Alamofire.request(...).responsePropertyList &#123; (resp: DataResponse&lt;Any&gt;) in ... &#125;</span><br></pre></td></tr></table></figure>
+<p>这些响应包括反序列化的<em>值</em>（数据，字符串，任何）或<em>错误</em>（网络，验证错误），以及<em>元数据</em>（URL请求，HTTP标头，状态代码，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#statistical-metrics" target="_blank" rel="noopener">度量标准</a> ……）。</p>
+<p>您可以通过多种方式自定义所有响应元素：</p>
+<ul>
+<li><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#response-mapping" target="_blank" rel="noopener">响应映射</a></li>
+<li><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#handling-errors" target="_blank" rel="noopener">处理错误</a></li>
+<li><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#creating-a-custom-response-serializer" target="_blank" rel="noopener">创建自定义响应序列化程序</a></li>
+<li><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#generic-response-object-serialization" target="_blank" rel="noopener">通用响应对象序列化</a></li>
+</ul>
+<h4 id="响应映射"><a href="#响应映射" class="headerlink" title="响应映射"></a>响应映射</h4><p>响应映射是生成自定义响应的最简单方法。它可以转换响应的值，同时保留最终的错误和元数据。例如，您可以将json响应<code>DataResponse&lt;Any&gt;</code>转换为包含应用程序模型的响应，例如<code>DataResponse&lt;User&gt;</code>。您使用以下<code>DataResponse.map</code>方法执行响应映射：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(<span class="string">"https://example.com/users/mattt"</span>).responseJSON &#123; (response: DataResponse&lt;Any&gt;) in</span><br><span class="line">    let userResponse = response.<span class="built_in">map</span> &#123; json in</span><br><span class="line">        <span class="comment">// We assume an existing User(json: Any) initializer</span></span><br><span class="line">        <span class="keyword">return</span> User(json: json)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Process userResponse, of type DataResponse&lt;User&gt;:</span></span><br><span class="line">    <span class="keyword">if</span> let user = userResponse.value &#123;</span><br><span class="line">        print(<span class="string">"User: &#123; username: \(user.username), name: \(user.name) &#125;"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当转换可能引发错误时，请<code>flatMap</code>改为使用：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(<span class="string">"https://example.com/users/mattt"</span>).responseJSON &#123; response in</span><br><span class="line">    let userResponse = response.flatMap &#123; json in</span><br><span class="line">        <span class="keyword">try</span> User(json: json)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>响应映射非常适合您的自定义完成处理程序：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@discardableResult</span><br><span class="line">func loadUser(completionHandler: @escaping (DataResponse&lt;User&gt;) -&gt; Void) -&gt; Alamofire.DataRequest &#123;</span><br><span class="line">    <span class="keyword">return</span> Alamofire.request(<span class="string">"https://example.com/users/mattt"</span>).responseJSON &#123; response in</span><br><span class="line">        let userResponse = response.flatMap &#123; json in</span><br><span class="line">            <span class="keyword">try</span> User(json: json)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        completionHandler(userResponse)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loadUser &#123; response in</span><br><span class="line">    <span class="keyword">if</span> let user = response.value &#123;</span><br><span class="line">        print(<span class="string">"User: &#123; username: \(user.username), name: \(user.name) &#125;"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当map / flatMap闭包可以处理大量数据时，请确保在主线程之外执行它：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@discardableResult</span><br><span class="line">func loadUser(completionHandler: @escaping (DataResponse&lt;User&gt;) -&gt; Void) -&gt; Alamofire.DataRequest &#123;</span><br><span class="line">    let utilityQueue = DispatchQueue.global(qos: .utility)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Alamofire.request(<span class="string">"https://example.com/users/mattt"</span>).responseJSON(<span class="built_in">queue</span>: utilityQueue) &#123; response in</span><br><span class="line">        let userResponse = response.flatMap &#123; json in</span><br><span class="line">            <span class="keyword">try</span> User(json: json)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        DispatchQueue.main.async &#123;</span><br><span class="line">            completionHandler(userResponse)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>map</code>并且<code>flatMap</code>还可以<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#downloading-data-to-a-file" target="_blank" rel="noopener">下载回复</a>。</p>
+<h4 id="处理错误"><a href="#处理错误" class="headerlink" title="处理错误"></a>处理错误</h4><p>在实现自定义响应序列化程序或对象序列化方法之前，考虑如何处理可能发生的任何错误非常重要。有两个基本选项：沿未修改的方式传递现有错误，在响应时处理; 或者，将所有错误包装在<code>Error</code>特定于您的应用的类型中。</p>
+<p>例如，这是一个简单的<code>BackendError</code>枚举，将在后面的例子中使用：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> BackendError: Error &#123;</span><br><span class="line">    <span class="function"><span class="keyword">case</span> <span class="title">network</span><span class="params">(error: Error)</span> <span class="comment">// Capture any underlying Error from the URLSession API</span></span></span><br><span class="line"><span class="function">    <span class="keyword">case</span> <span class="title">dataSerialization</span><span class="params">(error: Error)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">case</span> <span class="title">jsonSerialization</span><span class="params">(error: Error)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">case</span> <span class="title">xmlSerialization</span><span class="params">(error: Error)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">case</span> <span class="title">objectSerialization</span><span class="params">(reason: String)</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="创建自定义响应序列化程序"><a href="#创建自定义响应序列化程序" class="headerlink" title="创建自定义响应序列化程序"></a>创建自定义响应序列化程序</h4><p>Alamofire为字符串，JSON和属性列表提供内置的响应序列化，但是其他可以在扩展中添加<code>Alamofire.DataRequest</code>和/或<code>Alamofire.DownloadRequest</code>。</p>
+<p>例如，以下是如何实现使用<a href="https://github.com/mattt/Ono" target="_blank" rel="noopener">Ono</a>的响应处理程序：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">extension DataRequest &#123;</span><br><span class="line">    static func xmlResponseSerializer() -&gt; DataResponseSerializer&lt;ONOXMLDocument&gt; &#123;</span><br><span class="line">        <span class="keyword">return</span> DataResponseSerializer &#123; request, response, data, error in</span><br><span class="line">            <span class="comment">// Pass through any underlying URLSession error to the .network case.</span></span><br><span class="line">            guard error == nil <span class="keyword">else</span> &#123; <span class="keyword">return</span> .failure(BackendError.network(error: error!)) &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Use Alamofire's existing data serializer to extract the data, passing the error as nil, as it has</span></span><br><span class="line">            <span class="comment">// already been handled.</span></span><br><span class="line">            let result = Request.serializeResponseData(response: response, data: data, error: nil)</span><br><span class="line"></span><br><span class="line">            guard <span class="keyword">case</span> let .success(validData) = result <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> .failure(BackendError.dataSerialization(error: result.error! as! AFError))</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                let xml = <span class="keyword">try</span> ONOXMLDocument(data: validData)</span><br><span class="line">                <span class="keyword">return</span> .success(xml)</span><br><span class="line">            &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> .failure(BackendError.xmlSerialization(error: error))</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @discardableResult</span><br><span class="line">    func responseXMLDocument(</span><br><span class="line">        <span class="built_in">queue</span>: DispatchQueue? = nil,</span><br><span class="line">        completionHandler: @escaping (DataResponse&lt;ONOXMLDocument&gt;) -&gt; Void)</span><br><span class="line">        -&gt; Self</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> response(</span><br><span class="line">            <span class="built_in">queue</span>: <span class="built_in">queue</span>,</span><br><span class="line">            responseSerializer: DataRequest.xmlResponseSerializer(),</span><br><span class="line">            completionHandler: completionHandler</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="通用响应对象序列化"><a href="#通用响应对象序列化" class="headerlink" title="通用响应对象序列化"></a>通用响应对象序列化</h4><p>泛型可用于提供自动，类型安全的响应对象序列化。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">protocol ResponseObjectSerializable &#123;</span><br><span class="line">    init?(response: HTTPURLResponse, representation: Any)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">extension DataRequest &#123;</span><br><span class="line">    func responseObject&lt;T: ResponseObjectSerializable&gt;(</span><br><span class="line">        <span class="built_in">queue</span>: DispatchQueue? = nil,</span><br><span class="line">        completionHandler: @escaping (DataResponse&lt;T&gt;) -&gt; Void)</span><br><span class="line">        -&gt; Self</span><br><span class="line">    &#123;</span><br><span class="line">        let responseSerializer = DataResponseSerializer&lt;T&gt; &#123; request, response, data, error in</span><br><span class="line">            guard error == nil <span class="keyword">else</span> &#123; <span class="keyword">return</span> .failure(BackendError.network(error: error!)) &#125;</span><br><span class="line"></span><br><span class="line">            let jsonResponseSerializer = DataRequest.jsonResponseSerializer(options: .allowFragments)</span><br><span class="line">            let result = jsonResponseSerializer.serializeResponse(request, response, data, nil)</span><br><span class="line"></span><br><span class="line">            guard <span class="keyword">case</span> let .success(jsonObject) = result <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> .failure(BackendError.jsonSerialization(error: result.error!))</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            guard let response = response, let responseObject = T(response: response, representation: jsonObject) <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> .failure(BackendError.objectSerialization(reason: <span class="string">"JSON could not be serialized: \(jsonObject)"</span>))</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> .success(responseObject)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> response(<span class="built_in">queue</span>: <span class="built_in">queue</span>, responseSerializer: responseSerializer, completionHandler: completionHandler)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct User: ResponseObjectSerializable, CustomStringConvertible &#123;</span><br><span class="line">    let username: String</span><br><span class="line">    let name: String</span><br><span class="line"></span><br><span class="line">    var description: String &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User: &#123; username: \(username), name: \(name) &#125;"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    init?(response: HTTPURLResponse, representation: Any) &#123;</span><br><span class="line">        guard</span><br><span class="line">            let username = response.url?.lastPathComponent,</span><br><span class="line">            let representation = representation as? [String: Any],</span><br><span class="line">            let name = representation[<span class="string">"name"</span>] as? String</span><br><span class="line">        <span class="keyword">else</span> &#123; <span class="keyword">return</span> nil &#125;</span><br><span class="line"></span><br><span class="line">        self.username = username</span><br><span class="line">        self.name = name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.request(<span class="string">"https://example.com/users/mattt"</span>).responseObject &#123; (response: DataResponse&lt;User&gt;) in</span><br><span class="line">    debugPrint(response)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> let user = response.result.value &#123;</span><br><span class="line">        print(<span class="string">"User: &#123; username: \(user.username), name: \(user.name) &#125;"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同样的方法也可用于处理返回对象集合表示的端点：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">protocol ResponseCollectionSerializable &#123;</span><br><span class="line">    static func collection(from response: HTTPURLResponse, withRepresentation representation: Any) -&gt; [Self]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">extension ResponseCollectionSerializable where Self: ResponseObjectSerializable &#123;</span><br><span class="line">    static func collection(from response: HTTPURLResponse, withRepresentation representation: Any) -&gt; [Self] &#123;</span><br><span class="line">        var collection: [Self] = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> let representation = representation as? [[String: Any]] &#123;</span><br><span class="line">            <span class="keyword">for</span> itemRepresentation in representation &#123;</span><br><span class="line">                <span class="keyword">if</span> let item = Self(response: response, representation: itemRepresentation) &#123;</span><br><span class="line">                    collection.append(item)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> collection</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">extension DataRequest &#123;</span><br><span class="line">    @discardableResult</span><br><span class="line">    func responseCollection&lt;T: ResponseCollectionSerializable&gt;(</span><br><span class="line">        <span class="built_in">queue</span>: DispatchQueue? = nil,</span><br><span class="line">        completionHandler: @escaping (DataResponse&lt;[T]&gt;) -&gt; Void) -&gt; Self</span><br><span class="line">    &#123;</span><br><span class="line">        let responseSerializer = DataResponseSerializer&lt;[T]&gt; &#123; request, response, data, error in</span><br><span class="line">            guard error == nil <span class="keyword">else</span> &#123; <span class="keyword">return</span> .failure(BackendError.network(error: error!)) &#125;</span><br><span class="line"></span><br><span class="line">            let jsonSerializer = DataRequest.jsonResponseSerializer(options: .allowFragments)</span><br><span class="line">            let result = jsonSerializer.serializeResponse(request, response, data, nil)</span><br><span class="line"></span><br><span class="line">            guard <span class="keyword">case</span> let .success(jsonObject) = result <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> .failure(BackendError.jsonSerialization(error: result.error!))</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            guard let response = response <span class="keyword">else</span> &#123;</span><br><span class="line">                let reason = <span class="string">"Response collection could not be serialized due to nil response."</span></span><br><span class="line">                <span class="keyword">return</span> .failure(BackendError.objectSerialization(reason: reason))</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> .success(T.collection(from: response, withRepresentation: jsonObject))</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> response(responseSerializer: responseSerializer, completionHandler: completionHandler)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct User: ResponseObjectSerializable, ResponseCollectionSerializable, CustomStringConvertible &#123;</span><br><span class="line">    let username: String</span><br><span class="line">    let name: String</span><br><span class="line"></span><br><span class="line">    var description: String &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User: &#123; username: \(username), name: \(name) &#125;"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    init?(response: HTTPURLResponse, representation: Any) &#123;</span><br><span class="line">        guard</span><br><span class="line">            let username = response.url?.lastPathComponent,</span><br><span class="line">            let representation = representation as? [String: Any],</span><br><span class="line">            let name = representation[<span class="string">"name"</span>] as? String</span><br><span class="line">        <span class="keyword">else</span> &#123; <span class="keyword">return</span> nil &#125;</span><br><span class="line"></span><br><span class="line">        self.username = username</span><br><span class="line">        self.name = name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.request(<span class="string">"https://example.com/users"</span>).responseCollection &#123; (response: DataResponse&lt;[User]&gt;) in</span><br><span class="line">    debugPrint(response)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> let users = response.result.value &#123;</span><br><span class="line">        users.forEach &#123; print(<span class="string">"- \($0)"</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>在与服务器和Web服务通信时使用安全HTTPS连接是保护敏感数据的重要步骤。默认情况下，Alamofire将使用安全框架提供的Apple内置验证来评估服务器提供的证书链。虽然这可以保证证书链的有效性，但它不会阻止中间人（MITM）攻击或其他潜在漏洞。为了减轻MITM攻击，处理敏感客户数据或财务信息的应用程序应使用由提供的证书或公钥固定<code>ServerTrustPolicy</code>。</p>
+<h4 id="ServerTrustPolicy"><a href="#ServerTrustPolicy" class="headerlink" title="ServerTrustPolicy"></a>ServerTrustPolicy</h4><p>该<code>ServerTrustPolicy</code>枚举评估一般由提供的服务器信任<code>URLAuthenticationChallenge</code>连接到服务器通过安全的HTTPS连接时。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let serverTrustPolicy = ServerTrustPolicy.pinCertificates(</span><br><span class="line">    certificates: ServerTrustPolicy.certificates(),</span><br><span class="line">    validateCertificateChain: <span class="literal">true</span>,</span><br><span class="line">    validateHost: <span class="literal">true</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>服务器信任评估有许多不同的情况，使您可以完全控制验证过程：</p>
+<ul>
+<li><code>performDefaultEvaluation</code>：使用默认服务器信任评估，同时允许您控制是否验证质询提供的主机。</li>
+<li><code>pinCertificates</code>：使用固定证书来验证服务器信任。如果其中一个固定证书与其中一个服务器证书匹配，则认为服务器信任有效。</li>
+<li><code>pinPublicKeys</code>：使用固定的公钥来验证服务器信任。如果其中一个固定公钥与其中一个服务器证书公钥匹配，则认为服务器信任有效。</li>
+<li><code>disableEvaluation</code>：禁用所有评估，而评估又始终将任何服务器信任视为有效。</li>
+<li><code>customEvaluation</code>：使用关联的闭包来评估服务器信任的有效性，从而使您可以完全控制验证过程。谨慎使用。</li>
+</ul>
+<h4 id="服务器信任策略管理器"><a href="#服务器信任策略管理器" class="headerlink" title="服务器信任策略管理器"></a>服务器信任策略管理器</h4><p>该<code>ServerTrustPolicyManager</code>负责存储服务器的信任策略的内部映射到特定的主机。这允许Alamofire根据不同的服务器信任策略评估每个主机。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let serverTrustPolicies: [String: ServerTrustPolicy] = [</span><br><span class="line">    <span class="string">"test.example.com"</span>: .pinCertificates(</span><br><span class="line">        certificates: ServerTrustPolicy.certificates(),</span><br><span class="line">        validateCertificateChain: <span class="literal">true</span>,</span><br><span class="line">        validateHost: <span class="literal">true</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="string">"insecure.expired-apis.com"</span>: .disableEvaluation</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">let sessionManager = SessionManager(</span><br><span class="line">    serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>确保保留对新<code>SessionManager</code>实例的引用，否则在取消<code>sessionManager</code>分配时，您的请求都将被取消。</p>
+</blockquote>
+<p>这些服务器信任策略将导致以下行为：</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test.example.com</span><br></pre></td></tr></table></figure>
+<p>将始终使用证书链接和证书链并启用主机验证，因此需要满足以下条件才能使TLS握手成功：</p>
+<ul>
+<li>证书链必须有效。</li>
+<li>证书链必须包含一个固定证书。</li>
+<li>挑战主机必须匹配证书链的叶证书中的主机。</li>
+</ul>
+</li>
+<li><p><code>insecure.expired-apis.com</code> 永远不会评估证书链，并始终允许TLS握手成功。</p>
+</li>
+<li><p>所有其他主机将使用Apple提供的默认评估。</p>
+</li>
+</ul>
+<h5 id="子类化服务器信任策略管理器"><a href="#子类化服务器信任策略管理器" class="headerlink" title="子类化服务器信任策略管理器"></a>子类化服务器信任策略管理器</h5><p>如果您发现自己需要更灵活的服务器信任策略匹配行为（即通配域），则使用您自己的自定义实现继承<code>ServerTrustPolicyManager</code>并覆盖该<code>serverTrustPolicyForHost</code>方法。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomServerTrustPolicyManager</span>:</span> ServerTrustPolicyManager &#123;</span><br><span class="line">    override func serverTrustPolicy(forHost host: String) -&gt; ServerTrustPolicy? &#123;</span><br><span class="line">        var policy: ServerTrustPolicy?</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Implement your custom domain matching behavior...</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> policy</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="验证主机"><a href="#验证主机" class="headerlink" title="验证主机"></a>验证主机</h4><p>的<code>.performDefaultEvaluation</code>，<code>.pinCertificates</code>和<code>.pinPublicKeys</code>服务器信任的政策都将一个<code>validateHost</code>参数。将值设置为<code>true</code>将导致服务器信任评估验证证书中的主机名是否与质询的主机名匹配。如果它们不匹配，评估将失败。一个<code>validateHost</code>价值<code>false</code>仍然会评估整个证书链，但不会验证叶证书的主机名。</p>
+<blockquote>
+<p>建议<code>validateHost</code>始终<code>true</code>在生产环境中进行设置。</p>
+</blockquote>
+<h4 id="验证证书链"><a href="#验证证书链" class="headerlink" title="验证证书链"></a>验证证书链</h4><p>固定证书和公钥都可以选择使用<code>validateCertificateChain</code>参数验证证书链。通过将此值设置为<code>true</code>，除了对固定证书或公钥执行字节相等性检查之外，还将评估完整证书链。值<code>false</code>将跳过证书链验证，但仍将执行字节相等性检查。</p>
+<p>在某些情况下，禁用证书链验证可能是有意义的。禁用验证的最常见用例是自签名和过期证书。在这两种情况下，评估总是会失败，但字节相等检查仍将确保您收到您希望从服务器获得的证书。</p>
+<blockquote>
+<p>建议<code>validateCertificateChain</code>始终<code>true</code>在生产环境中进行设置。</p>
+</blockquote>
+<h4 id="App-Transport-Security"><a href="#App-Transport-Security" class="headerlink" title="App Transport Security"></a>App Transport Security</h4><p>通过在iOS 9中添加App Transport Security（ATS），使用<code>ServerTrustPolicyManager</code>具有多个<code>ServerTrustPolicy</code>对象的自定义可能无效。如果你不断看到<code>CFNetwork SSLHandshake failed (-9806)</code>错误，你可能遇到了这个问题。除非您在应用程序的plist中配置ATS设置以禁用足够的ATS设置以允许您的应用评估服务器信任，否则Apple的ATS系统会覆盖整个质询系统。</p>
+<p>如果您遇到此问题（使用自签名证书的概率很高），您可以通过将以下内容添加到您的问题来解决此问题<code>Info.plist</code>。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;dict&gt;</span><br><span class="line">    &lt;key&gt;NSAppTransportSecurity&lt;/key&gt;</span><br><span class="line">    &lt;dict&gt;</span><br><span class="line">        &lt;key&gt;NSExceptionDomains&lt;/key&gt;</span><br><span class="line">        &lt;dict&gt;</span><br><span class="line">            &lt;key&gt;example.com&lt;/key&gt;</span><br><span class="line">            &lt;dict&gt;</span><br><span class="line">                &lt;key&gt;NSExceptionAllowsInsecureHTTPLoads&lt;/key&gt;</span><br><span class="line">                &lt;<span class="literal">true</span>/&gt;</span><br><span class="line">                &lt;key&gt;NSExceptionRequiresForwardSecrecy&lt;/key&gt;</span><br><span class="line">                &lt;<span class="literal">false</span>/&gt;</span><br><span class="line">                &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;</span><br><span class="line">                &lt;<span class="literal">true</span>/&gt;</span><br><span class="line">                &lt;!-- Optional: Specify minimum TLS version --&gt;</span><br><span class="line">                &lt;key&gt;NSTemporaryExceptionMinimumTLSVersion&lt;/key&gt;</span><br><span class="line">                &lt;string&gt;TLSv1.2&lt;/string&gt;</span><br><span class="line">            &lt;/dict&gt;</span><br><span class="line">        &lt;/dict&gt;</span><br><span class="line">    &lt;/dict&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure>
+<p>是否需要设置<code>NSExceptionRequiresForwardSecrecy</code>为<code>NO</code>取决于您的TLS连接是否使用允许的密码套件。在某些情况下，需要将其设置为<code>NO</code>。在<code>NSExceptionAllowsInsecureHTTPLoads</code>必须设置为<code>YES</code>以允许<code>SessionDelegate</code>接受挑战回调。一旦调用挑战回调，<code>ServerTrustPolicyManager</code>将接管服务器信任评估。您可能还需要指定<code>NSTemporaryExceptionMinimumTLSVersion</code>是否尝试连接到仅支持低于TLS版本的主机<code>1.2</code>。</p>
+<blockquote>
+<p>建议始终在生产环境中使用有效证书。</p>
+</blockquote>
+<h4 id="将自签名证书与本地网络配合使用"><a href="#将自签名证书与本地网络配合使用" class="headerlink" title="将自签名证书与本地网络配合使用"></a>将自签名证书与本地网络配合使用</h4><p>如果您尝试连接到localhost上运行的服务器，并且您使用的是自签名证书，则需要将以下内容添加到您的<code>Info.plist</code>。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dict&gt;</span><br><span class="line">    &lt;key&gt;NSAppTransportSecurity&lt;/key&gt;</span><br><span class="line">    &lt;dict&gt;</span><br><span class="line">        &lt;key&gt;NSAllowsLocalNetworking&lt;/key&gt;</span><br><span class="line">        &lt;<span class="literal">true</span>/&gt;</span><br><span class="line">    &lt;/dict&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure>
+<p>根据<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35" target="_blank" rel="noopener">苹果的文档</a>，设置<code>NSAllowsLocalNetworking</code>以<code>YES</code>允许本地资源负载，而无需禁用ATS为您的应用程序的其余部分。</p>
+<h3 id="网络可达性"><a href="#网络可达性" class="headerlink" title="网络可达性"></a>网络可达性</h3><p>该<code>NetworkReachabilityManager</code>主机和地址都WWAN和WiFi网络接口的可达性变化监听。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let manager = NetworkReachabilityManager(host: <span class="string">"www.apple.com"</span>)</span><br><span class="line"></span><br><span class="line">manager?.listener = &#123; status in</span><br><span class="line">    print(<span class="string">"Network Status Changed: \(status)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">manager?.startListening()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>请务必记住保留<code>manager</code>上面的示例，否则不会报告任何状态更改。此外，不要在<code>host</code>字符串中包含该方案，否则可达性将无法正常运行。</p>
+</blockquote>
+<p>使用网络可达性来确定下一步该做什么时，需要记住一些重要的事项。</p>
+<ul>
+<li><p>请勿</p>
+<p>使用Reachability确定是否应发送网络请求。</p>
+<ul>
+<li>你应该<strong>总是</strong>发送它。</li>
+</ul>
+</li>
+<li><p>恢复可达性后，使用该事件重试失败的网络请求。</p>
+<ul>
+<li>即使网络请求可能仍然失败，这是重试它们的好时机。</li>
+</ul>
+</li>
+<li><p>网络可达性状态可用于确定网络请求可能失败的原因。</p>
+<ul>
+<li>如果网络请求失败，告诉用户网络请求由于脱机而不是更技术性错误（例如“请求超时”）更有用。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>建议查看<a href="https://developer.apple.com/videos/play/wwdc2012-706/" target="_blank" rel="noopener">WWDC 2012 Session 706，“Networking Best Practices”</a>以获取更多信息。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetCode/" rel="tag"># leetCode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/14/Swift源码分析/Alamofire-首页/" rel="next" title="Alamofire-首页">
+                <i class="fa fa-chevron-left"></i> Alamofire-首页
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/14/Swift源码分析/URL/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="LiYouCheng2014" />
+            
+              <p class="site-author-name" itemprop="name">LiYouCheng2014</p>
+              <p class="site-description motion-element" itemprop="description">iOS\算法\项目管理</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LiYouCheng2014" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liyoucheng2014@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#高级用法"><span class="nav-number">1.</span> <span class="nav-text">高级用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#会话管理器"><span class="nav-number">1.1.</span> <span class="nav-text">会话管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用默认配置创建会话管理器"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用默认配置创建会话管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用后台配置创建会话管理器"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用后台配置创建会话管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用临时配置创建会话管理器"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用临时配置创建会话管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改会话配置"><span class="nav-number">1.1.4.</span> <span class="nav-text">修改会话配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话代表"><span class="nav-number">1.2.</span> <span class="nav-text">会话代表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖闭包"><span class="nav-number">1.2.1.</span> <span class="nav-text">覆盖闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类"><span class="nav-number">1.2.2.</span> <span class="nav-text">子类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求"><span class="nav-number">1.3.</span> <span class="nav-text">请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由请求"><span class="nav-number">1.4.</span> <span class="nav-text">路由请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#URLConvertible"><span class="nav-number">1.4.1.</span> <span class="nav-text">URLConvertible</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#类型安全路由"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">类型安全路由</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URLRequestConvertible"><span class="nav-number">1.4.2.</span> <span class="nav-text">URLRequestConvertible</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#API参数抽象"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">API参数抽象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CRUD和授权"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">CRUD和授权</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适应和重试请求"><span class="nav-number">1.5.</span> <span class="nav-text">适应和重试请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RequestAdapter"><span class="nav-number">1.5.1.</span> <span class="nav-text">RequestAdapter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RequestRetrier"><span class="nav-number">1.5.2.</span> <span class="nav-text">RequestRetrier</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义响应序列化"><span class="nav-number">1.6.</span> <span class="nav-text">自定义响应序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#响应映射"><span class="nav-number">1.6.1.</span> <span class="nav-text">响应映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理错误"><span class="nav-number">1.6.2.</span> <span class="nav-text">处理错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建自定义响应序列化程序"><span class="nav-number">1.6.3.</span> <span class="nav-text">创建自定义响应序列化程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用响应对象序列化"><span class="nav-number">1.6.4.</span> <span class="nav-text">通用响应对象序列化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全"><span class="nav-number">1.7.</span> <span class="nav-text">安全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ServerTrustPolicy"><span class="nav-number">1.7.1.</span> <span class="nav-text">ServerTrustPolicy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器信任策略管理器"><span class="nav-number">1.7.2.</span> <span class="nav-text">服务器信任策略管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子类化服务器信任策略管理器"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">子类化服务器信任策略管理器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证主机"><span class="nav-number">1.7.3.</span> <span class="nav-text">验证主机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证证书链"><span class="nav-number">1.7.4.</span> <span class="nav-text">验证证书链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#App-Transport-Security"><span class="nav-number">1.7.5.</span> <span class="nav-text">App Transport Security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将自签名证书与本地网络配合使用"><span class="nav-number">1.7.6.</span> <span class="nav-text">将自签名证书与本地网络配合使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络可达性"><span class="nav-number">1.8.</span> <span class="nav-text">网络可达性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiYouCheng2014</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://LiYouCheng2014.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-高级用法/';
+          this.page.identifier = '2018/10/14/Swift源码分析/Alamofire-高级用法/';
+          this.page.title = 'Alamofire-高级用法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LiYouCheng2014.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
