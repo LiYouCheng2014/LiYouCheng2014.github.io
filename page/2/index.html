@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-首页/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiYouCheng2014">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/14/Swift源码分析/Alamofire-首页/" itemprop="url">Alamofire-首页</a></h1>
+                <a class="post-title-link" href="/2018/10/14/Swift源码分析/Alamofire-用法/" itemprop="url">Alamofire-用法</a></h1>
         
 
         <div class="post-meta">
@@ -364,17 +364,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/14/Swift源码分析/Alamofire-首页/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/14/Swift源码分析/Alamofire-首页/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -401,155 +390,172 @@
       
         
           
-            <p>Alamofire是一个用Swift编写的HTTP网络库。</p>
-<ul>
-<li><a href="https://github.com/Alamofire/Alamofire#features" target="_blank" rel="noopener">特征</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#component-libraries" target="_blank" rel="noopener">组件库</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#requirements" target="_blank" rel="noopener">要求</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#migration-guides" target="_blank" rel="noopener">迁移指南</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#communication" target="_blank" rel="noopener">通讯</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#installation" target="_blank" rel="noopener">安装</a></li>
-<li>用法<ul>
-<li><strong>简介 -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#making-a-request" target="_blank" rel="noopener">发出请求</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-handling" target="_blank" rel="noopener">响应处理</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-validation" target="_blank" rel="noopener">响应验证</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-caching" target="_blank" rel="noopener">响应缓存</a></li>
-<li><strong>HTTP -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#http-methods" target="_blank" rel="noopener">HTTP方法</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#parameter-encoding" target="_blank" rel="noopener">参数编码</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#http-headers" target="_blank" rel="noopener">HTTP标头</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#authentication" target="_blank" rel="noopener">身份验证</a></li>
-<li><strong>大数据 -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#uploading-data-to-a-server" target="_blank" rel="noopener">将数据</a><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#downloading-data-to-a-file" target="_blank" rel="noopener">下载到文件</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#uploading-data-to-a-server" target="_blank" rel="noopener">将数据上传到服务器</a></li>
-<li><strong>工具 -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#statistical-metrics" target="_blank" rel="noopener">统计指标</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#curl-command-output" target="_blank" rel="noopener">cURL命令输出</a></li>
-</ul>
-</li>
-<li>高级用法<ul>
-<li><strong>URL会话 -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-delegate" target="_blank" rel="noopener">会话代理</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#request" target="_blank" rel="noopener">请求</a></li>
-<li><strong>路由 -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#routing-requests" target="_blank" rel="noopener">路由请求</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#adapting-and-retrying-requests" target="_blank" rel="noopener">调整和重试请求</a></li>
-<li><strong>模型对象 -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#custom-response-serialization" target="_blank" rel="noopener">自定义响应序列化</a></li>
-<li><strong>连接 -</strong> <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#security" target="_blank" rel="noopener">安全性</a>，<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#network-reachability" target="_blank" rel="noopener">网络可达性</a></li>
-</ul>
-</li>
-<li><a href="https://github.com/Alamofire/Alamofire#open-radars" target="_blank" rel="noopener">打开雷达</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#faq" target="_blank" rel="noopener">常问问题</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#credits" target="_blank" rel="noopener">积分</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#donations" target="_blank" rel="noopener">捐赠</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire#license" target="_blank" rel="noopener">执照</a></li>
-</ul>
-<h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><ul>
-<li>可链接的请求/响应方法</li>
-<li>URL / JSON / plist参数编码</li>
-<li>上传文件/数据/流/ MultipartFormData</li>
-<li>使用请求或恢复数据下载文件</li>
-<li>使用URLCredential进行身份验证</li>
-<li>HTTP响应验证</li>
-<li>上传和下载进度闭包与进度</li>
-<li>cURL命令输出</li>
-<li>动态调整和重试请求</li>
-<li>TLS证书和公钥固定</li>
-<li>网络可达性</li>
-<li>综合单元和集成测试覆盖范围</li>
-<li><a href="https://alamofire.github.io/Alamofire" target="_blank" rel="noopener">完整文档</a></li>
-</ul>
-<h2 id="组件库"><a href="#组件库" class="headerlink" title="组件库"></a>组件库</h2><p>为了使Alamofire专注于核心网络实施，<a href="https://github.com/Alamofire/Foundation" target="_blank" rel="noopener">Alamofire软件基金会</a>创建了额外的组件库，为Alamofire生态系统带来了额外的功能。</p>
-<ul>
-<li><a href="https://github.com/Alamofire/AlamofireImage" target="_blank" rel="noopener">AlamofireImage</a> - 包含图像响应序列化器<code>UIImage</code>和<code>UIImageView</code>扩展，自定义图像过滤器，自动清除内存缓存和基于优先级的图像下载系统的图像库。</li>
-<li><a href="https://github.com/Alamofire/AlamofireNetworkActivityIndicator" target="_blank" rel="noopener">AlamofireNetworkActivityIndicator</a> - 使用Alamofire控制iOS上网络活动指示器的可见性。它包含可配置的延迟计时器，有助于缓解闪烁，并且可以支持<code>URLSession</code>非Alamofire管理的实例。</li>
-</ul>
-<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
-<li>iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+</li>
-<li>Xcode 8.3+</li>
-<li>Swift 3.1+</li>
-</ul>
-<h2 id="迁移指南"><a href="#迁移指南" class="headerlink" title="迁移指南"></a>迁移指南</h2><ul>
-<li><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Alamofire%204.0%20Migration%20Guide.md" target="_blank" rel="noopener">Alamofire 4.0迁移指南</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Alamofire%203.0%20Migration%20Guide.md" target="_blank" rel="noopener">Alamofire 3.0迁移指南</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Alamofire%202.0%20Migration%20Guide.md" target="_blank" rel="noopener">Alamofire 2.0迁移指南</a></li>
-</ul>
-<h2 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h2><ul>
-<li>如果您<strong>需要有关网络请求的帮助，请</strong>使用<a href="https://stackoverflow.com/questions/tagged/alamofire" target="_blank" rel="noopener">Stack Overflow</a>和tag <code>alamofire</code>。</li>
-<li>如果您需要<strong>查找或了解API</strong>，请查看<a href="http://alamofire.github.io/Alamofire/" target="_blank" rel="noopener">我们的文档</a>或<a href="https://developer.apple.com/documentation/foundation/url_loading_system" target="_blank" rel="noopener">Apple的文档<code>URLSession</code></a>，在其上构建Alamofire。</li>
-<li>如果您需要<strong>有关Alamofire功能的帮助</strong>，请使用<a href="https://forums.swift.org/c/related-projects/alamofire" target="_blank" rel="noopener">swift.org上的论坛</a>。</li>
-<li>如果您想<strong>讨论Alamofire最佳实践</strong>，请<a href="https://forums.swift.org/c/related-projects/alamofire" target="_blank" rel="noopener">在swift.org上</a>使用<a href="https://forums.swift.org/c/related-projects/alamofire" target="_blank" rel="noopener">我们的论坛</a>。</li>
-<li>如果您想<strong>讨论功能请求</strong>，请使用<a href="https://forums.swift.org/c/related-projects/alamofire" target="_blank" rel="noopener">swift.org上的论坛</a>。</li>
-<li>如果您<strong>发现了错误</strong>，请打开问题并按照指南操作。越详细越好！</li>
-<li>如果您<strong>想贡献</strong>，请提交拉取请求。</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="的CocoaPods"><a href="#的CocoaPods" class="headerlink" title="的CocoaPods"></a>的CocoaPods</h3><p><a href="https://cocoapods.org/" target="_blank" rel="noopener">CocoaPods</a>是Cocoa项目的依赖管理器。您可以使用以下命令安装它：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install cocoapods</span><br></pre></td></tr></table></figure>
+            <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="发出请求"><a href="#发出请求" class="headerlink" title="发出请求"></a>发出请求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Alamofire</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="响应处理"><a href="#响应处理" class="headerlink" title="响应处理"></a>响应处理</h3><p>处理Alamofire中<code>Response</code>的一个<code>Request</code>制作涉及将响应处理程序链接到<code>Request</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    print(&quot;Request: \(String(describing: response.request))&quot;)   // original url request</span><br><span class="line">    print(&quot;Response: \(String(describing: response.response))&quot;) // http url response</span><br><span class="line">    print(&quot;Result: \(response.result)&quot;)                         // response serialization result</span><br><span class="line"></span><br><span class="line">    if let json = response.result.value &#123;</span><br><span class="line">        print(&quot;JSON: \(json)&quot;) // serialized json response</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) &#123;</span><br><span class="line">        print(&quot;Data: \(utf8Text)&quot;) // original server data as UTF8 string</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的示例中，<code>responseJSON</code>处理程序附加到完成<code>Request</code>后要执行的处理程序<code>Request</code>。不是阻止执行以等待来自服务器的响应，而是指定闭包形式的<a href="https://en.wikipedia.org/wiki/Callback_%28computer_programming%29" target="_blank" rel="noopener">回调</a>以在收到响应后处理响应。请求的结果仅在响应闭包的范围内可用。根据响应或从服务器接收的数据执行的任何执行都必须在响应闭包内完成。</p>
 <blockquote>
-<p>构建Alamofire 4.0+需要CocoaPods 1.1+。</p>
+<p>Alamofire中的网络是<em>异步</em>完成的。对于不熟悉这个概念的程序员来说，异步编程可能会让人感到沮丧，但这样做有<a href="https://developer.apple.com/library/ios/qa/qa1693/_index.html" target="_blank" rel="noopener">很好的理由</a>。</p>
 </blockquote>
-<p>要使用CocoaPods将Alamofire集成到您的Xcode项目中，请在以下位置指定<code>Podfile</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">source &apos;https://github.com/CocoaPods/Specs.git&apos;</span><br><span class="line">platform :ios, &apos;10.0&apos;</span><br><span class="line">use_frameworks!</span><br><span class="line"></span><br><span class="line">target &apos;&lt;Your Target Name&gt;&apos; do</span><br><span class="line">    pod &apos;Alamofire&apos;, &apos;~&gt; 4.7&apos;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>然后，运行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod install</span><br></pre></td></tr></table></figure>
-<h3 id="迦太基"><a href="#迦太基" class="headerlink" title="迦太基"></a>迦太基</h3><p><a href="https://github.com/Carthage/Carthage" target="_blank" rel="noopener">Carthage</a>是一个分散的依赖管理器，它构建您的依赖项并为您提供二进制框架。</p>
-<p>您可以使用以下命令安装Carthage with <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
-<p>要使用Carthage将Alamofire集成到您的Xcode项目中，请在以下位置指定<code>Cartfile</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;Alamofire/Alamofire&quot; ~&gt; 4.7</span><br></pre></td></tr></table></figure>
-<p>运行<code>carthage update</code>以构建框架并将内置拖动<code>Alamofire.framework</code>到Xcode项目中。</p>
-<h3 id="Swift包管理器"><a href="#Swift包管理器" class="headerlink" title="Swift包管理器"></a>Swift包管理器</h3><p>在<a href="https://swift.org/package-manager/" target="_blank" rel="noopener">斯威夫特软件包管理器</a>是自动化的银行代码分配的工具，被集成到<code>swift</code>编译器。它处于早期开发阶段，但Alamofire支持在支持的平台上使用它。</p>
-<p>一旦你设置了Swift软件包，添加Alamofire作为依赖项就像添加它的<code>dependencies</code>价值一样简单<code>Package.swift</code>。</p>
-<h4 id="Swift-3"><a href="#Swift-3" class="headerlink" title="Swift 3"></a>Swift 3</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies: [</span><br><span class="line">    .Package(url: &quot;https://github.com/Alamofire/Alamofire.git&quot;, majorVersion: 4)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h4 id="Swift-4"><a href="#Swift-4" class="headerlink" title="Swift 4"></a>Swift 4</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies: [</span><br><span class="line">    .package(url: &quot;https://github.com/Alamofire/Alamofire.git&quot;, from: &quot;4.0.0&quot;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="手动"><a href="#手动" class="headerlink" title="手动"></a>手动</h3><p>如果您不想使用上述任何依赖管理器，可以手动将Alamofire集成到您的项目中。</p>
-<h4 id="嵌入式框架"><a href="#嵌入式框架" class="headerlink" title="嵌入式框架"></a>嵌入式框架</h4><ul>
-<li><p>打开Terminal，<code>cd</code>进入您的顶级项目目录，然后运行以下命令“if”您的项目未初始化为git存储库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过运行以下命令将Alamofire添加为git <a href="https://git-scm.com/docs/git-submodule" target="_blank" rel="noopener">子模块</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git submodule add https://github.com/Alamofire/Alamofire.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开新<code>Alamofire</code>文件夹，然后将其拖到<code>Alamofire.xcodeproj</code>应用程序Xcode项目的Project Navigator中。</p>
+<p>Alamofire默认包含五种不同的响应处理程序，包括：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//响应处理程序 - 反序列化响应</span><br><span class="line">func response(</span><br><span class="line">    queue: DispatchQueue?,</span><br><span class="line">    completionHandler: @escaping (DefaultDataResponse) -&gt; Void)</span><br><span class="line">    -&gt; Self</span><br><span class="line"></span><br><span class="line">//响应数据处理程序 - 序列化为数据</span><br><span class="line">func  responseData（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt;Data&gt;）- &gt;  Void）</span><br><span class="line">     - &gt;  Self</span><br><span class="line"></span><br><span class="line">//响应字符串处理程序 - 序列化为字符串</span><br><span class="line">func  responseString（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     encoding：String .Encoding ？，</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt; String &gt;）- &gt;  Void）</span><br><span class="line">     - &gt;  Self</span><br><span class="line"></span><br><span class="line">//响应JSON处理程序 - 序列化为任意</span><br><span class="line">func  responseJSON（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt; Any &gt;）- &gt;  Void）</span><br><span class="line">     - &gt;  Self</span><br><span class="line"></span><br><span class="line">//响应PropertyList（plist）处理程序 - 序列化为Any</span><br><span class="line">func  responsePropertyList（</span><br><span class="line">     queue：DispatchQueue ? ,</span><br><span class="line">     completionHandler：@escaping（DataResponse &lt; Any &gt;）- &gt;  Void））</span><br><span class="line">     - &gt;  Self</span><br></pre></td></tr></table></figure>
+<p>没有任何响应处理程序执行<code>HTTPURLResponse</code>从服务器返回的任何验证。</p>
 <blockquote>
-<p>它应该嵌套在应用程序的蓝色项目图标下面。无论是高于还是低于所有其他Xcode组并不重要。</p>
+<p>例如，<code>400..&lt;500</code>和<code>500..&lt;600</code>范围中的响应状态代码不会自动触发<code>Error</code>。Alamofire使用<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-validation" target="_blank" rel="noopener">响应验证</a>方法链接来实现此目的。</p>
 </blockquote>
-</li>
-<li><p><code>Alamofire.xcodeproj</code>在Project Navigator中选择并验证部署目标是否与应用程序目标的目标匹配。</p>
-</li>
-<li><p>接下来，在Project Navigator中选择您的应用程序项目（蓝色项目图标）以导航到目标配置窗口，并在侧栏中的“Targets”标题下选择应用程序目标。</p>
-</li>
-<li><p>在该窗口顶部的标签栏中，打开“常规”面板。</p>
-</li>
-<li><p>单击<code>+</code>“嵌入式二进制文件”部分下的按钮。</p>
-</li>
-<li><p>您将看到两个不同的<code>Alamofire.xcodeproj</code>文件夹，每个文件夹都有两个不同版本的<code>Alamofire.framework</code>嵌套在<code>Products</code>文件夹中。</p>
+<h4 id="响应处理程序"><a href="#响应处理程序" class="headerlink" title="响应处理程序"></a>响应处理程序</h4><p>该<code>response</code>处理程序不评价任何响应数据的。它只是直接从URL会话委托转发所有信息。这是Alamofire相当于<code>cURL</code>用来执行一个<code>Request</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).response &#123; response in</span><br><span class="line">    print(&quot;Request: \(response.request)&quot;)</span><br><span class="line">    print(&quot;Response: \(response.response)&quot;)</span><br><span class="line">    print(&quot;Error: \(response.error)&quot;)</span><br><span class="line"></span><br><span class="line">    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) &#123;</span><br><span class="line">    	print(&quot;Data: \(utf8Text)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><code>Products</code>您选择哪个文件夹无关紧要，但无论您选择顶部还是底部都无关紧要<code>Alamofire.framework</code>。</p>
+<p>我们强烈建议您利用其他响应序列化程序来利用<code>Response</code>和<code>Result</code>类型。</p>
 </blockquote>
-</li>
-<li><p>选择<code>Alamofire.framework</code>iOS 的顶部，OS X的底部。</p>
+<h4 id="响应数据处理程序"><a href="#响应数据处理程序" class="headerlink" title="响应数据处理程序"></a>响应数据处理程序</h4><p>该<code>responseData</code>处理程序使用<code>responseDataSerializer</code>（服务器数据序列化到一些其它类型的对象），以提取<code>Data</code>由服务器返回。如果没有错误发生并<code>Data</code>返回，则响应<code>Result</code>将是a <code>.success</code>，并且<code>value</code>将是类型<code>Data</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseData &#123; response in</span><br><span class="line">    debugPrint(&quot;All Response Info: \(response)&quot;)</span><br><span class="line"></span><br><span class="line">    if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) &#123;</span><br><span class="line">    	print(&quot;Data: \(utf8Text)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="响应字符串处理程序"><a href="#响应字符串处理程序" class="headerlink" title="响应字符串处理程序"></a>响应字符串处理程序</h4><p>该<code>responseString</code>处理器采用了<code>responseStringSerializer</code>转换的<code>Data</code>服务器返回到<code>String</code>与指定的编码。如果没有发生错误并且服务器数据成功序列化为a <code>String</code>，则响应<code>Result</code>将为a <code>.success</code>且<code>value</code>类型为<code>String</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseString &#123; response in</span><br><span class="line">    print(&quot;Success: \(response.result.isSuccess)&quot;)</span><br><span class="line">    print(&quot;Response String: \(response.result.value)&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>您可以通过检查项目的构建日志来验证您选择的那个。为构建目标<code>Alamofire</code>将被列为要么<code>Alamofire iOS</code>，<code>Alamofire macOS</code>，<code>Alamofire tvOS</code>或<code>Alamofire watchOS</code>。</p>
+<p>如果未指定编码，Alamofire将使用<code>HTTPURLResponse</code>服务器中指定的文本编码。如果服务器响应无法确定文本编码，则默认为<code>.isoLatin1</code>。</p>
 </blockquote>
-</li>
-<li><p>就是这样！</p>
+<h4 id="响应JSON处理程序"><a href="#响应JSON处理程序" class="headerlink" title="响应JSON处理程序"></a>响应JSON处理程序</h4><p>该<code>responseJSON</code>处理器采用了<code>responseJSONSerializer</code>转换的<code>Data</code>服务器返回到<code>Any</code>使用指定的类型<code>JSONSerialization.ReadingOptions</code>。如果没有发生错误并且服务器数据成功序列化为JSON对象，则响应<code>Result</code>将为a <code>.success</code>且<code>value</code>类型为<code>Any</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line"></span><br><span class="line">    if let json = response.result.value &#123;</span><br><span class="line">        print(&quot;JSON: \(json)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>该<code>Alamofire.framework</code>是自动添加为目标的依赖，链接框架和嵌入式框架，在文件拷贝建造阶段这是所有你需要建立在模拟器和设备。</p>
+<p>所有JSON序列化都由框架中的<code>JSONSerialization</code>API 处理<code>Foundation</code>。</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="打开雷达"><a href="#打开雷达" class="headerlink" title="打开雷达"></a>打开雷达</h2><p>以下雷达对Alamofire的当前实施有一定影响。</p>
+<h4 id="链式响应处理程序"><a href="#链式响应处理程序" class="headerlink" title="链式响应处理程序"></a>链式响应处理程序</h4><p>响应处理程序甚至可以链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;)</span><br><span class="line">    .responseString &#123; response in</span><br><span class="line">        print(&quot;Response String: \(response.result.value)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        print(&quot;Response JSON: \(response.result.value)&quot;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重要的是要注意，在同一个上使用多个响应处理程序<code>Request</code>需要多次序列化服务器数据。每个响应处理程序一次。</p>
+</blockquote>
+<h4 id="响应处理程序队列"><a href="#响应处理程序队列" class="headerlink" title="响应处理程序队列"></a>响应处理程序队列</h4><p>默认情况下，响应处理程序在主调度队列上执行。但是，可以提供自定义调度队列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let utilityQueue = DispatchQueue.global(qos: .utility)</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON(queue: utilityQueue) &#123; response in</span><br><span class="line">    print(&quot;Executing response handler on utility queue&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="响应验证"><a href="#响应验证" class="headerlink" title="响应验证"></a>响应验证</h3><p>默认情况下，无论响应的内容如何，Alamofire都会将任何已完成的请求视为成功。<code>validate</code>如果响应具有不可接受的状态代码或MIME类型，则在响应处理程序之前调用会导致生成错误。</p>
+<h4 id="手动验证"><a href="#手动验证" class="headerlink" title="手动验证"></a>手动验证</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;)</span><br><span class="line">    .validate(statusCode: 200..&lt;300)</span><br><span class="line">    .validate(contentType: [&quot;application/json&quot;])</span><br><span class="line">    .responseData &#123; response in</span><br><span class="line">        switch response.result &#123;</span><br><span class="line">        case .success:</span><br><span class="line">            print(&quot;Validation Successful&quot;)</span><br><span class="line">        case .failure(let error):</span><br><span class="line">            print(error)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自动验证"><a href="#自动验证" class="headerlink" title="自动验证"></a>自动验证</h4><p>自动验证<code>200..&lt;300</code>范围内的状态代码，并且<code>Content-Type</code>响应的<code>Accept</code>标头与请求的标头匹配（如果提供了标头）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).validate().responseJSON &#123; response in</span><br><span class="line">    switch response.result &#123;</span><br><span class="line">    case .success:</span><br><span class="line">        print(&quot;Validation Successful&quot;)</span><br><span class="line">    case .failure(let error):</span><br><span class="line">        print(error)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="响应缓存"><a href="#响应缓存" class="headerlink" title="响应缓存"></a>响应缓存</h3><p>响应缓存在系统框架级别上处理<a href="https://developer.apple.com/reference/foundation/urlcache" target="_blank" rel="noopener"><code>URLCache</code></a>。它提供了复合内存和磁盘缓存，并允许您操作内存和磁盘部分的大小。</p>
+<blockquote>
+<p>默认情况下，Alamofire利用共享<code>URLCache</code>。要自定义它，请参阅“ <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置”</a>部分。</p>
+</blockquote>
+<h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><p>该<code>HTTPMethod</code>枚举列出定义的HTTP方法<a href="https://tools.ietf.org/html/rfc7231#section-4.3" target="_blank" rel="noopener">RFC 7231第4.3节</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public enum HTTPMethod: String &#123;</span><br><span class="line">    case options = &quot;OPTIONS&quot;</span><br><span class="line">    case get     = &quot;GET&quot;</span><br><span class="line">    case head    = &quot;HEAD&quot;</span><br><span class="line">    case post    = &quot;POST&quot;</span><br><span class="line">    case put     = &quot;PUT&quot;</span><br><span class="line">    case patch   = &quot;PATCH&quot;</span><br><span class="line">    case delete  = &quot;DELETE&quot;</span><br><span class="line">    case trace   = &quot;TRACE&quot;</span><br><span class="line">    case connect = &quot;CONNECT&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这些值可以作为<code>method</code>参数传递给<code>Alamofire.request</code>API：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;) // method defaults to `.get`</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/put&quot;, method: .put)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/delete&quot;, method: .delete)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>所述<code>Alamofire.request</code>方法参数的缺省值为<code>.get</code>。</p>
+</blockquote>
+<h3 id="参数编码"><a href="#参数编码" class="headerlink" title="参数编码"></a>参数编码</h3><p>Alamofire支持三种类型的参数编码，包括：<code>URL</code>，<code>JSON</code>和<code>PropertyList</code>。它还可以支持任何符合<code>ParameterEncoding</code>协议的自定义编码。</p>
+<h4 id="网址编码"><a href="#网址编码" class="headerlink" title="网址编码"></a>网址编码</h4><p>该<code>URLEncoding</code>类型创建一个URL编码的查询字符串，该字符串将被设置为或附加到任何现有的URL查询字符串，或者设置为URL请求的HTTP正文。查询字符串是设置还是附加到任何现有URL查询字符串或设置为HTTP正文取决于<code>Destination</code>编码。该<code>Destination</code>枚举有三种情况：</p>
 <ul>
-<li><a href="http://www.openradar.me/radar?id=5517037090635776" target="_blank" rel="noopener"><code>rdar://21349340</code></a> - 由于测试用例中的免费桥接问题，编译器抛出警告</li>
-<li><code>rdar://26870455</code> - 后台URL会话配置在模拟器中不起作用</li>
-<li><code>rdar://26849668</code> - 某些URLProtocol API无法正确处理 <code>URLRequest</code></li>
-<li><a href="http://openradar.appspot.com/radar?id=4942308441063424" target="_blank" rel="noopener"><code>rdar://36082113</code></a>- <code>URLSessionTaskMetrics</code>未能在watchOS 3.0+上链接</li>
+<li><code>.methodDependent</code>- 将编码的查询字符串结果应用于现有查询字符串<code>GET</code>，<code>HEAD</code>并将<code>DELETE</code>请求和集合应用为使用任何其他HTTP方法的请求的HTTP正文。</li>
+<li><code>.queryString</code> - 将编码查询字符串结果设置或附加到现有查询字符串。</li>
+<li><code>.httpBody</code> - 将编码的查询字符串结果设置为URL请求的HTTP正文。</li>
 </ul>
-<h2 id="已解决的雷达"><a href="#已解决的雷达" class="headerlink" title="已解决的雷达"></a>已解决的雷达</h2><p>在针对Alamofire项目提出申请后，以下雷达已经解决了。</p>
+<p><code>Content-Type</code>HTTP主体的编码请求的HTTP头字段设置为<code>application/x-www-form-urlencoded; charset=utf-8</code>。由于没有关于如何编码集合类型的已发布规范，因此附加<code>[]</code>了数组值（<code>foo[]=1&amp;foo[]=2</code>）的键，以及为嵌套字典值（<code>foo[bar]=baz</code>）附加方括号括起来的键的约定。</p>
+<h5 id="使用URL编码参数获取请求"><a href="#使用URL编码参数获取请求" class="headerlink" title="使用URL编码参数获取请求"></a>使用URL编码参数获取请求</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let parameters: Parameters = [&quot;foo&quot;: &quot;bar&quot;]</span><br><span class="line"></span><br><span class="line">// All three of these calls are equivalent</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: parameters) // encoding defaults to `URLEncoding.default`</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: parameters, encoding: URLEncoding.default)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: parameters, encoding: URLEncoding(destination: .methodDependent))</span><br><span class="line"></span><br><span class="line">// https://httpbin.org/get?foo=bar</span><br></pre></td></tr></table></figure>
+<h5 id="使用URL编码参数的POST请求"><a href="#使用URL编码参数的POST请求" class="headerlink" title="使用URL编码参数的POST请求"></a>使用URL编码参数的POST请求</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let parameters: Parameters = [</span><br><span class="line">    &quot;foo&quot;: &quot;bar&quot;,</span><br><span class="line">    &quot;baz&quot;: [&quot;a&quot;, 1],</span><br><span class="line">    &quot;qux&quot;: [</span><br><span class="line">        &quot;x&quot;: 1,</span><br><span class="line">        &quot;y&quot;: 2,</span><br><span class="line">        &quot;z&quot;: 3</span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">// All three of these calls are equivalent</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: URLEncoding.default)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: URLEncoding.httpBody)</span><br><span class="line"></span><br><span class="line">// HTTP body: foo=bar&amp;baz[]=a&amp;baz[]=1&amp;qux[x]=1&amp;qux[y]=2&amp;qux[z]=3</span><br></pre></td></tr></table></figure>
+<h5 id="配置Bool参数编码"><a href="#配置Bool参数编码" class="headerlink" title="配置Bool参数编码"></a>配置<code>Bool</code>参数编码</h5><p>该<code>URLEncoding.BoolEncoding</code>枚举提供了编码以下方法<code>Bool</code>参数：</p>
 <ul>
-<li><a href="http://www.openradar.me/radar?id=5010235949318144" target="_blank" rel="noopener"><code>rdar://26761490</code></a> - Swift字符串插值导致内存泄漏，常见用法（在Xcode 9 beta 6中于9/1/17解决）。</li>
+<li><code>.numeric</code>-编码<code>true</code>作为<code>1</code>和<code>false</code>作为<code>0</code>。</li>
+<li><code>.literal</code>- 编码<code>true</code>和<code>false</code>字符串文字。</li>
 </ul>
-<h2 id="常问问题"><a href="#常问问题" class="headerlink" title="常问问题"></a>常问问题</h2><h3 id="Alamofire这个名字的起源是什么？"><a href="#Alamofire这个名字的起源是什么？" class="headerlink" title="Alamofire这个名字的起源是什么？"></a>Alamofire这个名字的起源是什么？</h3><p>Alamofire以<a href="https://aggie-horticulture.tamu.edu/wildseed/alamofire.html" target="_blank" rel="noopener">Alamo Fire花</a>命名，<a href="https://aggie-horticulture.tamu.edu/wildseed/alamofire.html" target="_blank" rel="noopener">Alamo Fire</a>花是得克萨斯州官方州花Bluebonnet的混合变体。</p>
-<h3 id="路由器与请求适配器中的逻辑属于什么？"><a href="#路由器与请求适配器中的逻辑属于什么？" class="headerlink" title="路由器与请求适配器中的逻辑属于什么？"></a>路由器与请求适配器中的逻辑属于什么？</h3><p>简单的静态数据（如路径，参数和公共头）属于<code>Router</code>。动态数据，例如<code>Authorization</code>其值可以根据认证系统而改变的标题属于a <code>RequestAdapter</code>。</p>
-<p>动态数据必须放入的原因<code>RequestAdapter</code>是支持重试操作。当一个<code>Request</code>重试，原来的请求不被重建意味着<code>Router</code>不会再次调用。在<code>RequestAdapter</code>被称为再次允许动态数据上重试前的原始请求更新<code>Request</code>。</p>
-<h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><p>Alamofire由<a href="http://alamofire.org/" target="_blank" rel="noopener">Alamofire Software Foundation</a>拥有和维护。您可以在Twitter上关注他们<a href="https://twitter.com/AlamofireSF" target="_blank" rel="noopener">@AlamofireSF</a>以获取项目更新和发布。</p>
-<h3 id="安全披露"><a href="#安全披露" class="headerlink" title="安全披露"></a>安全披露</h3><p>如果您认为自己发现了Alamofire的安全漏洞，则应尽快通过电子邮件向<a href="mailto:security@alamofire.org" target="_blank" rel="noopener">security@alamofire.org报告</a>。请不要将其发布到公共问题跟踪器。</p>
-<h2 id="捐赠"><a href="#捐赠" class="headerlink" title="捐赠"></a>捐赠</h2><p>该<a href="https://github.com/Alamofire/Foundation#members" target="_blank" rel="noopener">ASF</a>正在筹钱留正式注册为联邦非营利组织。注册将允许我们的成员获得一些法律保护，并允许我们捐赠使用，免税。捐赠给ASF将使我们能够：</p>
+<p>默认情况下，Alamofire使用<code>.numeric</code>编码。</p>
+<p>您可以创建自己的<code>URLEncoding</code>并<code>Bool</code>在初始化程序中指定所需的编码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let encoding = URLEncoding(boolEncoding: .literal)</span><br></pre></td></tr></table></figure>
+<h5 id="配置Array参数编码"><a href="#配置Array参数编码" class="headerlink" title="配置Array参数编码"></a>配置<code>Array</code>参数编码</h5><p>该<code>URLEncoding.ArrayEncoding</code>枚举提供了编码以下方法<code>Array</code>参数：</p>
 <ul>
-<li>支付我们的年度法律费用，以保持非营利组织的良好状态</li>
-<li>支付我们的邮件服务器，以帮助我们掌握所有问题和安全问题</li>
-<li>可能为测试服务器提供资金，以便我们更轻松地测试边缘情况</li>
-<li>可能资助开发人员全职工作我们的一个项目</li>
+<li><code>.brackets</code> - 每个值的键都附加一组空方括号。</li>
+<li><code>.noBrackets</code> - 不附加括号。密钥按原样编码。</li>
 </ul>
-<p>社区对ASF库的采用令人惊叹。我们对您对项目的热情非常谦卑，并希望继续尽我们所能推动未来发展。在您的不断支持下，ASF将能够改善其覆盖范围，并为核心成员提供更好的法律保障。如果您使用我们的任何图书馆工作，请查看您的雇主是否有兴趣捐赠。您今天捐赠的任何金额都可以帮助我们实现目标，我们将不胜感激。</p>
-<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=W34WPEE74APJQ" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/f896f7d176663a1559376bb56aac4bdbbbe85ed1/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e61746543435f4c472e676966" alt="贝宝"></a></p>
-<h2 id="执照"><a href="#执照" class="headerlink" title="执照"></a>执照</h2><p>Alamofire根据MIT许可证发布。<a href="https://github.com/Alamofire/Alamofire/blob/master/LICENSE" target="_blank" rel="noopener">有关</a>详细信息，<a href="https://github.com/Alamofire/Alamofire/blob/master/LICENSE" target="_blank" rel="noopener">请参阅LICENSE</a>。</p>
+<p>默认情况下，Alamofire使用<code>.brackets</code>编码，<code>foo=[1,2]</code>编码为<code>foo[]=1&amp;foo[]=2</code>。</p>
+<p>使用<code>.noBrackets</code>编码将编码<code>foo=[1,2]</code>为<code>foo=1&amp;foo=2</code>。</p>
+<p>您可以创建自己的<code>URLEncoding</code>并<code>Array</code>在初始化程序中指定所需的编码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let encoding = URLEncoding(arrayEncoding: .noBrackets)</span><br></pre></td></tr></table></figure>
+<h4 id="JSON编码"><a href="#JSON编码" class="headerlink" title="JSON编码"></a>JSON编码</h4><p>该<code>JSONEncoding</code>类型创建参数对象的JSON表示，该表示被设置为请求的HTTP主体。<code>Content-Type</code>编码请求的HTTP头字段设置为<code>application/json</code>。</p>
+<h5 id="使用JSON编码参数的POST请求"><a href="#使用JSON编码参数的POST请求" class="headerlink" title="使用JSON编码参数的POST请求"></a>使用JSON编码参数的POST请求</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let parameters: Parameters = [</span><br><span class="line">    &quot;foo&quot;: [1,2,3],</span><br><span class="line">    &quot;bar&quot;: [</span><br><span class="line">        &quot;baz&quot;: &quot;qux&quot;</span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">// Both calls are equivalent</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: JSONEncoding.default)</span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/post&quot;, method: .post, parameters: parameters, encoding: JSONEncoding(options: []))</span><br><span class="line"></span><br><span class="line">// HTTP body: &#123;&quot;foo&quot;: [1, 2, 3], &quot;bar&quot;: &#123;&quot;baz&quot;: &quot;qux&quot;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Plist编码"><a href="#Plist编码" class="headerlink" title="Plist编码"></a>Plist编码</h4><p>的<code>PropertyListEncoding</code>用途<code>PropertyListSerialization</code>来创建参数对象的plist表示时，根据相关联的格式，并写入选项的值，其被设置为请求的主体。<code>Content-Type</code>编码请求的HTTP头字段设置为<code>application/x-plist</code>。</p>
+<h4 id="自定义编码"><a href="#自定义编码" class="headerlink" title="自定义编码"></a>自定义编码</h4><p>如果提供的<code>ParameterEncoding</code>类型不符合您的需求，您可以创建自己的自定义编码。这是一个快速示例，说明如何构建自定义<code>JSONStringArrayEncoding</code>类型以将JSON字符串数组编码到<code>Request</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">struct JSONStringArrayEncoding: ParameterEncoding &#123;</span><br><span class="line">    private let array: [String]</span><br><span class="line"></span><br><span class="line">    init(array: [String]) &#123;</span><br><span class="line">        self.array = array</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -&gt; URLRequest &#123;</span><br><span class="line">        var urlRequest = try urlRequest.asURLRequest()</span><br><span class="line"></span><br><span class="line">        let data = try JSONSerialization.data(withJSONObject: array, options: [])</span><br><span class="line"></span><br><span class="line">        if urlRequest.value(forHTTPHeaderField: &quot;Content-Type&quot;) == nil &#123;</span><br><span class="line">            urlRequest.setValue(&quot;application/json&quot;, forHTTPHeaderField: &quot;Content-Type&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        urlRequest.httpBody = data</span><br><span class="line"></span><br><span class="line">        return urlRequest</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="URLRequest的手动参数编码"><a href="#URLRequest的手动参数编码" class="headerlink" title="URLRequest的手动参数编码"></a>URLRequest的手动参数编码</h4><p>该<code>ParameterEncoding</code>API可让网络请求之外使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let url = URL(string: &quot;https://httpbin.org/get&quot;)!</span><br><span class="line">var urlRequest = URLRequest(url: url)</span><br><span class="line"></span><br><span class="line">let parameters: Parameters = [&quot;foo&quot;: &quot;bar&quot;]</span><br><span class="line">let encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: parameters)</span><br></pre></td></tr></table></figure>
+<h3 id="HTTP头部"><a href="#HTTP头部" class="headerlink" title="HTTP头部"></a>HTTP头部</h3><p><code>Request</code>在global <code>request</code>方法中直接支持向a添加自定义HTTP标头。这样可以轻松地将HTTP标头附加到<code>Request</code>可以不断更改的标头上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let headers: HTTPHeaders = [</span><br><span class="line">    &quot;Authorization&quot;: &quot;Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==&quot;,</span><br><span class="line">    &quot;Accept&quot;: &quot;application/json&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/headers&quot;, headers: headers).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于不更改的HTTP标头，建议将它们设置为，<code>URLSessionConfiguration</code>以便它们自动应用于<code>URLSessionTask</code>底层创建的任何标头<code>URLSession</code>。有关更多信息，请参阅<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置</a>部分。</p>
+</blockquote>
+<p>默认的Alamofire <code>SessionManager</code>为每个提供默认的标头集<code>Request</code>。这些包括：</p>
+<ul>
+<li><code>Accept-Encoding</code>，默认为<code>gzip;q=1.0, compress;q=0.5</code>，每<a href="https://tools.ietf.org/html/rfc7230#section-4.2.3" target="_blank" rel="noopener">RFC 7230§4.2.3</a>。</li>
+<li><code>Accept-Language</code>，缺省到顶部6偏好的语言在系统上，格式化等<code>en;q=1.0</code>，每<a href="https://tools.ietf.org/html/rfc7231#section-5.3.5" target="_blank" rel="noopener">RFC 7231§5.3.5</a>。</li>
+<li><code>User-Agent</code>，其中包含有关当前应用程序的版本信息。例如：<code>iOS Example/1.0 (com.alamofire.iOS-Example; build:1; iOS 10.0.0) Alamofire/4.0.0</code>，根据<a href="https://tools.ietf.org/html/rfc7231#section-5.5.3" target="_blank" rel="noopener">RFC7231§5.5.3</a>。</li>
+</ul>
+<p>如果需要自定义这些标头，<code>URLSessionConfiguration</code>则应创建自定义，<code>defaultHTTPHeaders</code>更新属性并将配置应用于新<code>SessionManager</code>实例。</p>
+<h3 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h3><p>身份验证在系统框架级别由<a href="https://developer.apple.com/reference/foundation/nsurlcredential" target="_blank" rel="noopener"><code>URLCredential</code></a>和处理<a href="https://developer.apple.com/reference/foundation/urlauthenticationchallenge" target="_blank" rel="noopener"><code>URLAuthenticationChallenge</code></a>。</p>
+<p><strong>支持的身份验证方案</strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank" rel="noopener">HTTP基础</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Digest_access_authentication" target="_blank" rel="noopener">HTTP摘要</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Kerberos_%28protocol%29" target="_blank" rel="noopener">Kerberos的</a></li>
+<li><a href="https://en.wikipedia.org/wiki/NT_LAN_Manager" target="_blank" rel="noopener">NTLM</a></li>
+</ul>
+<h4 id="HTTP基本身份验证"><a href="#HTTP基本身份验证" class="headerlink" title="HTTP基本身份验证"></a>HTTP基本身份验证</h4><p>在<code>authenticate</code>上一个方法<code>Request</code>自动将提供<code>URLCredential</code>给一个<code>URLAuthenticationChallenge</code>适当的时候：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let user = &quot;user&quot;</span><br><span class="line">let password = &quot;password&quot;</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/basic-auth/\(user)/\(password)&quot;)</span><br><span class="line">    .authenticate(user: user, password: password)</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>根据您的服务器实现，<code>Authorization</code>标头也可能是合适的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let user = &quot;user&quot;</span><br><span class="line">let password = &quot;password&quot;</span><br><span class="line"></span><br><span class="line">var headers: HTTPHeaders = [:]</span><br><span class="line"></span><br><span class="line">if let authorizationHeader = Request.authorizationHeader(user: user, password: password) &#123;</span><br><span class="line">    headers[authorizationHeader.key] = authorizationHeader.value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/basic-auth/user/password&quot;, headers: headers)</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用URLCredential进行身份验证"><a href="#使用URLCredential进行身份验证" class="headerlink" title="使用URLCredential进行身份验证"></a>使用URLCredential进行身份验证</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let user = &quot;user&quot;</span><br><span class="line">let password = &quot;password&quot;</span><br><span class="line"></span><br><span class="line">let credential = URLCredential(user: user, password: password, persistence: .forSession)</span><br><span class="line"></span><br><span class="line">Alamofire.request(&quot;https://httpbin.org/basic-auth/\(user)/\(password)&quot;)</span><br><span class="line">    .authenticate(usingCredential: credential)</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>值得注意的是，当使用<code>URLCredential</code>for进行身份验证时，<code>URLSession</code>如果服务器发出质询，则底层实际上最终会发出两个请求。第一个请求将不包括“可能”从服务器触发质询的凭证。然后，Alamofire接收挑战，附加凭证并由底层重试请求<code>URLSession</code>。</p>
+</blockquote>
+<h3 id="将数据下载到文件"><a href="#将数据下载到文件" class="headerlink" title="将数据下载到文件"></a>将数据下载到文件</h3><p>在Alamofire中从服务器获取数据的请求可以下载内存中或磁盘上的数据。<code>Alamofire.request</code>到目前为止，所有示例中使用的API始终在内存中下载服务器数据。这对于较小的有效负载来说非常有用，因为它更有效，但对于较大的有效负载却非常糟糕，因为下载可以使整个应用程序运行在内存之外。因此，您还可以使用<code>Alamofire.download</code>API将服务器数据下载到磁盘上的临时文件。</p>
+<blockquote>
+<p>这只能按现状运行<code>macOS</code>。其他平台不允许访问应用程序沙箱之外的文件系统。要在其他平台上下载文件，请参阅“ <a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#download-file-destination" target="_blank" rel="noopener">下载文件目标”</a>部分。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;).responseData &#123; response in</span><br><span class="line">    if let data = response.result.value &#123;</span><br><span class="line">        let image = UIImage(data: data)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>该<code>Alamofire.download</code>API还应该如果你需要下载数据，同时您的应用程序在后台使用。有关更多信息，请参阅<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置</a>部分。</p>
+</blockquote>
+<h4 id="下载文件目的地"><a href="#下载文件目的地" class="headerlink" title="下载文件目的地"></a>下载文件目的地</h4><p>您还可以提供<code>DownloadFileDestination</code>闭包以将文件从临时目录移动到最终目标。在临时文件实际移动到之前<code>destinationURL</code>，<code>DownloadOptions</code>将执行闭包中指定的内容。目前支持的两个<code>DownloadOptions</code>是：</p>
+<ul>
+<li><code>.createIntermediateDirectories</code> - 如果指定，则为目标URL创建中间目录。</li>
+<li><code>.removePreviousFile</code> - 如果指定，则从目标URL中删除以前的文件。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let destination: DownloadRequest.DownloadFileDestination = &#123; _, _ in</span><br><span class="line">    let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]</span><br><span class="line">    let fileURL = documentsURL.appendingPathComponent(&quot;pig.png&quot;)</span><br><span class="line"></span><br><span class="line">    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Alamofire.download(urlString, to: destination).response &#123; response in</span><br><span class="line">    print(response)</span><br><span class="line"></span><br><span class="line">    if response.error == nil, let imagePath = response.destinationURL?.path &#123;</span><br><span class="line">        let image = UIImage(contentsOfFile: imagePath)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>您还可以使用建议的下载目标API。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)</span><br><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;, to: destination)</span><br></pre></td></tr></table></figure>
+<h4 id="下载进度"><a href="#下载进度" class="headerlink" title="下载进度"></a>下载进度</h4><p>很多时候向用户报告下载进度会很有帮助。任何人<code>DownloadRequest</code>都可以使用<code>downloadProgress</code>API 报告下载进度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;)</span><br><span class="line">    .downloadProgress &#123; progress in</span><br><span class="line">        print(&quot;Download Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseData &#123; response in</span><br><span class="line">        if let data = response.result.value &#123;</span><br><span class="line">            let image = UIImage(data: data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>该<code>downloadProgress</code>API也需要<code>queue</code>定义哪个参数<code>DispatchQueue</code>的下载进度闭合应该叫上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let utilityQueue = DispatchQueue.global(qos: .utility)</span><br><span class="line"></span><br><span class="line">Alamofire.download(&quot;https://httpbin.org/image/png&quot;)</span><br><span class="line">    .downloadProgress(queue: utilityQueue) &#123; progress in</span><br><span class="line">        print(&quot;Download Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseData &#123; response in</span><br><span class="line">        if let data = response.result.value &#123;</span><br><span class="line">            let image = UIImage(data: data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="恢复下载"><a href="#恢复下载" class="headerlink" title="恢复下载"></a>恢复下载</h4><p>如果a <code>DownloadRequest</code>被取消或中断，则基础URL会话可以生成活动的恢复数据<code>DownloadRequest</code>。如果发生这种情况，可以重新使用恢复数据重新启动<code>DownloadRequest</code>它停止的位置。可以通过下载响应访问恢复数据，然后在尝试重新启动请求时重用。</p>
+<blockquote>
+<p><strong>重要提示：</strong>在所有Apple平台的某些版本（iOS 10 - 10.2，macOS 10.12 - 10.12.2，tvOS 10 - 10.1，watchOS 3 - 3.1.1）<code>resumeData</code>上，后台URL会话配置中断。在<code>resumeData</code>生成逻辑中存在一个潜在的错误，其中数据写错了，并且总是无法恢复下载。有关错误和可能的解决方法的更多信息，请参阅此<a href="https://stackoverflow.com/a/39347461/1342462" target="_blank" rel="noopener">Stack Overflow帖子</a>。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class ImageRequestor &#123;</span><br><span class="line">    private var resumeData: Data?</span><br><span class="line">    private var image: UIImage?</span><br><span class="line"></span><br><span class="line">    func fetchImage(completion: (UIImage?) -&gt; Void) &#123;</span><br><span class="line">        guard image == nil else &#123; completion(image) ; return &#125;</span><br><span class="line"></span><br><span class="line">        let destination: DownloadRequest.DownloadFileDestination = &#123; _, _ in</span><br><span class="line">            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]</span><br><span class="line">            let fileURL = documentsURL.appendingPathComponent(&quot;pig.png&quot;)</span><br><span class="line"></span><br><span class="line">            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        let request: DownloadRequest</span><br><span class="line"></span><br><span class="line">        if let resumeData = resumeData &#123;</span><br><span class="line">            request = Alamofire.download(resumingWith: resumeData)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            request = Alamofire.download(&quot;https://httpbin.org/image/png&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        request.responseData &#123; response in</span><br><span class="line">            switch response.result &#123;</span><br><span class="line">            case .success(let data):</span><br><span class="line">                self.image = UIImage(data: data)</span><br><span class="line">            case .failure:</span><br><span class="line">                self.resumeData = response.resumeData</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="将数据上传到服务器"><a href="#将数据上传到服务器" class="headerlink" title="将数据上传到服务器"></a>将数据上传到服务器</h3><p>使用JSON或URL编码参数向服务器发送相对少量的数据时，<code>Alamofire.request</code>API通常就足够了。如果您需要从文件URL或文件URL发送更大量的数据<code>InputStream</code>，那么<code>Alamofire.upload</code>API就是您要使用的。</p>
+<blockquote>
+<p>该<code>Alamofire.upload</code>API还应该如果你需要上传的数据，同时您的应用程序在后台使用。有关更多信息，请参阅<a href="https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager" target="_blank" rel="noopener">会话管理器配置</a>部分。</p>
+</blockquote>
+<h4 id="上传数据"><a href="#上传数据" class="headerlink" title="上传数据"></a>上传数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let imageData = UIImagePNGRepresentation(image)!</span><br><span class="line"></span><br><span class="line">Alamofire.upload(imageData, to: &quot;https://httpbin.org/post&quot;).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let fileURL = Bundle.main.url(forResource: &quot;video&quot;, withExtension: &quot;mov&quot;)</span><br><span class="line"></span><br><span class="line">Alamofire.upload(fileURL, to: &quot;https://httpbin.org/post&quot;).responseJSON &#123; response in</span><br><span class="line">    debugPrint(response)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="上传多部分表单数据"><a href="#上传多部分表单数据" class="headerlink" title="上传多部分表单数据"></a>上传多部分表单数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.upload(</span><br><span class="line">    multipartFormData: &#123; multipartFormData in</span><br><span class="line">        multipartFormData.append(unicornImageURL, withName: &quot;unicorn&quot;)</span><br><span class="line">        multipartFormData.append(rainbowImageURL, withName: &quot;rainbow&quot;)</span><br><span class="line">    &#125;,</span><br><span class="line">    to: &quot;https://httpbin.org/post&quot;,</span><br><span class="line">    encodingCompletion: &#123; encodingResult in</span><br><span class="line">    	switch encodingResult &#123;</span><br><span class="line">    	case .success(let upload, _, _):</span><br><span class="line">            upload.responseJSON &#123; response in</span><br><span class="line">                debugPrint(response)</span><br><span class="line">            &#125;</span><br><span class="line">    	case .failure(let encodingError):</span><br><span class="line">    	    print(encodingError)</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="上传进度"><a href="#上传进度" class="headerlink" title="上传进度"></a>上传进度</h4><p>当您的用户等待上传完成时，有时可以方便地向用户显示上传的进度。任何人<code>UploadRequest</code>都可以使用<code>uploadProgress</code>和<code>downloadProgress</code>API 报告上传进度和响应数据的下载进度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let fileURL = Bundle.main.url(forResource: &quot;video&quot;, withExtension: &quot;mov&quot;)</span><br><span class="line"></span><br><span class="line">Alamofire.upload(fileURL, to: &quot;https://httpbin.org/post&quot;)</span><br><span class="line">    .uploadProgress &#123; progress in // main queue by default</span><br><span class="line">        print(&quot;Upload Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .downloadProgress &#123; progress in // main queue by default</span><br><span class="line">        print(&quot;Download Progress: \(progress.fractionCompleted)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    .responseJSON &#123; response in</span><br><span class="line">        debugPrint(response)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="统计指标"><a href="#统计指标" class="headerlink" title="统计指标"></a>统计指标</h3><h4 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h4><p>Alamofire在a的整个生命周期中收集时间，<code>Request</code>并创建<code>Timeline</code>在所有响应类型上作为属性公开的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    print(response.timeline)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上报告以下<code>Timeline</code>信息：</p>
+<ul>
+<li><code>Latency</code>：0.428秒</li>
+<li><code>Request Duration</code>：0.428秒</li>
+<li><code>Serialization Duration</code>：0.001秒</li>
+<li><code>Total Duration</code>：0.429秒</li>
+</ul>
+<h4 id="URL会话任务度量标准"><a href="#URL会话任务度量标准" class="headerlink" title="URL会话任务度量标准"></a>URL会话任务度量标准</h4><p>在iOS和tvOS 10以及macOS 10.12中，Apple引入了新的<a href="https://developer.apple.com/reference/foundation/urlsessiontaskmetrics" target="_blank" rel="noopener">URLSessionTaskMetrics</a> API。任务指标封装了一些关于请求和响应执行的精彩统计信息。API非常类似<code>Timeline</code>，但提供了Alamofire无法计算的更多统计信息。可以通过任何响应类型访问度量标准。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    print(response.metrics)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，这些API仅适用于iOS和tvOS 10以及macOS 10.12。因此，根据您的部署目标，您可能需要使用这些内部可用性检查：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alamofire.request(&quot;https://httpbin.org/get&quot;).responseJSON &#123; response in</span><br><span class="line">    if #available(iOS 10.0, *) &#123;</span><br><span class="line">        print(response.metrics)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="cURL命令输出"><a href="#cURL命令输出" class="headerlink" title="cURL命令输出"></a>cURL命令输出</h3><p>调试平台问题可能令人沮丧。值得庆幸的是，Alamofire <code>Request</code>对象符合协议<code>CustomStringConvertible</code>和<code>CustomDebugStringConvertible</code>协议，以提供一些非常有用的调试工具。</p>
+<h4 id="CustomStringConvertible"><a href="#CustomStringConvertible" class="headerlink" title="CustomStringConvertible"></a>CustomStringConvertible</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let request = Alamofire.request(&quot;https://httpbin.org/ip&quot;)</span><br><span class="line"></span><br><span class="line">print(request)</span><br><span class="line">// GET https://httpbin.org/ip (200)</span><br></pre></td></tr></table></figure>
+<h4 id="CustomDebugStringConvertible"><a href="#CustomDebugStringConvertible" class="headerlink" title="CustomDebugStringConvertible"></a>CustomDebugStringConvertible</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let request = Alamofire.request(&quot;https://httpbin.org/get&quot;, parameters: [&quot;foo&quot;: &quot;bar&quot;])</span><br><span class="line">debugPrint(request)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ curl -i \</span><br><span class="line">    -H <span class="string">"User-Agent: Alamofire/4.0.0"</span> \</span><br><span class="line">    -H <span class="string">"Accept-Encoding: gzip;q=1.0, compress;q=0.5"</span> \</span><br><span class="line">    -H <span class="string">"Accept-Language: en;q=1.0,fr;q=0.9,de;q=0.8,zh-Hans;q=0.7,zh-Hant;q=0.6,ja;q=0.5"</span> \</span><br><span class="line">    <span class="string">"https://httpbin.org/get?foo=bar"</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -664,17 +670,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/13/leetCode/leetCode-0234_回文链表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/13/leetCode/leetCode-0234_回文链表/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -832,17 +827,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/13/leetCode/leetCode-0025_k个一组翻转链表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/13/leetCode/leetCode-0025_k个一组翻转链表/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1011,17 +995,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/12/leetCode/leetCode-0141_环形链表II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/12/leetCode/leetCode-0141_环形链表II/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1173,17 +1146,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/11/leetCode/leetCode-0141_环形链表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/11/leetCode/leetCode-0141_环形链表/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1332,17 +1294,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/10/leetCode/leetCode-0024_两两交换链表中的节点/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/10/leetCode/leetCode-0024_两两交换链表中的节点/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1511,17 +1462,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/09/leetCode/leetCode-0206_反转链表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/09/leetCode/leetCode-0206_反转链表/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1679,17 +1619,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/28/数据结构之二叉树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/28/数据结构之二叉树/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1837,17 +1766,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/27/数据结构之队/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/27/数据结构之队/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1993,17 +1911,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/12/数据结构之线性/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/12/数据结构之线性/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -2346,14 +2253,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://LiYouCheng2014.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
 
 
 
@@ -2366,6 +2265,10 @@
   
 
 
+
+
+
+  
 
 
 
