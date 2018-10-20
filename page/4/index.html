@@ -297,6 +297,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/排序/排序算法之堆排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYouCheng2014">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/02/排序/排序算法之堆排序/" itemprop="url">排序算法之堆排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T21:45:22+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>基本思想:</p>
+<ol>
+<li>将无需的数据构成堆（即用无序数据生成满足堆定义的完全二叉树）</li>
+<li>利用堆排序（即将上一步生成的堆输出，得到排序后的有序数据）</li>
+</ol>
+<p>算法描述:</p>
+<p>构成堆</p>
+<ol>
+<li><p>将无序数据放入完全二叉树的各节点</p>
+</li>
+<li><p>由二叉树的下层向上层逐层进行父子节点的数据比较，使用一种称为“筛”的运算进行节点数据的调整，直到使节点最后满足堆的条件为止（针对非叶节点）</p>
+<p>2.1 确定Ai的两个子树的最大值，放在Aj中</p>
+<p>2.2 将Ai的数据与Aj的数据进行比较，如果Ai&gt;=Aj,表示Aj为根的子树已构成堆，筛运算完成</p>
+<p>2.3 若Ai&lt;Aj，则将Ai与Aj互换位置，互换位置后可能会破坏以Ai(此时Ai的值为原来的Aj)为根的堆，接着再以Aj为根重复前面的步骤，直到父节点数据大于子节点，或子节点为空时为止</p>
+</li>
+</ol>
+<p>堆排序</p>
+<ol>
+<li>取堆的根节点（最大值），将其放到数组的最后</li>
+<li>重新执行前面介绍的构成堆的方法，最后一个节点排除在外</li>
+<li>重复上面过程，直到只剩下一个节点，即可得到有序的数据</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/02/排序/排序算法之堆排序/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/排序/排序算法之选择排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1096,7 +1263,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
