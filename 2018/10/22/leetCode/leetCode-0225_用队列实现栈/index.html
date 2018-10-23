@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="swift," />
+  <meta name="keywords" content="队,leetCode," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="统计Alamofire代码函数 find Source -name “*.swift” | xargs cat |wc -l 目录结构 Alamofire.swift（支持的基本接口） Core AFError.swift （对错误的封装，包含了Alamofire中所有可能出现的错误，使用enum实现，很有意思） Notifications.swift（swift中通知的用法，这个跟oc的有区别）">
-<meta name="keywords" content="swift">
+<meta name="description" content="###  题目描述英文题目Implement the following operations of a stack using queues.  push(x) – Push element x onto stack. pop() – Removes the element on top of the stack. top() – Get the top element. empty() – R">
+<meta name="keywords" content="队,leetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Alamofire-目录">
-<meta property="og:url" content="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-目录/index.html">
+<meta property="og:title" content="leetCode-0225_用队列实现栈">
+<meta property="og:url" content="http://yoursite.com/2018/10/22/leetCode/leetCode-0225_用队列实现栈/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="统计Alamofire代码函数 find Source -name “*.swift” | xargs cat |wc -l 目录结构 Alamofire.swift（支持的基本接口） Core AFError.swift （对错误的封装，包含了Alamofire中所有可能出现的错误，使用enum实现，很有意思） Notifications.swift（swift中通知的用法，这个跟oc的有区别）">
+<meta property="og:description" content="###  题目描述英文题目Implement the following operations of a stack using queues.  push(x) – Push element x onto stack. pop() – Removes the element on top of the stack. top() – Get the top element. empty() – R">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-15T00:00:43.021Z">
+<meta property="og:updated_time" content="2018-10-23T14:22:12.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alamofire-目录">
-<meta name="twitter:description" content="统计Alamofire代码函数 find Source -name “*.swift” | xargs cat |wc -l 目录结构 Alamofire.swift（支持的基本接口） Core AFError.swift （对错误的封装，包含了Alamofire中所有可能出现的错误，使用enum实现，很有意思） Notifications.swift（swift中通知的用法，这个跟oc的有区别）">
+<meta name="twitter:title" content="leetCode-0225_用队列实现栈">
+<meta name="twitter:description" content="###  题目描述英文题目Implement the following operations of a stack using queues.  push(x) – Push element x onto stack. pop() – Removes the element on top of the stack. top() – Get the top element. empty() – R">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-目录/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/22/leetCode/leetCode-0225_用队列实现栈/"/>
 
 
 
 
 
-  <title>Alamofire-目录 | 成长路上</title>
+  <title>leetCode-0225_用队列实现栈 | 成长路上</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-目录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/leetCode/leetCode-0225_用队列实现栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiYouCheng2014">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Alamofire-目录</h1>
+          <h1 class="post-title" itemprop="name headline">leetCode-0225_用队列实现栈</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T15:00:33+08:00">
-                2018-10-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T22:20:45+08:00">
+                2018-10-22
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/swift源码学习/" itemprop="url" rel="index">
-                    <span itemprop="name">swift源码学习</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -391,37 +391,59 @@
       
 
       
-        <p>统计Alamofire代码函数</p>
-<p>find Source -name “*.swift” | xargs cat |wc -l</p>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><ul>
-<li>Alamofire.swift（支持的基本接口）</li>
-<li>Core<ul>
-<li>AFError.swift （对错误的封装，包含了Alamofire中所有可能出现的错误，使用enum实现，很有意思）</li>
-<li>Notifications.swift（swift中通知的用法，这个跟oc的有区别）</li>
-<li>ParameterEncoding.swift（参数编码，有些情况需要把参数编码到URL中，包含了转义相关的知识）</li>
-<li>Request.swift（最核心的请求类）</li>
-<li>Response.swift（服务器返回的数据的封装）</li>
-<li>Result.swift（对请求结果的封装）</li>
-<li>SessionDelegate.swift（会话代理）</li>
-<li>SessionManager.swift（会话管理，核心内容）</li>
-<li>TaskDelegate.swift（任务代理）</li>
+        <p>### </p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h6 id="英文题目"><a href="#英文题目" class="headerlink" title="英文题目"></a>英文题目</h6><p>Implement the following operations of a stack using queues.</p>
+<ul>
+<li>push(x) – Push element x onto stack.</li>
+<li>pop() – Removes the element on top of the stack.</li>
+<li>top() – Get the top element.</li>
+<li>empty() – Return whether the stack is empty.</li>
 </ul>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MyStack stack = new MyStack();</span><br><span class="line"></span><br><span class="line">stack.push(1);</span><br><span class="line">stack.push(2);  </span><br><span class="line">stack.top();   // returns 2</span><br><span class="line">stack.pop();   // returns 2</span><br><span class="line">stack.empty(); // returns false</span><br></pre></td></tr></table></figure>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>You must use <em>only</em> standard operations of a queue – which means only <code>push to back</code>, <code>peek/pop from front</code>, <code>size</code>, and <code>is empty</code> operations are valid.</li>
+<li>Depending on your language, queue may not be supported natively. You may simulate a queue by using a list or deque (double-ended queue), as long as you use only standard operations of a queue.</li>
+<li>You may assume that all operations are valid (for example, no pop or top operations will be called on an empty stack).</li>
+</ul>
+<h6 id="中文题目"><a href="#中文题目" class="headerlink" title="中文题目"></a>中文题目</h6><p>使用队列实现栈的下列操作：</p>
+<ul>
+<li>push(x) – 元素 x 入栈</li>
+<li>pop() – 移除栈顶元素</li>
+<li>top() – 获取栈顶元素</li>
+<li>empty() – 返回栈是否为空</li>
+</ul>
+<p><strong>注意:</strong></p>
+<ul>
+<li>你只能使用队列的基本操作– 也就是 <code>push to back</code>, <code>peek/pop from front</code>, <code>size</code>, 和 <code>is empty</code> 这些操作是合法的。</li>
+<li>你所使用的语言也许不支持队列。 你可以使用 list 或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。</li>
+<li>你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。</li>
+</ul>
+<a id="more"></a>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h6 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h6><ul>
+<li><p>描述</p>
+<p>需要另外一个队列来辅助操作，我们总共需要两个队列，其中一个队列用来放最后加进来的数，模拟栈顶元素。剩下所有的数都按顺序放入另一个队列中。</p>
+<p>当push操作时，将新数字先加入模拟栈顶元素的队列中，如果此时队列中有数字，则将原本有的数字放入另一个队中，让新数字在这队中，用来模拟栈顶元素。</p>
+<p>当top操作时，如果模拟栈顶的队中有数字则直接返回，如果没有则到另一个队列中通过平移数字取出最后一个数字加入模拟栈顶的队列中。</p>
+<p>当pop操作时，先执行下top()操作，保证模拟栈顶的队列中有数字，然后再将该数字移除即可。</p>
+<p>当empty操作时，当两个队列都为空时，栈为空</p>
 </li>
-<li>Extensions<ul>
-<li>DispatchQueue+Alamofire.swift</li>
-</ul>
-</li>
-<li>Features<ul>
-<li>MultipartFormData.swift（多表单数据处理）</li>
-<li>NetworkReachabilityManager.swift（网络状态管理）</li>
-<li>ResponseSerialization.swift（响应序列化管理）</li>
-<li>ServerTrustPolicy.swift（安全策略管理）</li>
-<li>Timeline.swift（新增的内容，与请求相关的一些时间属性）</li>
-<li>Validation.swift（对服务器响应的验证）</li>
-</ul>
+<li><p>源码</p>
 </li>
 </ul>
-<p><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="noopener">Alamofire</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    LinkQueue *q1;</span><br><span class="line">    LinkQueue *q2;<span class="comment">//模拟栈顶元素</span></span><br><span class="line">&#125;MyStack;</span><br><span class="line"></span><br><span class="line"><span class="function">MyStack *<span class="title">myStackCreate</span><span class="params">(<span class="keyword">int</span> maxSize)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MyStack *<span class="built_in">stack</span> = (MyStack *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(MyStack));</span><br><span class="line">    <span class="built_in">stack</span>-&gt;q1 = link_queue_create();</span><br><span class="line">    <span class="built_in">stack</span>-&gt;q2 = link_queue_create();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">stack</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当push操作时，将新数字先加入模拟栈顶元素的队列中，如果此时队列中有数字，则将原本有的数字放入另一个队中，让新数字在这队中，用来模拟栈顶元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myStackPush</span><span class="params">(MyStack *obj, <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    link_queue_enqueue(obj-&gt;q2, x);</span><br><span class="line">    <span class="keyword">while</span> (link_queue_length(obj-&gt;q2) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        link_queue_enqueue(obj-&gt;q1, obj-&gt;q2-&gt;head-&gt;data);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> data = <span class="number">0</span>;</span><br><span class="line">        link_queue_dequeue(obj-&gt;q2, &amp;data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当top操作时，如果模拟栈顶的队中有数字则直接返回，如果没有则到另一个队列中通过平移数字取出最后一个数字加入模拟栈顶的队列中</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myStackTop</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (link_queue_is_empty(obj-&gt;q2)) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; link_queue_length(obj-&gt;q1) - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            link_queue_enqueue(obj-&gt;q1, obj-&gt;q1-&gt;head-&gt;data);</span><br><span class="line">            <span class="keyword">int</span> data = <span class="number">0</span>;</span><br><span class="line">            link_queue_dequeue(obj-&gt;q1, &amp;data);</span><br><span class="line">        &#125;</span><br><span class="line">        link_queue_enqueue(obj-&gt;q2, obj-&gt;q1-&gt;head-&gt;data);</span><br><span class="line">        <span class="keyword">int</span> data = <span class="number">0</span>;</span><br><span class="line">        link_queue_dequeue(obj-&gt;q1, &amp;data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj-&gt;q2-&gt;head-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当pop操作时，先执行下top()操作，保证模拟栈顶的队列中有数字，然后再将该数字移除即可</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myStackPop</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    myStackTop(obj);</span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    link_queue_dequeue(obj-&gt;q2, &amp;data);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当empty操作时，当两个队列都为空时，栈为空</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">myStackEmpty</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> link_queue_is_empty(obj-&gt;q1) &amp;&amp; link_queue_is_empty(obj-&gt;q2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myStackFree</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    link_queue_destroy(obj-&gt;q1);</span><br><span class="line">    link_queue_destroy(obj-&gt;q2);</span><br><span class="line">    <span class="built_in">free</span>(obj);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">testStack</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MyStack *<span class="built_in">stack</span> = myStackCreate(<span class="number">5</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">1</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">2</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">3</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">4</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (!myStackEmpty(<span class="built_in">stack</span>)) &#123;</span><br><span class="line">        <span class="keyword">int</span> data = myStackPop(<span class="built_in">stack</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h6><ul>
+<li>描述</li>
+</ul>
+<p>每次把新加入的数插到前头，这样队列保存的顺序和栈的顺序是相反的，它们的取出方式也是反的，那么反反得正，就是我们需要的顺序了。我们需要一个辅助队列tmp，把s的元素也逆着顺序存入tmp中，此时加入新元素x，再把tmp中的元素存回来，这样就是我们要的顺序了，其他三个操作也就直接调用队列的操作即可</p>
+<ul>
+<li>源码</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    LinkQueue *q1;</span><br><span class="line">&#125;MyStack;</span><br><span class="line"></span><br><span class="line"><span class="function">MyStack *<span class="title">myStackCreate</span><span class="params">(<span class="keyword">int</span> maxSize)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MyStack *<span class="built_in">stack</span> = (MyStack *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(MyStack));</span><br><span class="line">    <span class="built_in">stack</span>-&gt;q1 = link_queue_create();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">stack</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myStackPush</span><span class="params">(MyStack *obj, <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkQueue *tmp = link_queue_create();</span><br><span class="line">    <span class="keyword">while</span> (!link_queue_is_empty(obj-&gt;q1)) &#123;</span><br><span class="line">        link_queue_enqueue(tmp, obj-&gt;q1-&gt;head-&gt;data);</span><br><span class="line">        <span class="keyword">int</span> data = <span class="number">0</span>;</span><br><span class="line">        link_queue_dequeue(obj-&gt;q1, &amp;data);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    link_queue_enqueue(obj-&gt;q1, x);</span><br><span class="line">    <span class="keyword">while</span> (!link_queue_is_empty(tmp)) &#123;</span><br><span class="line">        link_queue_enqueue(obj-&gt;q1, tmp-&gt;head-&gt;data);</span><br><span class="line">        <span class="keyword">int</span> data = <span class="number">0</span>;</span><br><span class="line">        link_queue_dequeue(tmp, &amp;data);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">free</span>(tmp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myStackTop</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj-&gt;q1-&gt;head-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myStackPop</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    link_queue_dequeue(obj-&gt;q1, &amp;data);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">myStackEmpty</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> link_queue_is_empty(obj-&gt;q1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myStackFree</span><span class="params">(MyStack *obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    link_queue_destroy(obj-&gt;q1);</span><br><span class="line">    <span class="built_in">free</span>(obj);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">testStack</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MyStack *<span class="built_in">stack</span> = myStackCreate(<span class="number">5</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">1</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">2</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">3</span>);</span><br><span class="line">    myStackPush(<span class="built_in">stack</span>, <span class="number">4</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (!myStackEmpty(<span class="built_in">stack</span>)) &#123;</span><br><span class="line">        <span class="keyword">int</span> data = myStackPop(<span class="built_in">stack</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p><a href="https://leetcode.com/problems/implement-stack-using-queues" target="_blank" rel="noopener">Implement Stack using Queues</a></p>
+<p><a href="https://leetcode-cn.com/problems/implement-stack-using-queues" target="_blank" rel="noopener">用队列实现栈</a></p>
+<h4 id="队列相关代码"><a href="#队列相关代码" class="headerlink" title="队列相关代码"></a>队列相关代码</h4><p><a href="https://liyoucheng2014.github.io/2018/10/20/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95-%E9%98%9F/" target="_blank" rel="noopener">数据结构-队</a></p>
 
       
     </div>
@@ -439,7 +461,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/swift/" rel="tag"># swift</a>
+            <a href="/tags/队/" rel="tag"># 队</a>
+          
+            <a href="/tags/leetCode/" rel="tag"># leetCode</a>
           
         </div>
       
@@ -452,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/13/leetCode/leetCode-0234_回文链表/" rel="next" title="leetCode-0234_回文链表">
-                <i class="fa fa-chevron-left"></i> leetCode-0234_回文链表
+              <a href="/2018/10/20/leetCode/leetCode-0020_有效的括号/" rel="next" title="leetCode-0020_有效的括号">
+                <i class="fa fa-chevron-left"></i> leetCode-0020_有效的括号
               </a>
             
           </div>
@@ -462,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/14/Swift源码分析/Alamofire-首页/" rel="prev" title="Alamofire-首页">
-                Alamofire-首页 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/23/leetCode/leetCode-0232_用栈实现队列/" rel="prev" title="leetCode-0232_用栈实现队列">
+                leetCode-0232_用栈实现队列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -631,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#英文题目"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">英文题目</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#中文题目"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">中文题目</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#方法一"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法二"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">3.</span> <span class="nav-text">题目来源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#队列相关代码"><span class="nav-number">3.1.</span> <span class="nav-text">队列相关代码</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-目录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/URL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiYouCheng2014">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/14/Swift源码分析/Alamofire-目录/" itemprop="url">Alamofire-目录</a></h1>
+                <a class="post-title-link" href="/2018/10/14/Swift源码分析/URL/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -328,7 +328,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T15:00:33+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T15:42:08+08:00">
                 2018-10-14
               </time>
             
@@ -338,28 +338,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/swift源码学习/" itemprop="url" rel="index">
-                    <span itemprop="name">swift源码学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -390,37 +368,71 @@
       
         
           
-            <p>统计Alamofire代码函数</p>
-<p>find Source -name “*.swift” | xargs cat |wc -l</p>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><ul>
-<li>Alamofire.swift（支持的基本接口）</li>
-<li>Core<ul>
-<li>AFError.swift （对错误的封装，包含了Alamofire中所有可能出现的错误，使用enum实现，很有意思）</li>
-<li>Notifications.swift（swift中通知的用法，这个跟oc的有区别）</li>
-<li>ParameterEncoding.swift（参数编码，有些情况需要把参数编码到URL中，包含了转义相关的知识）</li>
-<li>Request.swift（最核心的请求类）</li>
-<li>Response.swift（服务器返回的数据的封装）</li>
-<li>Result.swift（对请求结果的封装）</li>
-<li>SessionDelegate.swift（会话代理）</li>
-<li>SessionManager.swift（会话管理，核心内容）</li>
-<li>TaskDelegate.swift（任务代理）</li>
+            <h1 id="URL加载系统"><a href="#URL加载系统" class="headerlink" title="URL加载系统"></a>URL加载系统</h1><p>与URL交互并使用标准Internet协议与服务器通信。</p>
+<p>骨架</p>
+<ul>
+<li>基础</li>
 </ul>
-</li>
-<li>Extensions<ul>
-<li>DispatchQueue+Alamofire.swift</li>
+<p>在本页面</p>
+<ul>
+<li><a href="https://developer.apple.com/documentation/foundation/url_loading_system#overview" target="_blank" rel="noopener">概观</a></li>
+<li><a href="https://developer.apple.com/documentation/foundation/url_loading_system#topics" target="_blank" rel="noopener">话题</a></li>
+<li><a href="https://developer.apple.com/documentation/foundation/url_loading_system#see-also" target="_blank" rel="noopener">也可以看看</a></li>
 </ul>
-</li>
-<li>Features<ul>
-<li>MultipartFormData.swift（多表单数据处理）</li>
-<li>NetworkReachabilityManager.swift（网络状态管理）</li>
-<li>ResponseSerialization.swift（响应序列化管理）</li>
-<li>ServerTrustPolicy.swift（安全策略管理）</li>
-<li>Timeline.swift（新增的内容，与请求相关的一些时间属性）</li>
-<li>Validation.swift（对服务器响应的验证）</li>
-</ul>
-</li>
-</ul>
-<p><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="noopener">Alamofire</a></p>
+<h2 id="概观"><a href="#概观" class="headerlink" title="概观"></a>概观</h2><p>URL加载系统使用<code>https</code>您创建的标准协议或自定义协议提供对URL标识的资源的访问。加载是异步执行的，因此您的应用程序可以保持响应并在到达时处理传入的数据或错误。</p>
+<p>您可以使用<a href="https://developer.apple.com/documentation/foundation/urlsession" target="_blank" rel="noopener"><code>URLSession</code></a>实例创建一个或多个实例，这些实例可以获取数据并将数据返回到应用程序，下载文件或将数据和文件上载到远程位置。要配置会话，请使用一个对象，该对象控制如何使用缓存和cookie的行为，或者是否允许在蜂窝网络上进行连接。<a href="https://developer.apple.com/documentation/foundation/urlsessiontask" target="_blank" rel="noopener"><code>URLSessionTask</code></a><a href="https://developer.apple.com/documentation/foundation/urlsessionconfiguration" target="_blank" rel="noopener"><code>URLSessionConfiguration</code></a></p>
+<p>您可以重复使用一个会话来创建任务。例如，Web浏览器可能具有用于常规和私人浏览使用的单独会话，其中私有会话不缓存其数据。<a href="https://developer.apple.com/documentation/foundation/url_loading_system#2927983" target="_blank" rel="noopener">图1</a>显示了具有这些配置的两个会话如何创建多个任务。</p>
+<p>图1</p>
+<p>从URL会话创建任务</p>
+<p>每个会话都与一个委托相关联，以接收定期更新（或错误）。默认委托调用您提供的完成处理程序块; 如果您选择提供自己的自定义委托，则不会调用此块。</p>
+<p>您可以将会话配置为在后台运行，以便在应用程序暂停时，系统可以代表它下载数据并唤醒应用程序以提供结果。</p>
+<h2 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>配置和创建会话，然后使用它们创建与URL交互的任务。</p>
+<p>将网站数据提取到内存中</p>
+<p>通过从URL会话创建数据任务将数据直接接收到内存中。</p>
+<p>将数据上传到网站</p>
+<p>将数据从您的应用发布到服务器。</p>
+<p>在后台下载文件</p>
+<p>创建在应用处于非活动状态时下载文件的任务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLSession</span><br></pre></td></tr></table></figure>
+<p>协调一组相关网络数据传输任务的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLSessionConfiguration</span><br></pre></td></tr></table></figure>
+<p>用于定义URL会话的行为和策略的配置对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLSessionTask</span><br></pre></td></tr></table></figure>
+<p>在URL会话中执行的任务，如下载特定资源。</p>
+<h3 id="请求和回复"><a href="#请求和回复" class="headerlink" title="请求和回复"></a>请求和回复</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct URLRequest</span><br></pre></td></tr></table></figure>
+<p>一个独立于协议或URL方案的URL加载请求。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLResponse</span><br></pre></td></tr></table></figure>
+<p>与URL加载请求的响应关联的元数据，与协议和URL方案无关。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class HTTPURLResponse</span><br></pre></td></tr></table></figure>
+<p>与HTTP协议URL加载请求的响应关联的元数据。</p>
+<h3 id="缓存行为"><a href="#缓存行为" class="headerlink" title="缓存行为"></a>缓存行为</h3><p>访问缓存数据</p>
+<p>控制URL请求如何使用以前缓存的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class CachedURLResponse</span><br></pre></td></tr></table></figure>
+<p>对URL请求的缓存响应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLCache</span><br></pre></td></tr></table></figure>
+<p>将URL请求映射到缓存的响应对象的对象。</p>
+<h3 id="身份验证和凭据"><a href="#身份验证和凭据" class="headerlink" title="身份验证和凭据"></a>身份验证和凭据</h3><p>处理身份验证挑战</p>
+<p>当服务器要求对URL请求进行身份验证时，适当地做出响应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLAuthenticationChallenge</span><br></pre></td></tr></table></figure>
+<p>来自需要客户端身份验证的服务器的挑战。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLCredential</span><br></pre></td></tr></table></figure>
+<p><code>A</code>n身份验证凭据，包括特定于凭证类型的信息和要使用的持久性存储的类型（如果有）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLCredentialStorage</span><br></pre></td></tr></table></figure>
+<p>共享凭证缓存的管理员。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class URLProtectionSpace</span><br></pre></td></tr></table></figure>
+<p>服务器或服务器上的区域，通常称为域，需要身份验证。</p>
+<h3 id="饼干"><a href="#饼干" class="headerlink" title="饼干"></a>饼干</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class HTTPCookie</span><br></pre></td></tr></table></figure>
+<p>HTTP cookie的表示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class HTTPCookieStorage</span><br></pre></td></tr></table></figure>
+<p>管理cookie存储的容器。</p>
+<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct URLError</span><br></pre></td></tr></table></figure>
+<p>URL加载API返回的错误代码。</p>
+<p>URL加载系统错误信息键</p>
+<p>从URL加载API生成的错误对象的用户信息字典中识别这些键。</p>
+<h3 id="遗产"><a href="#遗产" class="headerlink" title="遗产"></a>遗产</h3><p>旧版URL加载系统</p>
+<p>将代码迁移远离使用这些旧对象。</p>
+<h2 id="也可以看看"><a href="#也可以看看" class="headerlink" title="也可以看看"></a>也可以看看</h2><h3 id="联网"><a href="#联网" class="headerlink" title="联网"></a>联网</h3><p>你好</p>
+<p>通过广告服务在本地网络上轻松发现，或发现其他人宣传的服务。</p>
 
           
         
@@ -1381,6 +1393,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Swift源码分析/Alamofire-目录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYouCheng2014">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/14/Swift源码分析/Alamofire-目录/" itemprop="url">Alamofire-目录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T15:00:33+08:00">
+                2018-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/swift源码学习/" itemprop="url" rel="index">
+                    <span itemprop="name">swift源码学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>统计Alamofire代码函数</p>
+<p>find Source -name “*.swift” | xargs cat |wc -l</p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><ul>
+<li>Alamofire.swift（支持的基本接口）</li>
+<li>Core<ul>
+<li>AFError.swift （对错误的封装，包含了Alamofire中所有可能出现的错误，使用enum实现，很有意思）</li>
+<li>Notifications.swift（swift中通知的用法，这个跟oc的有区别）</li>
+<li>ParameterEncoding.swift（参数编码，有些情况需要把参数编码到URL中，包含了转义相关的知识）</li>
+<li>Request.swift（最核心的请求类）</li>
+<li>Response.swift（服务器返回的数据的封装）</li>
+<li>Result.swift（对请求结果的封装）</li>
+<li>SessionDelegate.swift（会话代理）</li>
+<li>SessionManager.swift（会话管理，核心内容）</li>
+<li>TaskDelegate.swift（任务代理）</li>
+</ul>
+</li>
+<li>Extensions<ul>
+<li>DispatchQueue+Alamofire.swift</li>
+</ul>
+</li>
+<li>Features<ul>
+<li>MultipartFormData.swift（多表单数据处理）</li>
+<li>NetworkReachabilityManager.swift（网络状态管理）</li>
+<li>ResponseSerialization.swift（响应序列化管理）</li>
+<li>ServerTrustPolicy.swift（安全策略管理）</li>
+<li>Timeline.swift（新增的内容，与请求相关的一些时间属性）</li>
+<li>Validation.swift（对服务器响应的验证）</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="noopener">Alamofire</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/13/leetCode/leetCode-0234_回文链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2159,163 +2343,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/leetCode/leetCode-0206_反转链表/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LiYouCheng2014">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="成长路上">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/09/leetCode/leetCode-0206_反转链表/" itemprop="url">leetCode-0206_反转链表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-09T21:40:15+08:00">
-                2018-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><h6 id="英文题目"><a href="#英文题目" class="headerlink" title="英文题目"></a>英文题目</h6><ul>
-<li><p>Reverse a singly linked list.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</span><br><span class="line">Output: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h6 id="中文题目"><a href="#中文题目" class="headerlink" title="中文题目"></a>中文题目</h6><ul>
-<li><p>反转一个单链表。</p>
-<p><strong>示例:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</span><br><span class="line">输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/09/leetCode/leetCode-0206_反转链表/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2372,7 +2399,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
