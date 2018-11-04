@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C,排序,Swift,交换排序," />
+  <meta name="keywords" content="C,排序,Swift,选择排序," />
 
 
 
@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="介绍分析基本思想: 通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。 算法描述:  从数列中挑出一个元素，称该元素为“基准” 扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面 通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子">
-<meta name="keywords" content="C,排序,Swift,交换排序">
+<meta name="description" content="介绍分析基本思想:  将无需的数据构成堆（即用无序数据生成满足堆定义的完全二叉树） 利用堆排序（即将上一步生成的堆输出，得到排序后的有序数据）  算法描述: 构成堆  将无序数据放入完全二叉树的各节点  由二叉树的下层向上层逐层进行父子节点的数据比较，使用一种称为“筛”的运算进行节点数据的调整，直到使节点最后满足堆的条件为止（针对非叶节点） 2.1 确定Ai的两个子树的最大值，放在Aj中 2.2">
+<meta name="keywords" content="C,排序,Swift,选择排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法之快速排序">
-<meta property="og:url" content="http://yoursite.com/2018/09/02/排序/排序算法之快速排序/index.html">
+<meta property="og:title" content="排序算法之堆排序">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="介绍分析基本思想: 通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。 算法描述:  从数列中挑出一个元素，称该元素为“基准” 扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面 通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子">
+<meta property="og:description" content="介绍分析基本思想:  将无需的数据构成堆（即用无序数据生成满足堆定义的完全二叉树） 利用堆排序（即将上一步生成的堆输出，得到排序后的有序数据）  算法描述: 构成堆  将无序数据放入完全二叉树的各节点  由二叉树的下层向上层逐层进行父子节点的数据比较，使用一种称为“筛”的运算进行节点数据的调整，直到使节点最后满足堆的条件为止（针对非叶节点） 2.1 确定Ai的两个子树的最大值，放在Aj中 2.2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-03T13:06:34.654Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/堆排序9结点.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/堆排序10结点.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/堆排序3结点.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/堆排序19结点.png">
+<meta property="og:updated_time" content="2018-09-03T13:06:36.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法之快速排序">
-<meta name="twitter:description" content="介绍分析基本思想: 通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。 算法描述:  从数列中挑出一个元素，称该元素为“基准” 扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面 通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子">
+<meta name="twitter:title" content="排序算法之堆排序">
+<meta name="twitter:description" content="介绍分析基本思想:  将无需的数据构成堆（即用无序数据生成满足堆定义的完全二叉树） 利用堆排序（即将上一步生成的堆输出，得到排序后的有序数据）  算法描述: 构成堆  将无序数据放入完全二叉树的各节点  由二叉树的下层向上层逐层进行父子节点的数据比较，使用一种称为“筛”的运算进行节点数据的调整，直到使节点最后满足堆的条件为止（针对非叶节点） 2.1 确定Ai的两个子树的最大值，放在Aj中 2.2">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/堆排序9结点.png">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/02/排序/排序算法之快速排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/"/>
 
 
 
 
 
-  <title>排序算法之快速排序 | 成长路上</title>
+  <title>排序算法之堆排序 | 成长路上</title>
   
 
 
@@ -297,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/排序/排序算法之快速排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/算法/排序/排序算法之堆排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiYouCheng2014">
@@ -314,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法之快速排序</h1>
+          <h1 class="post-title" itemprop="name headline">排序算法之堆排序</h1>
         
 
         <div class="post-meta">
@@ -326,7 +331,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T14:07:43+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T21:45:22+08:00">
                 2018-09-02
               </time>
             
@@ -392,33 +397,48 @@
 
       
         <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>基本思想:</p>
-<pre><code>通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。
-</code></pre><p>算法描述:</p>
 <ol>
-<li>从数列中挑出一个元素，称该元素为“基准”</li>
-<li>扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面</li>
-<li>通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子数列和大于基准值元素的子数列排序</li>
+<li>将无需的数据构成堆（即用无序数据生成满足堆定义的完全二叉树）</li>
+<li>利用堆排序（即将上一步生成的堆输出，得到排序后的有序数据）</li>
+</ol>
+<p>算法描述:</p>
+<p>构成堆</p>
+<ol>
+<li><p>将无序数据放入完全二叉树的各节点</p>
+</li>
+<li><p>由二叉树的下层向上层逐层进行父子节点的数据比较，使用一种称为“筛”的运算进行节点数据的调整，直到使节点最后满足堆的条件为止（针对非叶节点）</p>
+<p>2.1 确定Ai的两个子树的最大值，放在Aj中</p>
+<p>2.2 将Ai的数据与Aj的数据进行比较，如果Ai&gt;=Aj,表示Aj为根的子树已构成堆，筛运算完成</p>
+<p>2.3 若Ai&lt;Aj，则将Ai与Aj互换位置，互换位置后可能会破坏以Ai(此时Ai的值为原来的Aj)为根的堆，接着再以Aj为根重复前面的步骤，直到父节点数据大于子节点，或子节点为空时为止</p>
+</li>
+</ol>
+<p>堆排序</p>
+<ol>
+<li>取堆的根节点（最大值），将其放到数组的最后</li>
+<li>重新执行前面介绍的构成堆的方法，最后一个节点排除在外</li>
+<li>重复上面过程，直到只剩下一个节点，即可得到有序的数据</li>
 </ol>
 <a id="more"></a>
-<h6 id="C实现"><a href="#C实现" class="headerlink" title="C实现"></a>C实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> 分治法拆分数组</span><br><span class="line"></span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param left 左边</span><br><span class="line"> @param right 右边</span><br><span class="line"> @return 拆分点</span><br><span class="line"> */</span><br><span class="line">int patition(int a[], int left, int right)</span><br><span class="line">&#123;</span><br><span class="line">    //基准元素</span><br><span class="line">    int base = a[left];</span><br><span class="line">    </span><br><span class="line">    while (left &lt; right) &#123;</span><br><span class="line">        while (left &lt; right &amp;&amp; a[right] &gt; base) &#123;</span><br><span class="line">            --right;</span><br><span class="line">        &#125;</span><br><span class="line">        a[left] = a[right];</span><br><span class="line">        </span><br><span class="line">        while (left &lt; right &amp;&amp; a[left] &lt; base) &#123;</span><br><span class="line">            ++left;</span><br><span class="line">        &#125;</span><br><span class="line">        a[right] = a[left];</span><br><span class="line">    &#125;</span><br><span class="line">    a[left] = base;</span><br><span class="line">    </span><br><span class="line">    return left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 快速排序</span><br><span class="line"></span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param left 左边</span><br><span class="line"> @param right 右边</span><br><span class="line"> */</span><br><span class="line">void quicklySort(int a[], int left, int right)</span><br><span class="line">&#123;</span><br><span class="line">    if (left &lt; right) &#123;</span><br><span class="line">        int i = patition(a, left, right);</span><br><span class="line">        quicklySort(a, left, i - 1);</span><br><span class="line">        quicklySort(a, i + 1, right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 测试快速排序</span><br><span class="line"> */</span><br><span class="line">void testQuicklySort()</span><br><span class="line">&#123;</span><br><span class="line">    int arr[8] = &#123; 19, 3, 10, 9, 16, 11, 28, 26 &#125;;</span><br><span class="line">    int len = sizeof(arr)/ sizeof(arr[0]);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;快速排序前:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    quicklySort(arr, 0, len - 1);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;\n快速排序后:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="Swift实现"><a href="#Swift实现" class="headerlink" title="Swift实现"></a>Swift实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">class QuicklySort &#123;</span><br><span class="line"></span><br><span class="line">    /// 分治法拆分数组</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - left: 左边</span><br><span class="line">    ///   - right: 右边</span><br><span class="line">    /// - Returns: 拆分点</span><br><span class="line">    func patition(a: inout [Int], left: Int, right: Int) -&gt; Int &#123;</span><br><span class="line">        let base = a[left]</span><br><span class="line">        var i = left</span><br><span class="line">        var j = right</span><br><span class="line">        while i &lt; j &#123;</span><br><span class="line">            while i &lt; j &amp;&amp; a[j] &gt; base &#123;</span><br><span class="line">                j -= 1</span><br><span class="line">            &#125;</span><br><span class="line">            a[i] = a[j]</span><br><span class="line">            </span><br><span class="line">            while i &lt; j &amp;&amp; a[i] &lt; base &#123;</span><br><span class="line">                i += 1</span><br><span class="line">            &#125;</span><br><span class="line">            a[j] = a[i]</span><br><span class="line">        &#125;</span><br><span class="line">        a[i] = base;</span><br><span class="line">        </span><br><span class="line">        return i</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /// 快速排序</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - left: 左边</span><br><span class="line">    ///   - right: 右边</span><br><span class="line">    func quicklySort(a: inout [Int], left: Int, right: Int) &#123;</span><br><span class="line">        if left &lt; right &#123;</span><br><span class="line">            let i = patition(a: &amp;a, left: left, right: right)</span><br><span class="line">            quicklySort(a: &amp;a, left: left, right: i - 1)</span><br><span class="line">            quicklySort(a: &amp;a, left: i + 1, right: right)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    /// 测试</span><br><span class="line">    func testQuicklySort() &#123;</span><br><span class="line">        var arr = [ 19, 3, 10, 9, 16, 11, 28, 26 ]</span><br><span class="line">        print(&quot;归并排序前:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">        quicklySort(a: &amp;arr, left: 0, right: arr.count - 1)</span><br><span class="line">        print(&quot;归并排序后:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/09/02/算法/排序/排序算法之堆排序/堆排序9结点.png" alt="堆排序9结点"></p>
+<p><img src="/2018/09/02/算法/排序/排序算法之堆排序/堆排序10结点.png" alt="堆排序10结点"></p>
+<p><img src="/2018/09/02/算法/排序/排序算法之堆排序/堆排序3结点.png" alt="堆排序3结点"></p>
+<p><img src="/2018/09/02/算法/排序/排序算法之堆排序/堆排序19结点.png" alt="堆排序19结点"></p>
+<h6 id="C实现"><a href="#C实现" class="headerlink" title="C实现"></a>C实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> 创建大堆</span><br><span class="line"></span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param s 当前结点</span><br><span class="line"> @param n 堆的大小</span><br><span class="line"> */</span><br><span class="line">void HeapAdjus(int a[], int s, int n)</span><br><span class="line">&#123;</span><br><span class="line">    while (2 * s + 1 &lt; n) &#123;</span><br><span class="line">        int j = 2 * s + 1;</span><br><span class="line">        if ((j + 1) &lt; n) &#123;</span><br><span class="line">            //左子树小于右子树，则需要比较右子树</span><br><span class="line">            if (a[j] &lt; a[j + 1]) &#123;</span><br><span class="line">                j++;//序号增加1，指向右子树</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        //比较s与j为序号的数据</span><br><span class="line">        if (a[s] &lt; a[j]) &#123;</span><br><span class="line">            int t = a[s];</span><br><span class="line">            a[s] = a[j];</span><br><span class="line">            a[j] = t;</span><br><span class="line">            //堆被破坏，需要重新调整</span><br><span class="line">            s = j;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            //不再需要调整</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 堆排序</span><br><span class="line"> </span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param len 数组长度</span><br><span class="line"> */</span><br><span class="line">void heapSort(int a[], int len)</span><br><span class="line">&#123;</span><br><span class="line">    //将a[0]至a[n-1]构成堆</span><br><span class="line">    for (int i = len / 2 - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">        HeapAdjus(a, i, len);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //取根节点与末节点交换</span><br><span class="line">    for (int i = len - 1; i &gt; 0; i--) &#123;</span><br><span class="line">        int t = a[0];</span><br><span class="line">        a[0] = a[i];//与第i个记录交换</span><br><span class="line">        a[i] = t;</span><br><span class="line">        //将a[0]至a[i]重新调整为堆</span><br><span class="line">        HeapAdjus(a, 0, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 测试堆排序</span><br><span class="line"> */</span><br><span class="line">void testHeapSort()</span><br><span class="line">&#123;</span><br><span class="line">    int arr[8] = &#123; 19, 3, 10, 9, 16, 11, 28, 26 &#125;;</span><br><span class="line">    int len = sizeof(arr)/ sizeof(arr[0]);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;堆排序前:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    heapSort(arr, len);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;\n堆排序后:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="Swift实现"><a href="#Swift实现" class="headerlink" title="Swift实现"></a>Swift实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">class HeapSort &#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    /// 创建大堆</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - i: 当前结点</span><br><span class="line">    ///   - n: 堆的大小</span><br><span class="line">    func HeapAdjust(a: inout [Int], i: Int, n: Int) &#123;</span><br><span class="line">        var s = i</span><br><span class="line">        while 2 * s + 1 &lt; n &#123;</span><br><span class="line">            var j = 2 * s + 1;</span><br><span class="line">            if ((j + 1) &lt; n) &#123;</span><br><span class="line">                //左子树小于右子树，则需要比较右子树</span><br><span class="line">                if a[j] &lt; a[j + 1] &#123;</span><br><span class="line">                    j += 1;//序号增加1，指向右子树</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            //比较s与j为序号的数据</span><br><span class="line">            if a[s] &lt; a[j] &#123;</span><br><span class="line">                (a[s], a[j]) = (a[j], a[s])</span><br><span class="line"></span><br><span class="line">                //堆被破坏，需要重新调整</span><br><span class="line">                s = j;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                //不再需要调整</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /// 堆排序</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - len: 数组长度</span><br><span class="line">    func heapSort(a: inout [Int], len: Int) &#123;</span><br><span class="line">        //将a[0]至a[n-1]构成堆</span><br><span class="line">        for i in (0...len / 2 - 1).reversed() &#123;</span><br><span class="line">            HeapAdjust(a: &amp;a, i: i, n: len)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        //取根节点与末节点交换</span><br><span class="line">        for i in (1...len - 1).reversed() &#123;</span><br><span class="line">            (a[0], a[i]) = (a[i], a[0])</span><br><span class="line">            //将a[0]至a[i]重新调整为堆</span><br><span class="line">            HeapAdjust(a: &amp;a, i: 0, n: i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /// 测试</span><br><span class="line">    func testHeapSort() &#123;</span><br><span class="line">        var arr = [ 19, 3, 10, 9, 16, 11, 28, 26 ]</span><br><span class="line">        print(&quot;堆排序前:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">        heapSort(a: &amp;arr, len: arr.count)</span><br><span class="line">        print(&quot;堆排序后:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>时间复杂度:</p>
 <ul>
-<li>最差O(n^2)</li>
-<li><p>最优O(nlogn)</p>
-</li>
-<li><p>平均O(nlogn)</p>
-</li>
+<li>最差O(nlogn)</li>
+<li>最优O(nlogn)</li>
+<li>平均O(nlogn)</li>
 </ul>
 <p>空间复杂度:</p>
 <ul>
-<li>O(nlogn)</li>
+<li>O(1)</li>
 </ul>
 <p>稳定性:</p>
 <ul>
 <li>不稳定</li>
 </ul>
-<p>当数组元素基本有序时，快速排序将没有任何优势，基本退化为冒泡排序，可在选取基准元素时选取中间值进行优化。</p>
 
       
     </div>
@@ -442,7 +462,7 @@
           
             <a href="/tags/Swift/" rel="tag"># Swift</a>
           
-            <a href="/tags/交换排序/" rel="tag"># 交换排序</a>
+            <a href="/tags/选择排序/" rel="tag"># 选择排序</a>
           
         </div>
       
@@ -455,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/02/排序/排序算法之冒泡排序/" rel="next" title="排序算法之冒泡排序">
-                <i class="fa fa-chevron-left"></i> 排序算法之冒泡排序
+              <a href="/2018/08/30/杂事/Hexo搭建个人博客/" rel="next" title="Hexo搭建个人博客">
+                <i class="fa fa-chevron-left"></i> Hexo搭建个人博客
               </a>
             
           </div>
@@ -465,8 +485,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/02/排序/排序算法之选择排序/" rel="prev" title="排序算法之选择排序">
-                排序算法之选择排序 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/06/Leetcode-1/" rel="prev" title="Leetcode-1">
+                Leetcode-1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -563,7 +583,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -574,7 +594,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -585,7 +605,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

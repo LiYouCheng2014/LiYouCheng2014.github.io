@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C,排序,Swift,选择排序," />
+  <meta name="keywords" content="C,排序,Swift,插入排序," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="介绍分析基本思想: 对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
-<meta name="keywords" content="C,排序,Swift,选择排序">
+<meta name="description" content="介绍分析基本思想: 1通过构建有序序列，对未排序数据，在已排序序列中从后向前扫描，找到对应位置并插入该数据，使数据形成有序排列 算法描述:  第1个元素，作为有序序列 从数组中获取下一个元素，在已排序的元素序列中从后向前扫描，并判断给元素与已排序元素的大小 若排序序列的元素大于新元素，则将排序序列该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置 将新元素插入到该位置 重">
+<meta name="keywords" content="C,排序,Swift,插入排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法之选择排序">
-<meta property="og:url" content="http://yoursite.com/2018/09/02/排序/排序算法之选择排序/index.html">
+<meta property="og:title" content="排序-插入排序">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/算法/排序/算法-插入排序/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="介绍分析基本思想: 对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
+<meta property="og:description" content="介绍分析基本思想: 1通过构建有序序列，对未排序数据，在已排序序列中从后向前扫描，找到对应位置并插入该数据，使数据形成有序排列 算法描述:  第1个元素，作为有序序列 从数组中获取下一个元素，在已排序的元素序列中从后向前扫描，并判断给元素与已排序元素的大小 若排序序列的元素大于新元素，则将排序序列该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置 将新元素插入到该位置 重">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-03T13:06:43.625Z">
+<meta property="og:updated_time" content="2018-10-24T14:35:06.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法之选择排序">
-<meta name="twitter:description" content="介绍分析基本思想: 对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程 算法描述:  从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换 从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换 重复下去，直到只剩下一个数据为止">
+<meta name="twitter:title" content="排序-插入排序">
+<meta name="twitter:description" content="介绍分析基本思想: 1通过构建有序序列，对未排序数据，在已排序序列中从后向前扫描，找到对应位置并插入该数据，使数据形成有序排列 算法描述:  第1个元素，作为有序序列 从数组中获取下一个元素，在已排序的元素序列中从后向前扫描，并判断给元素与已排序元素的大小 若排序序列的元素大于新元素，则将排序序列该元素移到下一位置 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置 将新元素插入到该位置 重">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/02/排序/排序算法之选择排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/算法/排序/算法-插入排序/"/>
 
 
 
 
 
-  <title>排序算法之选择排序 | 成长路上</title>
+  <title>排序-插入排序 | 成长路上</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/排序/排序算法之选择排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/算法/排序/算法-插入排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiYouCheng2014">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法之选择排序</h1>
+          <h1 class="post-title" itemprop="name headline">排序-插入排序</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T18:03:37+08:00">
-                2018-09-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T22:30:00+08:00">
+                2018-10-24
               </time>
             
 
@@ -392,20 +392,23 @@
 
       
         <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>基本思想:</p>
-<pre><code>对n个记录进行扫描，选择最小的记录，将其输出，接着在剩下的n-1个记录中扫描，选择最小的记录将其输出，不断重复这个过程，直到只剩下一个记录为止，即可完成数据从小到大的排序过程
-</code></pre><p>算法描述:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过构建有序序列，对未排序数据，在已排序序列中从后向前扫描，找到对应位置并插入该数据，使数据形成有序排列</span><br></pre></td></tr></table></figure>
+<p>算法描述:</p>
 <ol>
-<li>从数据中选择最小（或最大）的一个数据，然后将该数与第一个数交换</li>
-<li>从剩下数据中选择最小（或最大）的一个数，然后将和第二个数进行交换</li>
-<li>重复下去，直到只剩下一个数据为止</li>
+<li>第1个元素，作为有序序列</li>
+<li>从数组中获取下一个元素，在已排序的元素序列中从后向前扫描，并判断给元素与已排序元素的大小</li>
+<li>若排序序列的元素大于新元素，则将排序序列该元素移到下一位置</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
+<li>将新元素插入到该位置</li>
+<li>重复步骤2-5，直到处理完成</li>
 </ol>
 <a id="more"></a>
-<h6 id="C实现"><a href="#C实现" class="headerlink" title="C实现"></a>C实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> 选择排序</span><br><span class="line"></span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param len 数组长度</span><br><span class="line"> */</span><br><span class="line">void selectSort(int a[], int len)</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">        int minIndex = i;</span><br><span class="line">        for (int j = i + 1; j &lt; len; j++) &#123;</span><br><span class="line">            if (a[j] &lt; a[minIndex]) &#123;</span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        int temp = a[i];</span><br><span class="line">        a[i] = a[minIndex];</span><br><span class="line">        a[minIndex] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 测试选择排序</span><br><span class="line"> */</span><br><span class="line">void testSelectSort()</span><br><span class="line">&#123;</span><br><span class="line">    int arr[8] = &#123; 19, 3, 10, 9, 16, 11, 28, 26 &#125;;</span><br><span class="line">    int len = sizeof(arr)/ sizeof(arr[0]);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;选择排序前:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    selectSort(arr, len);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;\n选择排序后:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="Swift实现"><a href="#Swift实现" class="headerlink" title="Swift实现"></a>Swift实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class SelectSort &#123;</span><br><span class="line">    </span><br><span class="line">    /// 选择排序</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - len: 数组长度</span><br><span class="line">    func selectSort(a: inout [Int], len: Int) &#123;</span><br><span class="line">        for i in 0..&lt;len-1 &#123;</span><br><span class="line">            var minIndex : Int = i</span><br><span class="line">            for j in i + 1..&lt;len &#123;</span><br><span class="line">                if a[j] &lt; a[minIndex] &#123;</span><br><span class="line">                    minIndex = j</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            (a[i],a[minIndex]) = (a[minIndex],a[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /// 测试</span><br><span class="line">    func testSelectSort() &#123;</span><br><span class="line">        var arr = [ 19, 3, 10, 9, 16, 11, 28, 26 ]</span><br><span class="line">        print(&quot;选择排序前:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">        selectSort(a: &amp;arr, len: arr.count)</span><br><span class="line">        print(&quot;选择排序后:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="C实现"><a href="#C实现" class="headerlink" title="C实现"></a>C实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> 插入排序</span><br><span class="line"> </span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param len 数组长度</span><br><span class="line"> */</span><br><span class="line">void insertSort(int a[], int len)</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 1; i &lt; len; i++) &#123;</span><br><span class="line">        int t = a[i];</span><br><span class="line">        int j = 0;</span><br><span class="line">        for (j = i - 1; j &gt;= 0; j--) &#123;</span><br><span class="line">            if (t &lt; a[j]) &#123;</span><br><span class="line">                a[j + 1] = a[j];</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        a[j + 1] = t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 测试插入排序</span><br><span class="line"> */</span><br><span class="line">void testInsertSort()</span><br><span class="line">&#123;</span><br><span class="line">    int arr[8] = &#123; 19, 3, 10, 9, 16, 11, 28, 26 &#125;;</span><br><span class="line">    int len = sizeof(arr)/ sizeof(arr[0]);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;插入排序前:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    insertSort(arr, len);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;\n插入排序后:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="Swift实现"><a href="#Swift实现" class="headerlink" title="Swift实现"></a>Swift实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class InsertSort &#123;</span><br><span class="line">    </span><br><span class="line">    /// 插入排序</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - len: 数组长度</span><br><span class="line">    func insertSort(a: inout [Int], len: Int) &#123;</span><br><span class="line">        for i in 1..&lt;len &#123;</span><br><span class="line">            let temp = a[i];</span><br><span class="line">            var index = i - 1;</span><br><span class="line">            for j in (0...i-1).reversed() &#123;</span><br><span class="line">                if temp &lt; a[j] &#123;</span><br><span class="line">                    a[j + 1] = a[j]</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                index -= 1</span><br><span class="line">            &#125;</span><br><span class="line">            a[index + 1] = temp</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /// 测试</span><br><span class="line">    func testInserSort() &#123;</span><br><span class="line">        var arr = [ 19, 3, 10, 9, 16, 11, 28, 26 ]</span><br><span class="line">        print(&quot;插入排序前:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">        insertSort(a: &amp;arr, len: arr.count)</span><br><span class="line">        print(&quot;插入排序后:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>时间复杂度:</p>
 <ul>
 <li>最差O(n^2)</li>
-<li>最优O(n^2)</li>
+<li>最优O(n)</li>
 <li>平均O(n^2)</li>
 </ul>
 <p>空间复杂度:</p>
@@ -414,7 +417,7 @@
 </ul>
 <p>稳定性:</p>
 <ul>
-<li>不稳定</li>
+<li>稳定</li>
 </ul>
 
       
@@ -439,7 +442,7 @@
           
             <a href="/tags/Swift/" rel="tag"># Swift</a>
           
-            <a href="/tags/选择排序/" rel="tag"># 选择排序</a>
+            <a href="/tags/插入排序/" rel="tag"># 插入排序</a>
           
         </div>
       
@@ -452,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/02/排序/排序算法之快速排序/" rel="next" title="排序算法之快速排序">
-                <i class="fa fa-chevron-left"></i> 排序算法之快速排序
+              <a href="/2018/10/24/算法/排序/算法-冒泡排序/" rel="next" title="算法-冒泡排序">
+                <i class="fa fa-chevron-left"></i> 算法-冒泡排序
               </a>
             
           </div>
@@ -462,8 +465,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/02/排序/排序算法之堆排序/" rel="prev" title="排序算法之堆排序">
-                排序算法之堆排序 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/24/算法/排序/算法-选择排序/" rel="prev" title="算法-选择排序">
+                算法-选择排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -560,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -571,7 +574,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -582,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

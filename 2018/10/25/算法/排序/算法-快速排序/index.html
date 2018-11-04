@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,算法,Swift,Objective-C,项目管理" />
+  <meta name="keywords" content="C,排序,Swift,交换排序," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="iOS\算法\项目管理">
-<meta name="keywords" content="iOS,算法,Swift,Objective-C,项目管理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="成长路上">
-<meta property="og:url" content="http://yoursite.com/archives/2018/09/page/2/index.html">
+<meta name="description" content="介绍分析基本思想: 通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。 算法描述:  从数列中挑出一个元素，称该元素为“基准” 扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面 通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子">
+<meta name="keywords" content="C,排序,Swift,交换排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法-快速排序">
+<meta property="og:url" content="http://yoursite.com/2018/10/25/算法/排序/算法-快速排序/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="iOS\算法\项目管理">
+<meta property="og:description" content="介绍分析基本思想: 通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。 算法描述:  从数列中挑出一个元素，称该元素为“基准” 扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面 通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-25T14:30:41.412Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="成长路上">
-<meta name="twitter:description" content="iOS\算法\项目管理">
+<meta name="twitter:title" content="算法-快速排序">
+<meta name="twitter:description" content="介绍分析基本思想: 通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。 算法描述:  从数列中挑出一个元素，称该元素为“基准” 扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面 通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/09/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/25/算法/排序/算法-快速排序/"/>
 
 
 
 
 
-  <title>Archive | 成长路上</title>
+  <title>算法-快速排序 | 成长路上</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,225 +283,211 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 37 posts in total. Keep on posting.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/算法/排序/算法-快速排序/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYouCheng2014">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长路上">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">算法-快速排序</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T22:30:43+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序/排序算法之堆排序/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">排序算法之堆排序</span>
+                <span class="post-meta-item-text">In</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T21:45:22+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序/排序算法之选择排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之选择排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T18:03:37+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序/排序算法之快速排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之快速排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T14:07:43+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><h6 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h6><p>基本思想:</p>
+<pre><code>通过一遍排序将需要排序的数据分成两部分，使其中一部分数据比另一部数据小，然后再分别对这两部分继续进行这种排序，按此规则继续，直到每个部分为空或者只含一个数时，整个排序结束。
+</code></pre><p>算法描述:</p>
+<ol>
+<li>从数列中挑出一个元素，称该元素为“基准”</li>
+<li>扫描一遍数列，将所有比“基准”小的元素排在基准前面，所有比“基准“大的元素排在基准后面</li>
+<li>通过递归，将各子序列划分为更小的序列，直到把小于基准值元素的子数列和大于基准值元素的子数列排序</li>
+</ol>
+<a id="more"></a>
+<h6 id="C实现"><a href="#C实现" class="headerlink" title="C实现"></a>C实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> 分治法拆分数组</span><br><span class="line"></span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param left 左边</span><br><span class="line"> @param right 右边</span><br><span class="line"> @return 拆分点</span><br><span class="line"> */</span><br><span class="line">int patition(int a[], int left, int right)</span><br><span class="line">&#123;</span><br><span class="line">    //基准元素</span><br><span class="line">    int base = a[left];</span><br><span class="line">    </span><br><span class="line">    while (left &lt; right) &#123;</span><br><span class="line">        while (left &lt; right &amp;&amp; a[right] &gt; base) &#123;</span><br><span class="line">            --right;</span><br><span class="line">        &#125;</span><br><span class="line">        a[left] = a[right];</span><br><span class="line">        </span><br><span class="line">        while (left &lt; right &amp;&amp; a[left] &lt; base) &#123;</span><br><span class="line">            ++left;</span><br><span class="line">        &#125;</span><br><span class="line">        a[right] = a[left];</span><br><span class="line">    &#125;</span><br><span class="line">    a[left] = base;</span><br><span class="line">    </span><br><span class="line">    return left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 快速排序</span><br><span class="line"></span><br><span class="line"> @param a 原数组</span><br><span class="line"> @param left 左边</span><br><span class="line"> @param right 右边</span><br><span class="line"> */</span><br><span class="line">void quicklySort(int a[], int left, int right)</span><br><span class="line">&#123;</span><br><span class="line">    if (left &lt; right) &#123;</span><br><span class="line">        int i = patition(a, left, right);</span><br><span class="line">        quicklySort(a, left, i - 1);</span><br><span class="line">        quicklySort(a, i + 1, right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> 测试快速排序</span><br><span class="line"> */</span><br><span class="line">void testQuicklySort()</span><br><span class="line">&#123;</span><br><span class="line">    int arr[8] = &#123; 19, 3, 10, 9, 16, 11, 28, 26 &#125;;</span><br><span class="line">    int len = sizeof(arr)/ sizeof(arr[0]);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;快速排序前:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    quicklySort(arr, 0, len - 1);</span><br><span class="line">    </span><br><span class="line">    printf(&quot;\n快速排序后:&quot;);</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="Swift实现"><a href="#Swift实现" class="headerlink" title="Swift实现"></a>Swift实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">class QuicklySort &#123;</span><br><span class="line"></span><br><span class="line">    /// 分治法拆分数组</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - left: 左边</span><br><span class="line">    ///   - right: 右边</span><br><span class="line">    /// - Returns: 拆分点</span><br><span class="line">    func patition(a: inout [Int], left: Int, right: Int) -&gt; Int &#123;</span><br><span class="line">        let base = a[left]</span><br><span class="line">        var i = left</span><br><span class="line">        var j = right</span><br><span class="line">        while i &lt; j &#123;</span><br><span class="line">            while i &lt; j &amp;&amp; a[j] &gt; base &#123;</span><br><span class="line">                j -= 1</span><br><span class="line">            &#125;</span><br><span class="line">            a[i] = a[j]</span><br><span class="line">            </span><br><span class="line">            while i &lt; j &amp;&amp; a[i] &lt; base &#123;</span><br><span class="line">                i += 1</span><br><span class="line">            &#125;</span><br><span class="line">            a[j] = a[i]</span><br><span class="line">        &#125;</span><br><span class="line">        a[i] = base;</span><br><span class="line">        </span><br><span class="line">        return i</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /// 快速排序</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - a: 原数组</span><br><span class="line">    ///   - left: 左边</span><br><span class="line">    ///   - right: 右边</span><br><span class="line">    func quicklySort(a: inout [Int], left: Int, right: Int) &#123;</span><br><span class="line">        if left &lt; right &#123;</span><br><span class="line">            let i = patition(a: &amp;a, left: left, right: right)</span><br><span class="line">            quicklySort(a: &amp;a, left: left, right: i - 1)</span><br><span class="line">            quicklySort(a: &amp;a, left: i + 1, right: right)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    /// 测试</span><br><span class="line">    func testQuicklySort() &#123;</span><br><span class="line">        var arr = [ 19, 3, 10, 9, 16, 11, 28, 26 ]</span><br><span class="line">        print(&quot;归并排序前:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">        quicklySort(a: &amp;arr, left: 0, right: arr.count - 1)</span><br><span class="line">        print(&quot;归并排序后:\(arr)&quot;, separator: &quot; &quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>时间复杂度:</p>
+<ul>
+<li>最差O(n^2)</li>
+<li><p>最优O(nlogn)</p>
+</li>
+<li><p>平均O(nlogn)</p>
+</li>
+</ul>
+<p>空间复杂度:</p>
+<ul>
+<li>O(nlogn)</li>
+</ul>
+<p>稳定性:</p>
+<ul>
+<li>不稳定</li>
+</ul>
+<p>当数组元素基本有序时，快速排序将没有任何优势，基本退化为冒泡排序，可在选取基准元素时选取中间值进行优化。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/02/排序/排序算法之冒泡排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之冒泡排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-02T13:27:43+08:00"
-              content="2018-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/01/排序/排序算法之归并排序/" itemprop="url">
-              
-                <span itemprop="name">排序算法之归并排序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T10:43:30+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+            <a href="/tags/排序/" rel="tag"># 排序</a>
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+            <a href="/tags/交换排序/" rel="tag"># 交换排序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/25/算法/排序/算法-归并排序/" rel="next" title="算法-归并排序">
+                <i class="fa fa-chevron-left"></i> 算法-归并排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/28/leetCode/leetCode-0069_x的平方根/" rel="prev" title="leetCode-0069_x的平方根">
+                leetCode-0069_x的平方根 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/09/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/09/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -508,6 +495,23 @@
 
 
           
+  <div id="lv-container" data-id="city" data-uid="MTAyMC80MDMyMy8xNjg1MA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+  <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+  </div>
+
 
         </div>
         
@@ -530,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -550,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -561,7 +574,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -572,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -611,6 +624,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#分析"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#C实现"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">C实现</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Swift实现"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Swift实现</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -771,6 +800,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
