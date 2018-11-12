@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="leetCode,递归,迭代,分治," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="四数之和给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，**b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。 注意： 答案中不可以包含重复的四元组。 示例： 12345678给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。满足">
-<meta name="keywords" content="leetcode">
+<meta name="description" content="题目描述英文题目  Implement pow(x, n), which calculates x raised to the power n (xn). Example 1: 12Input: 2.00000, 10Output: 1024.00000 Example 2: 12Input: 2.10000, 3Output: 9.26100 Example 3: 123Input: 2.00">
+<meta name="keywords" content="leetCode,递归,迭代,分治">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-16">
-<meta property="og:url" content="http://yoursite.com/2018/09/09/Leetcode-18/index.html">
+<meta property="og:title" content="leetCode-0050_Pon(x,n)">
+<meta property="og:url" content="http://yoursite.com/2018/11/12/leetCode/leetCode-0050_Pow(x,n)/index.html">
 <meta property="og:site_name" content="成长路上">
-<meta property="og:description" content="四数之和给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，**b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。 注意： 答案中不可以包含重复的四元组。 示例： 12345678给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。满足">
+<meta property="og:description" content="题目描述英文题目  Implement pow(x, n), which calculates x raised to the power n (xn). Example 1: 12Input: 2.00000, 10Output: 1024.00000 Example 2: 12Input: 2.10000, 3Output: 9.26100 Example 3: 123Input: 2.00">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T03:20:02.859Z">
+<meta property="og:updated_time" content="2018-11-12T13:35:00.350Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode-16">
-<meta name="twitter:description" content="四数之和给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，**b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。 注意： 答案中不可以包含重复的四元组。 示例： 12345678给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。满足">
+<meta name="twitter:title" content="leetCode-0050_Pon(x,n)">
+<meta name="twitter:description" content="题目描述英文题目  Implement pow(x, n), which calculates x raised to the power n (xn). Example 1: 12Input: 2.00000, 10Output: 1024.00000 Example 2: 12Input: 2.10000, 3Output: 9.26100 Example 3: 123Input: 2.00">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/09/Leetcode-18/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/12/leetCode/leetCode-0050_Pow(x,n)/"/>
 
 
 
 
 
-  <title>Leetcode-16 | 成长路上</title>
+  <title>leetCode-0050_Pon(x,n) | 成长路上</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/09/Leetcode-18/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/12/leetCode/leetCode-0050_Pow(x,n)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiYouCheng2014">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode-16</h1>
+          <h1 class="post-title" itemprop="name headline">leetCode-0050_Pon(x,n)</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-09T11:10:33+08:00">
-                2018-09-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-12T21:31:25+08:00">
+                2018-11-12
               </time>
             
 
@@ -392,17 +392,55 @@
 
       
         <hr>
-<h4 id="四数之和"><a href="#四数之和" class="headerlink" title="四数之和"></a>四数之和</h4><p>给定一个包含 <em>n</em> 个整数的数组 <code>nums</code> 和一个目标值 <code>target</code>，判断 <code>nums</code> 中是否存在四个元素 <em>a，**b，c</em> 和 <em>d</em> ，使得 <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> 的值与 <code>target</code> 相等？找出所有满足条件且不重复的四元组。</p>
-<p><strong>注意：</strong></p>
-<p>答案中不可以包含重复的四元组。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。</span><br><span class="line"></span><br><span class="line">满足要求的四元组集合为：</span><br><span class="line">[</span><br><span class="line">  [-1,  0, 0, 1],</span><br><span class="line">  [-2, -1, 1, 2],</span><br><span class="line">  [-2,  0, 0, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>英文题目</p>
+<ul>
+<li><p>Implement <a href="http://www.cplusplus.com/reference/valarray/pow/" target="_blank" rel="noopener">pow(<em>x</em>, <em>n</em>)</a>, which calculates <em>x</em> raised to the power <em>n</em> (xn).</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 2.00000, 10</span><br><span class="line">Output: 1024.00000</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 2.10000, 3</span><br><span class="line">Output: 9.26100</span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 2.00000, -2</span><br><span class="line">Output: 0.25000</span><br><span class="line">Explanation: 2-2 = 1/22 = 1/4 = 0.25</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>-100.0 &lt; <em>x</em> &lt; 100.0</li>
+<li><em>n</em> is a 32-bit signed integer, within the range [−231, 231 − 1]</li>
+</ul>
+</li>
+</ul>
+<h6 id="中文题目"><a href="#中文题目" class="headerlink" title="中文题目"></a>中文题目</h6><ul>
+<li><p>实现 <a href="https://www.cplusplus.com/reference/valarray/pow/" target="_blank" rel="noopener">pow(<em>x</em>, <em>n</em>)</a> ，即计算 x 的 n 次幂函数。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 2.00000, 10</span><br><span class="line">输出: 1024.00000</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 2.10000, 3</span><br><span class="line">输出: 9.26100</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 2.00000, -2</span><br><span class="line">输出: 0.25000</span><br><span class="line">解释: 2-2 = 1/22 = 1/4 = 0.25</span><br></pre></td></tr></table></figure>
+<p><strong>说明:</strong></p>
+<ul>
+<li>-100.0 &lt; <em>x</em> &lt; 100.0</li>
+<li><em>n</em> 是 32 位有符号整数，其数值范围是 [−231, 231 − 1] 。</li>
+</ul>
+</li>
+</ul>
 <a id="more"></a>
-<p>思路跟<a href="https://liyoucheng2014.github.io/2018/09/06/Leetcode-15/" target="_blank" rel="noopener">3Sum 三数之和</a>基本没啥区别，就是多加了一层for循环，其他的都一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">int compare(const void *a, const void *b) &#123;</span><br><span class="line">	return (*(int *)a) - (*(int *)b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void k_sum(int *nums, int low, int high, int target, int total, int k, int *stack, int len, int **results, int *count) &#123;</span><br><span class="line">	if (k == 2) &#123;</span><br><span class="line">		while(low &lt; high) &#123;</span><br><span class="line">            int diff = target - nums[low];</span><br><span class="line">			if(diff &gt; nums[high]) &#123;</span><br><span class="line">				while (++low &lt; high &amp;&amp; nums[low] == nums[low - 1]) &#123;&#125;</span><br><span class="line">			&#125; else if (diff &lt; nums[high]) &#123;</span><br><span class="line">				while (--high &gt; low &amp;&amp; nums[high] == nums[high + 1]) &#123;&#125;</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				stack[len++] = nums[low];</span><br><span class="line">				stack[len++] = nums[high];</span><br><span class="line">				results[*count] = malloc(total * sizeof(int));</span><br><span class="line">				memcpy(results[*count],stack,total * sizeof(int));</span><br><span class="line">				(*count)++;</span><br><span class="line">				len -= 2;</span><br><span class="line">				//过滤重复</span><br><span class="line">				while (++low &lt; high &amp;&amp; nums[low] == nums[low - 1]) &#123;&#125;</span><br><span class="line">				while (--high &gt; low &amp;&amp; nums[high] == nums[high + 1]) &#123;&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">		for (int i = low; i &lt;= high - k + 1; i++) &#123;</span><br><span class="line">			if (i &gt; low &amp;&amp; nums[i] == nums[i - 1]) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			stack[len++] = nums[i];</span><br><span class="line">			k_sum(nums, i + 1, high, target - nums[i],total, k - 1, stack, len, results, count);</span><br><span class="line">			len--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int** fourSum(int* nums, int numsSize, int target, int* returnSize)&#123;</span><br><span class="line">	int len = 4;</span><br><span class="line">	if (numsSize &lt; len) &#123;</span><br><span class="line">		return NULL;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	qsort(nums,numsSize,sizeof(*nums),compare);</span><br><span class="line"></span><br><span class="line">	*returnSize = 0;</span><br><span class="line">	int **results = malloc(sizeof(int *) * (((numsSize * (numsSize - 1) * (numsSize - 2))) / (3 * 2 * 1)));</span><br><span class="line">	//临时存储</span><br><span class="line">	int *stack = malloc(len * sizeof(int));</span><br><span class="line">	k_sum(nums, 0, numsSize - 1, target, len, len, stack, 0, results, returnSize);</span><br><span class="line"></span><br><span class="line">	return results;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="https://leetcode-cn.com/problems" target="_blank" rel="noopener">参考题目</a></p>
-<p><a href="https://www.cnblogs.com/grandyang/p/4606334.html" target="_blank" rel="noopener">参考答案</a></p>
-
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h6 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h6><ul>
+<li>描述</li>
+</ul>
+<p>用递归来折半计算，每次把n缩小一半，这样n最终会缩小到0，任何数的0次方都为1，这时候我们再往回乘，如果此时n是偶数，直接把上次递归得到的值算个平方返回即可，如果是奇数，则还需要乘上个x的值。还有一点需要引起我们的注意的是n有可能为负数，对于n是负数的情况，我们可以先用其绝对值计算出一个结果再取其倒数即可</p>
+<ul>
+<li>源码</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> half = myPow(x, n / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">         <span class="keyword">return</span> half * half;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> half * half * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> half * half / x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h6><ul>
+<li>描述</li>
+</ul>
+<p>迭代的解法，我们让i初始化为n，然后看i是否是2的倍数，是的话x乘以自己，否则res乘以x，i每次循环缩小一半，直到为0停止循环。最后看n的正负，如果为负，返回其倒数</p>
+<ul>
+<li>源码</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> res = <span class="number">1.0</span>;</span><br><span class="line">    <span class="keyword">int</span> index = n;</span><br><span class="line">    <span class="keyword">while</span> (index != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (index % <span class="number">2</span> != <span class="number">0</span>) &#123;</span><br><span class="line">            res *= x;</span><br><span class="line">        &#125;</span><br><span class="line">        x *= x;</span><br><span class="line">        index /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> n &lt; <span class="number">0</span> ? <span class="number">1</span> / res : res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><h4 id="Pow-x-n"><a href="#Pow-x-n" class="headerlink" title="Pow(x, n)"></a><a href="https://leetcode.com/problems/powx-n/" target="_blank" rel="noopener">Pow(x, n)</a></h4><h4 id="Pow-x-n-1"><a href="#Pow-x-n-1" class="headerlink" title="Pow(x, n)"></a><a href="https://leetcode-cn.com/problems/powx-n/" target="_blank" rel="noopener">Pow(x, n)</a></h4>
       
     </div>
     
@@ -419,7 +457,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+            <a href="/tags/leetCode/" rel="tag"># leetCode</a>
+          
+            <a href="/tags/递归/" rel="tag"># 递归</a>
+          
+            <a href="/tags/迭代/" rel="tag"># 迭代</a>
+          
+            <a href="/tags/分治/" rel="tag"># 分治</a>
           
         </div>
       
@@ -432,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/06/Leetcode-16/" rel="next" title="Leetcode-16">
-                <i class="fa fa-chevron-left"></i> Leetcode-16
+              <a href="/2018/11/12/leetCode/leetCode-0235_二叉搜索树的最近公共祖先/" rel="next" title="leetCode-0236_二叉搜索树的最近公共祖先">
+                <i class="fa fa-chevron-left"></i> leetCode-0236_二叉搜索树的最近公共祖先
               </a>
             
           </div>
@@ -441,10 +485,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/12/数据结构之基本概况/" rel="prev" title="数据结构之基本概况">
-                数据结构之基本概况 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -540,7 +580,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -551,7 +591,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -562,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -611,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#四数之和"><span class="nav-number">1.</span> <span class="nav-text">四数之和</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#中文题目"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">中文题目</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#方法一"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法二"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">3.</span> <span class="nav-text">题目来源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pow-x-n"><span class="nav-number">3.1.</span> <span class="nav-text">Pow(x, n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pow-x-n-1"><span class="nav-number">3.2.</span> <span class="nav-text">Pow(x, n)</span></a></li></ol></li></ol></div>
             
 
           </div>

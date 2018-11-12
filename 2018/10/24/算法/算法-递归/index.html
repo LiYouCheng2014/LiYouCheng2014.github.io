@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="成长路上">
 <meta property="og:description" content="递归需要满足的三个条件  一个问题的解可以分解为几个子问题的解 这个问题与分解之后的子问题，除了数据规模不同，求解思路完全一样 存在递归终止条件  如何编写递归代码？ 写递归代码的关键就是找到如何将大问题分解为小问题的规律，并且基于此写出递推公式，然后再推敲终止条件，最后将递推公式和终止条件翻译成代码。 编写递归代码的关键是，只要遇到递归，我们就把它抽象成一个递推公式，不用想一层层的调用关系，不要">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-30T14:36:08.903Z">
+<meta property="og:updated_time" content="2018-11-12T13:42:49.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法-递归">
 <meta name="twitter:description" content="递归需要满足的三个条件  一个问题的解可以分解为几个子问题的解 这个问题与分解之后的子问题，除了数据规模不同，求解思路完全一样 存在递归终止条件  如何编写递归代码？ 写递归代码的关键就是找到如何将大问题分解为小问题的规律，并且基于此写出递推公式，然后再推敲终止条件，最后将递推公式和终止条件翻译成代码。 编写递归代码的关键是，只要遇到递归，我们就把它抽象成一个递推公式，不用想一层层的调用关系，不要">
@@ -407,6 +407,10 @@
 <p>空间复杂度高</p>
 <p>我们平时调试代码喜欢使用 IDE 的单步跟踪功能，像规模比较大、递归层次很深的递归代码，几乎无法使用这种调试方式。对于递归代码，你有什么好的调试方法呢？</p>
 <p>调试递归:<br>1.打印日志发现，递归值。<br>2.结合条件断点进行调试。</p>
+<p>分治公式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">divide_conquer(problem, param1, param2, ...)</span><br><span class="line"></span><br><span class="line"># recursion terminator</span><br><span class="line">if problem结束</span><br><span class="line">	print_result</span><br><span class="line">	return</span><br><span class="line">	</span><br><span class="line">#prepare data</span><br><span class="line">data = prepare_data(problem)</span><br><span class="line">subproblems = split_proble(problem, data)</span><br><span class="line"></span><br><span class="line"># conquer subproblems</span><br><span class="line">subresult1 = self.divide_conquer(subproblesm[0], p1,...)</span><br><span class="line">subresult2 = self.divide_conquer(subproblesm[1], p1,...)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"># process and generate the final result</span><br><span class="line">result = process_result(subresult1, subresult2, subresult3, ...)</span><br></pre></td></tr></table></figure>
+<p>递归公式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">recursion(level, param1, param2, ...)</span><br><span class="line"></span><br><span class="line"># recursion terminator</span><br><span class="line">if level &gt; MAX_LEVEL</span><br><span class="line">	print_result</span><br><span class="line">	return</span><br><span class="line">	</span><br><span class="line">#prepare logic in current level</span><br><span class="line">process_data(level, data, ...)</span><br><span class="line"></span><br><span class="line"># drill down</span><br><span class="line">self.recursion(level + 1, p1, ...)</span><br><span class="line"></span><br><span class="line"># reverse the current level status if needed</span><br><span class="line">reverse_state(level)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -538,7 +542,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -549,7 +553,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -560,7 +564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
