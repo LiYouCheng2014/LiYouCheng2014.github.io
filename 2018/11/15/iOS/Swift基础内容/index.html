@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="swift," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一. 基础内容 1 常量和变量 1.1 声明常量和变量 1.2 类型标注 1.3 命名常量和变量 1.4 输出常量和变量   2 注释 3 分号 4 整数 4.1 整数范围 4.2 Int 4.3 UInt   5 浮点数 6 类型安全和类型推断 7 数值型字面量 8 数值类型转换 8.1 整数转换 8.2 整数和浮点数转换   9 类型别名 10 布尔值 11 元组 12 可选项 12.1 ni">
+<meta name="keywords" content="swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS-Swift语法">
+<meta property="og:url" content="http://yoursite.com/2018/11/15/iOS/Swift基础内容/index.html">
+<meta property="og:site_name" content="成长路上">
+<meta property="og:description" content="一. 基础内容 1 常量和变量 1.1 声明常量和变量 1.2 类型标注 1.3 命名常量和变量 1.4 输出常量和变量   2 注释 3 分号 4 整数 4.1 整数范围 4.2 Int 4.3 UInt   5 浮点数 6 类型安全和类型推断 7 数值型字面量 8 数值类型转换 8.1 整数转换 8.2 整数和浮点数转换   9 类型别名 10 布尔值 11 元组 12 可选项 12.1 ni">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-15T12:24:57.227Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS-Swift语法">
+<meta name="twitter:description" content="一. 基础内容 1 常量和变量 1.1 声明常量和变量 1.2 类型标注 1.3 命名常量和变量 1.4 输出常量和变量   2 注释 3 分号 4 整数 4.1 整数范围 4.2 Int 4.3 UInt   5 浮点数 6 类型安全和类型推断 7 数值型字面量 8 数值类型转换 8.1 整数转换 8.2 整数和浮点数转换   9 类型别名 10 布尔值 11 元组 12 可选项 12.1 ni">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/15/iOS/Swift基础内容/"/>
+
+
+
+
+
+  <title>iOS-Swift语法 | 成长路上</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">成长路上</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不断放弃舒适区</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/iOS/Swift基础内容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYouCheng2014">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成长路上">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS-Swift语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T19:50:49+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一-基础内容"><a href="#一-基础内容" class="headerlink" title="一. 基础内容"></a>一. 基础内容</h3><ul>
+<li>1 常量和变量<ul>
+<li><a href="https://www.cnswift.org/the-basics#spl-2" target="_blank" rel="noopener">1.1 声明常量和变量</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-3" target="_blank" rel="noopener">1.2 类型标注</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-4" target="_blank" rel="noopener">1.3 命名常量和变量</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-5" target="_blank" rel="noopener">1.4 输出常量和变量</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/the-basics#spl-6" target="_blank" rel="noopener">2 注释</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-7" target="_blank" rel="noopener">3 分号</a></li>
+<li>4 整数<ul>
+<li><a href="https://www.cnswift.org/the-basics#spl-9" target="_blank" rel="noopener">4.1 整数范围</a></li>
+<li><a href="https://www.cnswift.org/the-basics#Int" target="_blank" rel="noopener">4.2 Int</a></li>
+<li><a href="https://www.cnswift.org/the-basics#UInt" target="_blank" rel="noopener">4.3 UInt</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/the-basics#spl-10" target="_blank" rel="noopener">5 浮点数</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-11" target="_blank" rel="noopener">6 类型安全和类型推断</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-12" target="_blank" rel="noopener">7 数值型字面量</a></li>
+<li>8 数值类型转换<ul>
+<li><a href="https://www.cnswift.org/the-basics#spl-14" target="_blank" rel="noopener">8.1 整数转换</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-15" target="_blank" rel="noopener">8.2 整数和浮点数转换</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/the-basics#spl-16" target="_blank" rel="noopener">9 类型别名</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-17" target="_blank" rel="noopener">10 布尔值</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-18" target="_blank" rel="noopener">11 元组</a></li>
+<li>12 可选项<ul>
+<li><a href="https://www.cnswift.org/the-basics#nil" target="_blank" rel="noopener">12.1 nil</a></li>
+<li><a href="https://www.cnswift.org/the-basics#If" target="_blank" rel="noopener">12.2 If 语句以及强制展开</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-20" target="_blank" rel="noopener">12.3 可选项绑定</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-21" target="_blank" rel="noopener">12.4 隐式展开可选项</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/the-basics#spl-22" target="_blank" rel="noopener">13 错误处理</a></li>
+<li>14 断言和先决条件<ul>
+<li><a href="https://www.cnswift.org/the-basics#spl-24" target="_blank" rel="noopener">14.1 使用断言进行调试</a></li>
+<li><a href="https://www.cnswift.org/the-basics#spl-25" target="_blank" rel="noopener">14.2 强制先决条件</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="二-基本运算符"><a href="#二-基本运算符" class="headerlink" title="二. 基本运算符"></a>二. 基本运算符</h3><ul>
+<li><a href="https://www.cnswift.org/basic-operators#spl" target="_blank" rel="noopener">1 专门用语</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-2" target="_blank" rel="noopener">2 赋值运算符</a></li>
+<li>3 算术运算符<ul>
+<li><a href="https://www.cnswift.org/basic-operators#spl-4" target="_blank" rel="noopener">3.1 余数运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-5" target="_blank" rel="noopener">3.2 一元减号运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-6" target="_blank" rel="noopener">3.3 一元加号运算符</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-7" target="_blank" rel="noopener">4 组合赋值符号</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-8" target="_blank" rel="noopener">5 比较运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-9" target="_blank" rel="noopener">6 三元条件运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-10" target="_blank" rel="noopener">7 合并空值运算符</a></li>
+<li>8 区间运算符<ul>
+<li><a href="https://www.cnswift.org/basic-operators#spl-12" target="_blank" rel="noopener">8.1 闭区间运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-13" target="_blank" rel="noopener">8.2 半开区间运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-14" target="_blank" rel="noopener">8.3 单侧区间</a></li>
+</ul>
+</li>
+<li>9 逻辑运算符<ul>
+<li><a href="https://www.cnswift.org/basic-operators#spl-16" target="_blank" rel="noopener">9.1 逻辑非运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-17" target="_blank" rel="noopener">9.2 逻辑与运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-18" target="_blank" rel="noopener">9.3 逻辑或运算符</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-19" target="_blank" rel="noopener">9.4 混合逻辑运算</a></li>
+<li><a href="https://www.cnswift.org/basic-operators#spl-20" target="_blank" rel="noopener">9.5 显式括号</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="三-字符串和字符"><a href="#三-字符串和字符" class="headerlink" title="三. 字符串和字符"></a>三. 字符串和字符</h3><ul>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl" target="_blank" rel="noopener">1 字符串字面量</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-2" target="_blank" rel="noopener">2 初始化一个空字符串</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-3" target="_blank" rel="noopener">3 字符串可变性</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-4" target="_blank" rel="noopener">4 字符串是值类型</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-5" target="_blank" rel="noopener">5 操作字符</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-6" target="_blank" rel="noopener">6 连接字符串和字符</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-7" target="_blank" rel="noopener">7 字符串插值</a></li>
+<li>8 Unicode<ul>
+<li><a href="https://www.cnswift.org/strings-and-characters#Unicode-2" target="_blank" rel="noopener">8.1 Unicode 标量</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-8" target="_blank" rel="noopener">8.2 字符串字面量中的特殊字符</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-9" target="_blank" rel="noopener">8.3 扩展字形集群</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-10" target="_blank" rel="noopener">9 字符统计</a></li>
+<li>10 访问和修改字符串<ul>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-12" target="_blank" rel="noopener">10.1 字符串索引</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-13" target="_blank" rel="noopener">10.2 插入和删除</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-14" target="_blank" rel="noopener">11 子字符串</a></li>
+<li>12 字符串比较<ul>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-16" target="_blank" rel="noopener">12.1 字符串和字符相等性</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#spl-17" target="_blank" rel="noopener">12.2 前缀和后缀相等性</a></li>
+</ul>
+</li>
+<li>13 字符串的 Unicode 表示法<ul>
+<li><a href="https://www.cnswift.org/strings-and-characters#UTF-8" target="_blank" rel="noopener">13.1 UTF-8 表示法</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#UTF-16" target="_blank" rel="noopener">13.2 UTF-16 表示法</a></li>
+<li><a href="https://www.cnswift.org/strings-and-characters#Unicode-3" target="_blank" rel="noopener">13.3 Unicode 标量表示法</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="四-集合类型"><a href="#四-集合类型" class="headerlink" title="四. 集合类型"></a>四. 集合类型</h3><ul>
+<li><a href="https://www.cnswift.org/collection-types#spl" target="_blank" rel="noopener">1 集合的可变性</a></li>
+<li>2 数组<ul>
+<li><a href="https://www.cnswift.org/collection-types#spl-3" target="_blank" rel="noopener">2.1 数组类型简写语法</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-4" target="_blank" rel="noopener">2.2 创建一个空数组</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-5" target="_blank" rel="noopener">2.3 使用默认值创建数组</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-6" target="_blank" rel="noopener">2.4 通过连接两个数组来创建数组</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-7" target="_blank" rel="noopener">2.5 使用数组字面量创建数组</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-8" target="_blank" rel="noopener">2.6 访问和修改数组</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-9" target="_blank" rel="noopener">2.7 遍历一个数组</a></li>
+</ul>
+</li>
+<li>3 合集[1]<ul>
+<li><a href="https://www.cnswift.org/collection-types#Set" target="_blank" rel="noopener">3.1 Set 类型的哈希值</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-10" target="_blank" rel="noopener">3.2 合集类型语法</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-11" target="_blank" rel="noopener">3.3 创建并初始化一个空合集</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-12" target="_blank" rel="noopener">3.4 使用数组字面量创建合集</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-13" target="_blank" rel="noopener">3.5 访问和修改合集</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-14" target="_blank" rel="noopener">3.6 遍历合集</a></li>
+</ul>
+</li>
+<li>4 执行合集操作<ul>
+<li><a href="https://www.cnswift.org/collection-types#spl-16" target="_blank" rel="noopener">4.1 基本合集操作</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-17" target="_blank" rel="noopener">4.2 合集成员关系和相等性</a></li>
+</ul>
+</li>
+<li>5 字典<ul>
+<li><a href="https://www.cnswift.org/collection-types#spl-19" target="_blank" rel="noopener">5.1 字典类型简写语法</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-20" target="_blank" rel="noopener">5.2 创建一个空字典</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-21" target="_blank" rel="noopener">5.3 用字典字面量创建字典</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-22" target="_blank" rel="noopener">5.4 访问和修改字典</a></li>
+<li><a href="https://www.cnswift.org/collection-types#spl-23" target="_blank" rel="noopener">5.5 遍历字典</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="五-控制流"><a href="#五-控制流" class="headerlink" title="五. 控制流"></a>五. 控制流</h3><ul>
+<li><a href="https://www.cnswift.org/control-flow#For-in" target="_blank" rel="noopener">1 For-in 循环</a></li>
+<li>2  While 循环<ul>
+<li><a href="https://www.cnswift.org/control-flow#While-2" target="_blank" rel="noopener">2.1 While</a></li>
+<li><a href="https://www.cnswift.org/control-flow#Repeat-While" target="_blank" rel="noopener">2.2 Repeat-While</a></li>
+</ul>
+</li>
+<li>3 条件语句<ul>
+<li><a href="https://www.cnswift.org/control-flow#If" target="_blank" rel="noopener">3.1 If</a></li>
+<li>3.2 Switch<ul>
+<li><a href="https://www.cnswift.org/control-flow#spl-2" target="_blank" rel="noopener">3.2.1 没有隐式贯穿</a></li>
+<li><a href="https://www.cnswift.org/control-flow#spl-3" target="_blank" rel="noopener">3.2.2 区间匹配</a></li>
+<li><a href="https://www.cnswift.org/control-flow#spl-4" target="_blank" rel="noopener">3.2.3 元组</a></li>
+<li><a href="https://www.cnswift.org/control-flow#spl-5" target="_blank" rel="noopener">3.2.4 值绑定</a></li>
+<li><a href="https://www.cnswift.org/control-flow#Where" target="_blank" rel="noopener">3.2.5 Where</a></li>
+<li><a href="https://www.cnswift.org/control-flow#spl-6" target="_blank" rel="noopener">3.2.6 复合情况</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>4 控制转移语句<ul>
+<li><a href="https://www.cnswift.org/control-flow#Continue" target="_blank" rel="noopener">4.1 Continue</a></li>
+<li>4.2 Break<ul>
+<li><a href="https://www.cnswift.org/control-flow#_Break" target="_blank" rel="noopener">4.2.1 循环语句中的 Break</a></li>
+<li><a href="https://www.cnswift.org/control-flow#Switch_Break" target="_blank" rel="noopener">4.2.2 Switch 语句里的 Break</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/control-flow#Fallthrough" target="_blank" rel="noopener">4.3 Fallthrough</a></li>
+<li><a href="https://www.cnswift.org/control-flow#spl-8" target="_blank" rel="noopener">4.4 给语句打标签</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/control-flow#spl-9" target="_blank" rel="noopener">5 提前退出</a></li>
+<li><a href="https://www.cnswift.org/control-flow#API" target="_blank" rel="noopener">6 检查API的可用性</a></li>
+</ul>
+<h3 id="六-函数"><a href="#六-函数" class="headerlink" title="六. 函数"></a>六. 函数</h3><ul>
+<li><a href="https://www.cnswift.org/functions#spl" target="_blank" rel="noopener">1 定义和调用函数</a></li>
+<li>2 函数的形式参数和返回值<ul>
+<li><a href="https://www.cnswift.org/functions#spl-3" target="_blank" rel="noopener">2.1 无形式参数的函数</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-4" target="_blank" rel="noopener">2.2 多形式参数的函数</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-5" target="_blank" rel="noopener">2.3 无返回值的函数</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-6" target="_blank" rel="noopener">2.4 多返回值的函数</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-7" target="_blank" rel="noopener">2.5 可选元组返回类型</a></li>
+</ul>
+</li>
+<li>3 函数实际参数标签和形式参数名<ul>
+<li><a href="https://www.cnswift.org/functions#spl-9" target="_blank" rel="noopener">3.1 指定实际参数标签</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-10" target="_blank" rel="noopener">3.2 省略实际参数标签</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-11" target="_blank" rel="noopener">3.3 默认形式参数值</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-12" target="_blank" rel="noopener">3.4 可变形式参数</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-13" target="_blank" rel="noopener">3.5 输入输出形式参数</a></li>
+</ul>
+</li>
+<li>4 函数类型<ul>
+<li><a href="https://www.cnswift.org/functions#spl-15" target="_blank" rel="noopener">4.1 使用函数类型</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-16" target="_blank" rel="noopener">4.2 函数类型作为形式参数类型</a></li>
+<li><a href="https://www.cnswift.org/functions#spl-17" target="_blank" rel="noopener">4.3 函数类型作为返回类型</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/functions#spl-18" target="_blank" rel="noopener">5 内嵌函数</a></li>
+</ul>
+<h3 id="七-闭包"><a href="#七-闭包" class="headerlink" title="七. 闭包"></a>七. 闭包</h3><ul>
+<li>1 闭包表达式<ul>
+<li><a href="https://www.cnswift.org/closures#Sorted" target="_blank" rel="noopener">1.1 Sorted 方法</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-2" target="_blank" rel="noopener">1.2 闭包表达式语法</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-3" target="_blank" rel="noopener">1.3 从语境中推断类型</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-4" target="_blank" rel="noopener">1.4 从单表达式闭包隐式返回</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-5" target="_blank" rel="noopener">1.5 简写的实际参数名</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-6" target="_blank" rel="noopener">1.6 运算符函数</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/closures#spl-7" target="_blank" rel="noopener">2 尾随闭包</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-8" target="_blank" rel="noopener">3 捕获值</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-9" target="_blank" rel="noopener">4 闭包是引用类型</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-10" target="_blank" rel="noopener">5 逃逸闭包</a></li>
+<li><a href="https://www.cnswift.org/closures#spl-11" target="_blank" rel="noopener">6 自动闭包</a></li>
+</ul>
+<h3 id="八-枚举"><a href="#八-枚举" class="headerlink" title="八. 枚举"></a>八. 枚举</h3><ul>
+<li><a href="https://www.cnswift.org/enumerations#spl" target="_blank" rel="noopener">1 枚举</a></li>
+<li><a href="https://www.cnswift.org/enumerations#spl-2" target="_blank" rel="noopener">2 枚举语法</a></li>
+<li><a href="https://www.cnswift.org/enumerations#_Switch" target="_blank" rel="noopener">3 使用 Switch 语句来匹配枚举值</a></li>
+<li><a href="https://www.cnswift.org/enumerations#case" target="_blank" rel="noopener">4 遍历枚举情况（case）</a></li>
+<li><a href="https://www.cnswift.org/enumerations#spl-3" target="_blank" rel="noopener">5 关联值</a></li>
+<li>6 原始值<ul>
+<li><a href="https://www.cnswift.org/enumerations#spl-5" target="_blank" rel="noopener">6.1 隐式指定的原始值</a></li>
+<li><a href="https://www.cnswift.org/enumerations#spl-6" target="_blank" rel="noopener">6.2 从原始值初始化</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/enumerations#spl-7" target="_blank" rel="noopener">7 递归枚举</a></li>
+</ul>
+<h3 id="九-类和结构体"><a href="#九-类和结构体" class="headerlink" title="九. 类和结构体"></a>九. 类和结构体</h3><ul>
+<li>1 类与结构体的对比<ul>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-2" target="_blank" rel="noopener">1.1 定义语法</a></li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-3" target="_blank" rel="noopener">1.2 类与结构体实例</a></li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-4" target="_blank" rel="noopener">1.3 访问属性</a></li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-5" target="_blank" rel="noopener">1.4 结构体类型的成员初始化器</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-6" target="_blank" rel="noopener">2 结构体和枚举是值类型</a></li>
+<li>3 类是引用类型<ul>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-8" target="_blank" rel="noopener">3.1 特征运算符</a></li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-9" target="_blank" rel="noopener">3.2 指针</a></li>
+</ul>
+</li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-10" target="_blank" rel="noopener">4 类和结构体之间的选择</a></li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-11" target="_blank" rel="noopener">5 字符串，数组和字典的赋值与拷贝行为</a></li>
+<li><a href="https://www.cnswift.org/classes-and-structures#spl-12" target="_blank" rel="noopener">6 译注</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/swift/" rel="tag"># swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/14/iOS/多线程-Operation/" rel="next" title="多线程-Operation">
+                <i class="fa fa-chevron-left"></i> 多线程-Operation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/15/leetCode/leetCode-0102_二叉树的层次遍历/" rel="prev" title="leetCode-0102_二叉树的层次遍历">
+                leetCode-0102_二叉树的层次遍历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div id="lv-container" data-id="city" data-uid="MTAyMC80MDMyMy8xNjg1MA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+  <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="LiYouCheng2014" />
+            
+              <p class="site-author-name" itemprop="name">LiYouCheng2014</p>
+              <p class="site-description motion-element" itemprop="description">iOS\算法\项目管理</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LiYouCheng2014" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liyoucheng2014@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-基础内容"><span class="nav-number">1.</span> <span class="nav-text">一. 基础内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-基本运算符"><span class="nav-number">2.</span> <span class="nav-text">二. 基本运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-字符串和字符"><span class="nav-number">3.</span> <span class="nav-text">三. 字符串和字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-集合类型"><span class="nav-number">4.</span> <span class="nav-text">四. 集合类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-控制流"><span class="nav-number">5.</span> <span class="nav-text">五. 控制流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六-函数"><span class="nav-number">6.</span> <span class="nav-text">六. 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七-闭包"><span class="nav-number">7.</span> <span class="nav-text">七. 闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八-枚举"><span class="nav-number">8.</span> <span class="nav-text">八. 枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九-类和结构体"><span class="nav-number">9.</span> <span class="nav-text">九. 类和结构体</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiYouCheng2014</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
